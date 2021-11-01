@@ -1,0 +1,6 @@
+robotframework
+robotframework-seleniumlibrary
+robotframework-robocop
+RESTinstance
+robotframework-jsonlibrary
+robotframework-robocop

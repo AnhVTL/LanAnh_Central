@@ -1,0 +1,538 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 4.1.1 (Python 3.9.7 on win32)" generated="20211101 14:02:58.377" rpa="false" schemaversion="2">
+<suite id="s1" name="Testcases" source="C:\Users\Public\CDS_LanAnh\testcases">
+<suite id="s1-s1" name="Search Brand" source="C:\Users\Public\CDS_LanAnh\testcases\search_brand">
+<suite id="s1-s1-s1" name="Navigate Product List Ddt" source="C:\Users\Public\CDS_LanAnh\testcases\search_brand\navigate_product_list_ddt.robot">
+<test id="s1-s1-s1-t1" name="Keyword with partially name of product in brand">
+<kw name="Open chrome browser and redirect to brand page" library="common_keywords" type="SETUP">
+<arg>${brand.clinique.url_key}</arg>
+<kw name="Open chrome browser and redirect to page" library="common_keywords">
+<doc>Open chrome browser and redirect to page
+${url} - Target url
+${delay} - Delay that is waited after each Selenium command
+${is_headless} - Turn on headless browser with True, default False</doc>
+<kw name="Evaluate" library="BuiltIn">
+<var>${options}</var>
+<arg>sys.modules['selenium.webdriver'].ChromeOptions()</arg>
+<arg>sys</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20211101 14:02:59.998" level="INFO">${options} = &lt;selenium.webdriver.chrome.options.Options object at 0x000001DDB91CE310&gt;</msg>
+<status status="PASS" starttime="20211101 14:02:59.998" endtime="20211101 14:02:59.998"/>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-notifications</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" starttime="20211101 14:02:59.999" endtime="20211101 14:02:59.999"/>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-infobars</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" starttime="20211101 14:03:00.000" endtime="20211101 14:03:00.000"/>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>start-maximized</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" starttime="20211101 14:03:00.000" endtime="20211101 14:03:00.000"/>
+</kw>
+<kw name="Create Webdriver" library="SeleniumLibrary">
+<arg>Chrome</arg>
+<arg>chrome_options=${options}</arg>
+<doc>Creates an instance of Selenium WebDriver.</doc>
+<msg timestamp="20211101 14:03:00.001" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
+<status status="PASS" starttime="20211101 14:03:00.000" endtime="20211101 14:03:01.487"/>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${url}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20211101 14:03:01.488" level="INFO">Opening url 'https://www.central.co.th/en'</msg>
+<status status="PASS" starttime="20211101 14:03:01.488" endtime="20211101 14:03:08.905"/>
+</kw>
+<kw name="Wait until page is completely loaded" library="common_keywords">
+<kw name="Instrument Browser" library="SeleniumLibrary">
+<tag>plugin</tag>
+<doc>Instruments the current webpage for testability. This should happen automatically vie SeleniumTestability's internal `Event Firing Webdriver` support but keyword is provided also. Calls `Inject Testability` keyword automatically.</doc>
+<status status="PASS" starttime="20211101 14:03:08.906" endtime="20211101 14:03:09.091"/>
+</kw>
+<kw name="Wait For Testability Ready" library="SeleniumLibrary">
+<tag>plugin</tag>
+<doc>Explicitly waits until testability is ready or timeout happens.
+Parameters:
+- ``timeout`` Amount of time to wait until giving up for testability to be ready. Robot framework timestring
+- ``error_on_timeout`` if timeout occurs, should we throw an error</doc>
+<status status="PASS" starttime="20211101 14:03:09.092" endtime="20211101 14:03:09.369"/>
+</kw>
+<status status="PASS" starttime="20211101 14:03:08.906" endtime="20211101 14:03:09.369"/>
+</kw>
+<status status="PASS" starttime="20211101 14:02:59.998" endtime="20211101 14:03:09.370"/>
+</kw>
+<kw name="Catenate" library="BuiltIn">
+<var>${target_url}</var>
+<arg>SEPARATOR=/</arg>
+<arg>${base_url}</arg>
+<arg>${brand_url_key}</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<msg timestamp="20211101 14:03:09.370" level="INFO">${target_url} = https://www.central.co.th/en/clinique</msg>
+<status status="PASS" starttime="20211101 14:03:09.370" endtime="20211101 14:03:09.371"/>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${target_url}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20211101 14:03:09.371" level="INFO">Opening url 'https://www.central.co.th/en/clinique'</msg>
+<status status="PASS" starttime="20211101 14:03:09.371" endtime="20211101 14:03:11.083"/>
+</kw>
+<kw name="Wait until page is completely loaded" library="common_keywords">
+<kw name="Instrument Browser" library="SeleniumLibrary">
+<tag>plugin</tag>
+<doc>Instruments the current webpage for testability. This should happen automatically vie SeleniumTestability's internal `Event Firing Webdriver` support but keyword is provided also. Calls `Inject Testability` keyword automatically.</doc>
+<status status="PASS" starttime="20211101 14:03:11.084" endtime="20211101 14:03:11.088"/>
+</kw>
+<kw name="Wait For Testability Ready" library="SeleniumLibrary">
+<tag>plugin</tag>
+<doc>Explicitly waits until testability is ready or timeout happens.
+Parameters:
+- ``timeout`` Amount of time to wait until giving up for testability to be ready. Robot framework timestring
+- ``error_on_timeout`` if timeout occurs, should we throw an error</doc>
+<status status="PASS" starttime="20211101 14:03:11.088" endtime="20211101 14:03:11.095"/>
+</kw>
+<status status="PASS" starttime="20211101 14:03:11.083" endtime="20211101 14:03:11.095"/>
+</kw>
+<status status="PASS" starttime="20211101 14:02:59.995" endtime="20211101 14:03:11.095"/>
+</kw>
+<kw name="Template - Search any product of brand and verify product list page is displayed">
+<arg>clinique for men super energizer anti-fatigue depuffing eye gel 15 ml</arg>
+<kw name="Input text on search box" library="header_fragment">
+<arg>${keyword}</arg>
+<doc>Input search keyword in search box</doc>
+<kw name="Input Text" library="common_keywords">
+<arg>${headerFragmentLocator}[input_search_box]</arg>
+<arg>${keyword}</arg>
+<doc>Input text into target element
+${locator} - Locator of target element</doc>
+<kw name="Wait Element Is Visible" library="common_keywords">
+<arg>${locator}</arg>
+<arg>${timeout}</arg>
+<doc>Wait element is visible
+xpath=(//*[@id='txt-searchProductOnSearchBar'])[1] - Locator of target element
+30 - Waiting time for target element visible</doc>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>timeout=${timeout}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20211101 14:03:11.098" endtime="20211101 14:03:11.175"/>
+</kw>
+<status status="PASS" starttime="20211101 14:03:11.098" endtime="20211101 14:03:11.175"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20211101 14:03:11.176" level="INFO">Clicking element 'xpath=(//*[@id='txt-searchProductOnSearchBar'])[1]'.</msg>
+<status status="PASS" starttime="20211101 14:03:11.176" endtime="20211101 14:03:11.512"/>
+</kw>
+<kw name="Clear Element Text" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
+<status status="PASS" starttime="20211101 14:03:11.512" endtime="20211101 14:03:12.921"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>${keyword}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20211101 14:03:12.922" level="INFO">Typing text 'clinique for men super energizer anti-fatigue depuffing eye gel 15 ml' into text field 'xpath=(//*[@id='txt-searchProductOnSearchBar'])[1]'.</msg>
+<status status="PASS" starttime="20211101 14:03:12.921" endtime="20211101 14:03:13.085"/>
+</kw>
+<status status="PASS" starttime="20211101 14:03:11.097" endtime="20211101 14:03:13.085"/>
+</kw>
+<status status="PASS" starttime="20211101 14:03:11.096" endtime="20211101 14:03:13.085"/>
+</kw>
+<kw name="Press Enter key" library="common_keywords">
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>None</arg>
+<arg>RETURN</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20211101 14:03:13.086" level="INFO">Sending key(s) ('RETURN',) to page.</msg>
+<msg timestamp="20211101 14:03:13.086" level="INFO">Pressing special key RETURN to browser.</msg>
+<msg timestamp="20211101 14:03:13.087" level="INFO">Releasing special key RETURN.</msg>
+<status status="PASS" starttime="20211101 14:03:13.086" endtime="20211101 14:03:13.118"/>
+</kw>
+<status status="PASS" starttime="20211101 14:03:13.086" endtime="20211101 14:03:13.119"/>
+</kw>
+<kw name="Verify product list page is navigated correctly" library="product_list_page_feature">
+<arg>${keyword}</arg>
+<kw name="Wait until page is completely loaded" library="common_keywords">
+<kw name="Instrument Browser" library="SeleniumLibrary">
+<tag>plugin</tag>
+<doc>Instruments the current webpage for testability. This should happen automatically vie SeleniumTestability's internal `Event Firing Webdriver` support but keyword is provided also. Calls `Inject Testability` keyword automatically.</doc>
+<status status="PASS" starttime="20211101 14:03:13.120" endtime="20211101 14:03:13.124"/>
+</kw>
+<kw name="Wait For Testability Ready" library="SeleniumLibrary">
+<tag>plugin</tag>
+<doc>Explicitly waits until testability is ready or timeout happens.
+Parameters:
+- ``timeout`` Amount of time to wait until giving up for testability to be ready. Robot framework timestring
+- ``error_on_timeout`` if timeout occurs, should we throw an error</doc>
+<status status="PASS" starttime="20211101 14:03:13.124" endtime="20211101 14:03:15.663"/>
+</kw>
+<status status="PASS" starttime="20211101 14:03:13.119" endtime="20211101 14:03:15.663"/>
+</kw>
+<kw name="Verify search title is displayed correctly" library="product_list_page">
+<arg>${search_keyword}</arg>
+<kw name="Format String" library="String">
+<var>${locator}</var>
+<arg>${productListPageLocator}[txt_search_title]</arg>
+<arg>search_keyword=${search_keyword}</arg>
+<doc>Formats a ``template`` using the given ``positional`` and ``named`` arguments.</doc>
+<msg timestamp="20211101 14:03:15.665" level="INFO">${locator} = xpath=//*[@data-testid='txt-viewProductListOnTitle' and contains(text(),'clinique for men super energizer anti-fatigue depuffing eye gel 15 ml')]</msg>
+<status status="PASS" starttime="20211101 14:03:15.664" endtime="20211101 14:03:15.665"/>
+</kw>
+<kw name="Wait Element Is Visible" library="common_keywords">
+<arg>${locator}</arg>
+<doc>Wait element is visible
+xpath=//*[@data-testid='txt-viewProductListOnTitle' and contains(text(),'clinique for men super energizer anti-fatigue depuffing eye gel 15 ml')] - Locator of target element
+${timeout} - Waiting time for target element visible</doc>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>timeout=${timeout}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20211101 14:03:15.666" endtime="20211101 14:03:15.706"/>
+</kw>
+<status status="PASS" starttime="20211101 14:03:15.665" endtime="20211101 14:03:15.707"/>
+</kw>
+<status status="PASS" starttime="20211101 14:03:15.664" endtime="20211101 14:03:15.708"/>
+</kw>
+<kw name="Verify button sort filter is displayed" library="product_list_page">
+<kw name="Wait Element Is Visible" library="common_keywords">
+<arg>${productListPageLocator}[button_sort_filter]</arg>
+<doc>Wait element is visible
+${locator} - Locator of target element
+${timeout} - Waiting time for target element visible</doc>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>timeout=${timeout}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20211101 14:03:15.713" endtime="20211101 14:03:27.608"/>
+</kw>
+<status status="PASS" starttime="20211101 14:03:15.712" endtime="20211101 14:03:27.608"/>
+</kw>
+<status status="PASS" starttime="20211101 14:03:15.708" endtime="20211101 14:03:27.609"/>
+</kw>
+<kw name="Verify tool bar part is displayed" library="product_list_page">
+<kw name="Wait Element Is Visible" library="common_keywords">
+<arg>${productListPageLocator}[part_tool_bar]</arg>
+<doc>Wait element is visible
+${locator} - Locator of target element
+${timeout} - Waiting time for target element visible</doc>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>timeout=${timeout}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20211101 14:03:27.611" endtime="20211101 14:03:27.643"/>
+</kw>
+<status status="PASS" starttime="20211101 14:03:27.611" endtime="20211101 14:03:27.643"/>
+</kw>
+<status status="PASS" starttime="20211101 14:03:27.609" endtime="20211101 14:03:27.643"/>
+</kw>
+<status status="PASS" starttime="20211101 14:03:13.119" endtime="20211101 14:03:27.643"/>
+</kw>
+<status status="PASS" starttime="20211101 14:03:11.096" endtime="20211101 14:03:27.643"/>
+</kw>
+<kw name="Tear Down Test" library="common_keywords" type="TEARDOWN">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20211101 14:03:27.644" endtime="20211101 14:03:29.872"/>
+</kw>
+<status status="PASS" starttime="20211101 14:03:27.644" endtime="20211101 14:03:29.873"/>
+</kw>
+<tag>ddt</tag>
+<tag>navigate_product_list</tag>
+<tag>Search_027</tag>
+<tag>Search_028</tag>
+<tag>search_brand</tag>
+<tag>search_function</tag>
+<status status="PASS" starttime="20211101 14:02:59.994" endtime="20211101 14:03:29.874"/>
+</test>
+<test id="s1-s1-s1-t2" name="Keyword with fully name of product in brand">
+<kw name="Open chrome browser and redirect to brand page" library="common_keywords" type="SETUP">
+<arg>${brand.clinique.url_key}</arg>
+<kw name="Open chrome browser and redirect to page" library="common_keywords">
+<doc>Open chrome browser and redirect to page
+${url} - Target url
+${delay} - Delay that is waited after each Selenium command
+${is_headless} - Turn on headless browser with True, default False</doc>
+<kw name="Evaluate" library="BuiltIn">
+<var>${options}</var>
+<arg>sys.modules['selenium.webdriver'].ChromeOptions()</arg>
+<arg>sys</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20211101 14:03:29.899" level="INFO">${options} = &lt;selenium.webdriver.chrome.options.Options object at 0x000001DDB9278FD0&gt;</msg>
+<status status="PASS" starttime="20211101 14:03:29.898" endtime="20211101 14:03:29.900"/>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-notifications</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" starttime="20211101 14:03:29.900" endtime="20211101 14:03:29.901"/>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-infobars</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" starttime="20211101 14:03:29.902" endtime="20211101 14:03:29.903"/>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>start-maximized</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" starttime="20211101 14:03:29.904" endtime="20211101 14:03:29.905"/>
+</kw>
+<kw name="Create Webdriver" library="SeleniumLibrary">
+<arg>Chrome</arg>
+<arg>chrome_options=${options}</arg>
+<doc>Creates an instance of Selenium WebDriver.</doc>
+<msg timestamp="20211101 14:03:29.908" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
+<status status="PASS" starttime="20211101 14:03:29.906" endtime="20211101 14:03:31.471"/>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${url}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20211101 14:03:31.471" level="INFO">Opening url 'https://www.central.co.th/en'</msg>
+<status status="PASS" starttime="20211101 14:03:31.471" endtime="20211101 14:03:38.221"/>
+</kw>
+<kw name="Wait until page is completely loaded" library="common_keywords">
+<kw name="Instrument Browser" library="SeleniumLibrary">
+<tag>plugin</tag>
+<doc>Instruments the current webpage for testability. This should happen automatically vie SeleniumTestability's internal `Event Firing Webdriver` support but keyword is provided also. Calls `Inject Testability` keyword automatically.</doc>
+<status status="PASS" starttime="20211101 14:03:38.222" endtime="20211101 14:03:38.310"/>
+</kw>
+<kw name="Wait For Testability Ready" library="SeleniumLibrary">
+<tag>plugin</tag>
+<doc>Explicitly waits until testability is ready or timeout happens.
+Parameters:
+- ``timeout`` Amount of time to wait until giving up for testability to be ready. Robot framework timestring
+- ``error_on_timeout`` if timeout occurs, should we throw an error</doc>
+<status status="PASS" starttime="20211101 14:03:38.310" endtime="20211101 14:03:39.312"/>
+</kw>
+<status status="PASS" starttime="20211101 14:03:38.221" endtime="20211101 14:03:39.312"/>
+</kw>
+<status status="PASS" starttime="20211101 14:03:29.896" endtime="20211101 14:03:39.313"/>
+</kw>
+<kw name="Catenate" library="BuiltIn">
+<var>${target_url}</var>
+<arg>SEPARATOR=/</arg>
+<arg>${base_url}</arg>
+<arg>${brand_url_key}</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<msg timestamp="20211101 14:03:39.313" level="INFO">${target_url} = https://www.central.co.th/en/clinique</msg>
+<status status="PASS" starttime="20211101 14:03:39.313" endtime="20211101 14:03:39.313"/>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${target_url}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20211101 14:03:39.314" level="INFO">Opening url 'https://www.central.co.th/en/clinique'</msg>
+<status status="PASS" starttime="20211101 14:03:39.313" endtime="20211101 14:03:41.415"/>
+</kw>
+<kw name="Wait until page is completely loaded" library="common_keywords">
+<kw name="Instrument Browser" library="SeleniumLibrary">
+<tag>plugin</tag>
+<doc>Instruments the current webpage for testability. This should happen automatically vie SeleniumTestability's internal `Event Firing Webdriver` support but keyword is provided also. Calls `Inject Testability` keyword automatically.</doc>
+<status status="PASS" starttime="20211101 14:03:41.415" endtime="20211101 14:03:41.420"/>
+</kw>
+<kw name="Wait For Testability Ready" library="SeleniumLibrary">
+<tag>plugin</tag>
+<doc>Explicitly waits until testability is ready or timeout happens.
+Parameters:
+- ``timeout`` Amount of time to wait until giving up for testability to be ready. Robot framework timestring
+- ``error_on_timeout`` if timeout occurs, should we throw an error</doc>
+<status status="PASS" starttime="20211101 14:03:41.420" endtime="20211101 14:03:41.427"/>
+</kw>
+<status status="PASS" starttime="20211101 14:03:41.415" endtime="20211101 14:03:41.427"/>
+</kw>
+<status status="PASS" starttime="20211101 14:03:29.884" endtime="20211101 14:03:41.427"/>
+</kw>
+<kw name="Template - Search any product of brand and verify product list page is displayed">
+<arg>clinique for men</arg>
+<kw name="Input text on search box" library="header_fragment">
+<arg>${keyword}</arg>
+<doc>Input search keyword in search box</doc>
+<kw name="Input Text" library="common_keywords">
+<arg>${headerFragmentLocator}[input_search_box]</arg>
+<arg>${keyword}</arg>
+<doc>Input text into target element
+${locator} - Locator of target element</doc>
+<kw name="Wait Element Is Visible" library="common_keywords">
+<arg>${locator}</arg>
+<arg>${timeout}</arg>
+<doc>Wait element is visible
+xpath=(//*[@id='txt-searchProductOnSearchBar'])[1] - Locator of target element
+30 - Waiting time for target element visible</doc>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>timeout=${timeout}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20211101 14:03:41.430" endtime="20211101 14:03:41.477"/>
+</kw>
+<status status="PASS" starttime="20211101 14:03:41.429" endtime="20211101 14:03:41.477"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20211101 14:03:41.478" level="INFO">Clicking element 'xpath=(//*[@id='txt-searchProductOnSearchBar'])[1]'.</msg>
+<status status="PASS" starttime="20211101 14:03:41.477" endtime="20211101 14:03:41.558"/>
+</kw>
+<kw name="Clear Element Text" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
+<status status="PASS" starttime="20211101 14:03:41.559" endtime="20211101 14:03:42.246"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>${keyword}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20211101 14:03:42.247" level="INFO">Typing text 'clinique for men' into text field 'xpath=(//*[@id='txt-searchProductOnSearchBar'])[1]'.</msg>
+<status status="PASS" starttime="20211101 14:03:42.247" endtime="20211101 14:03:43.507"/>
+</kw>
+<status status="PASS" starttime="20211101 14:03:41.429" endtime="20211101 14:03:43.508"/>
+</kw>
+<status status="PASS" starttime="20211101 14:03:41.428" endtime="20211101 14:03:43.508"/>
+</kw>
+<kw name="Press Enter key" library="common_keywords">
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>None</arg>
+<arg>RETURN</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20211101 14:03:43.509" level="INFO">Sending key(s) ('RETURN',) to page.</msg>
+<msg timestamp="20211101 14:03:43.509" level="INFO">Pressing special key RETURN to browser.</msg>
+<msg timestamp="20211101 14:03:43.509" level="INFO">Releasing special key RETURN.</msg>
+<status status="PASS" starttime="20211101 14:03:43.508" endtime="20211101 14:03:43.536"/>
+</kw>
+<status status="PASS" starttime="20211101 14:03:43.508" endtime="20211101 14:03:43.536"/>
+</kw>
+<kw name="Verify product list page is navigated correctly" library="product_list_page_feature">
+<arg>${keyword}</arg>
+<kw name="Wait until page is completely loaded" library="common_keywords">
+<kw name="Instrument Browser" library="SeleniumLibrary">
+<tag>plugin</tag>
+<doc>Instruments the current webpage for testability. This should happen automatically vie SeleniumTestability's internal `Event Firing Webdriver` support but keyword is provided also. Calls `Inject Testability` keyword automatically.</doc>
+<status status="PASS" starttime="20211101 14:03:43.537" endtime="20211101 14:03:43.541"/>
+</kw>
+<kw name="Wait For Testability Ready" library="SeleniumLibrary">
+<tag>plugin</tag>
+<doc>Explicitly waits until testability is ready or timeout happens.
+Parameters:
+- ``timeout`` Amount of time to wait until giving up for testability to be ready. Robot framework timestring
+- ``error_on_timeout`` if timeout occurs, should we throw an error</doc>
+<status status="PASS" starttime="20211101 14:03:43.541" endtime="20211101 14:03:45.922"/>
+</kw>
+<status status="PASS" starttime="20211101 14:03:43.537" endtime="20211101 14:03:45.923"/>
+</kw>
+<kw name="Verify search title is displayed correctly" library="product_list_page">
+<arg>${search_keyword}</arg>
+<kw name="Format String" library="String">
+<var>${locator}</var>
+<arg>${productListPageLocator}[txt_search_title]</arg>
+<arg>search_keyword=${search_keyword}</arg>
+<doc>Formats a ``template`` using the given ``positional`` and ``named`` arguments.</doc>
+<msg timestamp="20211101 14:03:45.928" level="INFO">${locator} = xpath=//*[@data-testid='txt-viewProductListOnTitle' and contains(text(),'clinique for men')]</msg>
+<status status="PASS" starttime="20211101 14:03:45.926" endtime="20211101 14:03:45.929"/>
+</kw>
+<kw name="Wait Element Is Visible" library="common_keywords">
+<arg>${locator}</arg>
+<doc>Wait element is visible
+xpath=//*[@data-testid='txt-viewProductListOnTitle' and contains(text(),'clinique for men')] - Locator of target element
+${timeout} - Waiting time for target element visible</doc>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>timeout=${timeout}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20211101 14:03:45.935" endtime="20211101 14:03:46.020"/>
+</kw>
+<status status="PASS" starttime="20211101 14:03:45.932" endtime="20211101 14:03:46.020"/>
+</kw>
+<status status="PASS" starttime="20211101 14:03:45.924" endtime="20211101 14:03:46.021"/>
+</kw>
+<kw name="Verify button sort filter is displayed" library="product_list_page">
+<kw name="Wait Element Is Visible" library="common_keywords">
+<arg>${productListPageLocator}[button_sort_filter]</arg>
+<doc>Wait element is visible
+${locator} - Locator of target element
+${timeout} - Waiting time for target element visible</doc>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>timeout=${timeout}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20211101 14:03:46.024" endtime="20211101 14:03:55.011"/>
+</kw>
+<status status="PASS" starttime="20211101 14:03:46.023" endtime="20211101 14:03:55.012"/>
+</kw>
+<status status="PASS" starttime="20211101 14:03:46.021" endtime="20211101 14:03:55.012"/>
+</kw>
+<kw name="Verify tool bar part is displayed" library="product_list_page">
+<kw name="Wait Element Is Visible" library="common_keywords">
+<arg>${productListPageLocator}[part_tool_bar]</arg>
+<doc>Wait element is visible
+${locator} - Locator of target element
+${timeout} - Waiting time for target element visible</doc>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>timeout=${timeout}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20211101 14:03:55.016" endtime="20211101 14:03:55.052"/>
+</kw>
+<status status="PASS" starttime="20211101 14:03:55.015" endtime="20211101 14:03:55.052"/>
+</kw>
+<status status="PASS" starttime="20211101 14:03:55.012" endtime="20211101 14:03:55.052"/>
+</kw>
+<status status="PASS" starttime="20211101 14:03:43.536" endtime="20211101 14:03:55.053"/>
+</kw>
+<status status="PASS" starttime="20211101 14:03:41.428" endtime="20211101 14:03:55.053"/>
+</kw>
+<kw name="Tear Down Test" library="common_keywords" type="TEARDOWN">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20211101 14:03:55.054" endtime="20211101 14:03:57.511"/>
+</kw>
+<status status="PASS" starttime="20211101 14:03:55.053" endtime="20211101 14:03:57.511"/>
+</kw>
+<tag>ddt</tag>
+<tag>navigate_product_list</tag>
+<tag>Search_027</tag>
+<tag>Search_028</tag>
+<tag>search_brand</tag>
+<tag>search_function</tag>
+<status status="PASS" starttime="20211101 14:03:29.879" endtime="20211101 14:03:57.512"/>
+</test>
+<status status="PASS" starttime="20211101 14:02:58.404" endtime="20211101 14:03:57.513"/>
+</suite>
+<status status="PASS" starttime="20211101 14:02:58.402" endtime="20211101 14:03:57.516"/>
+</suite>
+<status status="PASS" starttime="20211101 14:02:58.380" endtime="20211101 14:03:57.517"/>
+</suite>
+<statistics>
+<total>
+<stat pass="2" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="2" fail="0" skip="0">ddt</stat>
+<stat pass="2" fail="0" skip="0">navigate_product_list</stat>
+<stat pass="2" fail="0" skip="0">Search_027</stat>
+<stat pass="2" fail="0" skip="0">Search_028</stat>
+<stat pass="2" fail="0" skip="0">search_brand</stat>
+<stat pass="2" fail="0" skip="0">search_function</stat>
+</tag>
+<suite>
+<stat pass="2" fail="0" skip="0" id="s1" name="Testcases">Testcases</stat>
+<stat pass="2" fail="0" skip="0" id="s1-s1" name="Search Brand">Testcases.Search Brand</stat>
+<stat pass="2" fail="0" skip="0" id="s1-s1-s1" name="Navigate Product List Ddt">Testcases.Search Brand.Navigate Product List Ddt</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

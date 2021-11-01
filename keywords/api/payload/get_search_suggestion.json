@@ -1,0 +1,14 @@
+{
+    "operationName":"v2SuggestSearch",
+    "variables":
+        {
+            "input":
+                {
+                    "keyword":"",
+                    "productSize":6,
+                    "categorySize":3,
+                    "suggestionTermSize":3
+                }
+        },
+    "query":"query v2SuggestSearch($input: V2SuggestSearchInput) { v2SuggestSearch(input: $input) { products { id type name sku urlKey overlayImageUrl thumbnailUrl brand { id name urlKey  __typename} priceSummary { original final discount { amount percentage effectiveDateRange { from to __typename } __typename } __typename} __typename} categories { id name parentId urlPath isGtm  __typename} suggestionTerms(input: $input) __typename } }"
+}

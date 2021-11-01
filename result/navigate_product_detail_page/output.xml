@@ -1,0 +1,1105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 4.1.1 (Python 3.9.7 on win32)" generated="20211101 15:38:55.559" rpa="false" schemaversion="2">
+<suite id="s1" name="Testcases" source="C:\Users\Public\CDS_LanAnh\testcases">
+<suite id="s1-s1" name="Search Brand" source="C:\Users\Public\CDS_LanAnh\testcases\search_brand">
+<suite id="s1-s1-s1" name="Navigate Product Detail Page" source="C:\Users\Public\CDS_LanAnh\testcases\search_brand\navigate_product_detail_page.robot">
+<test id="s1-s1-s1-t1" name="Verify user is navigated to brand page after search by brand by keyword">
+<kw name="Open chrome browser and redirect to brand page" library="common_keywords" type="SETUP">
+<arg>${brand.clinique.url_key}</arg>
+<kw name="Open chrome browser and redirect to page" library="common_keywords">
+<doc>Open chrome browser and redirect to page
+${url} - Target url
+${delay} - Delay that is waited after each Selenium command
+${is_headless} - Turn on headless browser with True, default False</doc>
+<kw name="Evaluate" library="BuiltIn">
+<var>${options}</var>
+<arg>sys.modules['selenium.webdriver'].ChromeOptions()</arg>
+<arg>sys</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20211101 15:38:56.262" level="INFO">${options} = &lt;selenium.webdriver.chrome.options.Options object at 0x000001AC1A653E20&gt;</msg>
+<status status="PASS" starttime="20211101 15:38:56.261" endtime="20211101 15:38:56.262"/>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-notifications</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" starttime="20211101 15:38:56.262" endtime="20211101 15:38:56.262"/>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-infobars</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" starttime="20211101 15:38:56.262" endtime="20211101 15:38:56.262"/>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>start-maximized</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" starttime="20211101 15:38:56.263" endtime="20211101 15:38:56.263"/>
+</kw>
+<kw name="Create Webdriver" library="SeleniumLibrary">
+<arg>Chrome</arg>
+<arg>chrome_options=${options}</arg>
+<doc>Creates an instance of Selenium WebDriver.</doc>
+<msg timestamp="20211101 15:38:56.263" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
+<status status="PASS" starttime="20211101 15:38:56.263" endtime="20211101 15:38:57.833"/>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${url}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20211101 15:38:57.834" level="INFO">Opening url 'https://www.central.co.th/en'</msg>
+<status status="PASS" starttime="20211101 15:38:57.833" endtime="20211101 15:39:04.171"/>
+</kw>
+<kw name="Wait until page is completely loaded" library="common_keywords">
+<kw name="Instrument Browser" library="SeleniumLibrary">
+<tag>plugin</tag>
+<doc>Instruments the current webpage for testability. This should happen automatically vie SeleniumTestability's internal `Event Firing Webdriver` support but keyword is provided also. Calls `Inject Testability` keyword automatically.</doc>
+<status status="PASS" starttime="20211101 15:39:04.172" endtime="20211101 15:39:04.261"/>
+</kw>
+<kw name="Wait For Testability Ready" library="SeleniumLibrary">
+<tag>plugin</tag>
+<doc>Explicitly waits until testability is ready or timeout happens.
+Parameters:
+- ``timeout`` Amount of time to wait until giving up for testability to be ready. Robot framework timestring
+- ``error_on_timeout`` if timeout occurs, should we throw an error</doc>
+<status status="PASS" starttime="20211101 15:39:04.262" endtime="20211101 15:39:04.545"/>
+</kw>
+<status status="PASS" starttime="20211101 15:39:04.172" endtime="20211101 15:39:04.545"/>
+</kw>
+<status status="PASS" starttime="20211101 15:38:56.261" endtime="20211101 15:39:04.545"/>
+</kw>
+<kw name="Catenate" library="BuiltIn">
+<var>${target_url}</var>
+<arg>SEPARATOR=/</arg>
+<arg>${base_url}</arg>
+<arg>${brand_url_key}</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<msg timestamp="20211101 15:39:04.546" level="INFO">${target_url} = https://www.central.co.th/en/clinique</msg>
+<status status="PASS" starttime="20211101 15:39:04.545" endtime="20211101 15:39:04.546"/>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${target_url}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20211101 15:39:04.546" level="INFO">Opening url 'https://www.central.co.th/en/clinique'</msg>
+<status status="PASS" starttime="20211101 15:39:04.546" endtime="20211101 15:39:06.626"/>
+</kw>
+<kw name="Wait until page is completely loaded" library="common_keywords">
+<kw name="Instrument Browser" library="SeleniumLibrary">
+<tag>plugin</tag>
+<doc>Instruments the current webpage for testability. This should happen automatically vie SeleniumTestability's internal `Event Firing Webdriver` support but keyword is provided also. Calls `Inject Testability` keyword automatically.</doc>
+<status status="PASS" starttime="20211101 15:39:06.627" endtime="20211101 15:39:06.631"/>
+</kw>
+<kw name="Wait For Testability Ready" library="SeleniumLibrary">
+<tag>plugin</tag>
+<doc>Explicitly waits until testability is ready or timeout happens.
+Parameters:
+- ``timeout`` Amount of time to wait until giving up for testability to be ready. Robot framework timestring
+- ``error_on_timeout`` if timeout occurs, should we throw an error</doc>
+<status status="PASS" starttime="20211101 15:39:06.631" endtime="20211101 15:39:06.635"/>
+</kw>
+<status status="PASS" starttime="20211101 15:39:06.627" endtime="20211101 15:39:06.635"/>
+</kw>
+<status status="PASS" starttime="20211101 15:38:56.259" endtime="20211101 15:39:06.636"/>
+</kw>
+<kw name="Get suggestion data with search by keyword" library="search_api">
+<arg>${brand.clinique.name}</arg>
+<kw name="Load JSON From File" library="JSONLibrary">
+<var>${request}</var>
+<arg>C:\\Users\\Public\\CDS_LanAnh\\keywords\\api/payload/get_search_suggestion.json</arg>
+<doc>Load JSON from file.</doc>
+<msg timestamp="20211101 15:39:06.638" level="INFO">${request} = {'operationName': 'v2SuggestSearch', 'variables': {'input': {'keyword': '', 'productSize': 6, 'categorySize': 3, 'suggestionTermSize': 3}}, 'query': 'query v2SuggestSearch($input: V2SuggestSearchInput...</msg>
+<status status="PASS" starttime="20211101 15:39:06.637" endtime="20211101 15:39:06.638"/>
+</kw>
+<kw name="Update Value To Json" library="JSONLibrary">
+<var>${request}</var>
+<arg>${request}</arg>
+<arg>$..keyword</arg>
+<arg>${keyword}</arg>
+<doc>Update value to JSON using JSONPath</doc>
+<msg timestamp="20211101 15:39:06.668" level="INFO">${request} = {'operationName': 'v2SuggestSearch', 'variables': {'input': {'keyword': 'clinique', 'productSize': 6, 'categorySize': 3, 'suggestionTermSize': 3}}, 'query': 'query v2SuggestSearch($input: V2SuggestSea...</msg>
+<status status="PASS" starttime="20211101 15:39:06.638" endtime="20211101 15:39:06.668"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${body}</var>
+<arg>json.dumps($request)</arg>
+<arg>json</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20211101 15:39:06.675" level="INFO">${body} = {"operationName": "v2SuggestSearch", "variables": {"input": {"keyword": "clinique", "productSize": 6, "categorySize": 3, "suggestionTermSize": 3}}, "query": "query v2SuggestSearch($input: V2SuggestSea...</msg>
+<status status="PASS" starttime="20211101 15:39:06.669" endtime="20211101 15:39:06.675"/>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${headers}</var>
+<arg>store=en</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20211101 15:39:06.677" level="INFO">${headers} = {'store': 'en'}</msg>
+<status status="PASS" starttime="20211101 15:39:06.676" endtime="20211101 15:39:06.677"/>
+</kw>
+<kw name="Post" library="REST">
+<var>${response}</var>
+<arg>endpoint=${api_end_point}</arg>
+<arg>body=${body}</arg>
+<arg>headers=${headers}</arg>
+<tag>http</tag>
+<doc>*Sends a POST request to the endpoint.*</doc>
+<msg timestamp="20211101 15:39:06.857" level="INFO">${response} = {'seconds': 0.165054, 'status': 200, 'body': {'data': {'v2SuggestSearch': {'products': [{'id': '612749', 'type': 'SIMPLE', 'name': 'Even Better Clinical™ Radical Dark Spot Corrector + Interrupter 50ML...</msg>
+<status status="PASS" starttime="20211101 15:39:06.678" endtime="20211101 15:39:06.857"/>
+</kw>
+<kw name="Integer" library="REST">
+<arg>response status</arg>
+<arg>200</arg>
+<tag>assertions</tag>
+<doc>*Asserts the field as JSON integer.*</doc>
+<status status="PASS" starttime="20211101 15:39:06.858" endtime="20211101 15:39:06.858"/>
+</kw>
+<kw name="Output" library="REST">
+<var>${response}</var>
+<arg>response body</arg>
+<tag>I/O</tag>
+<doc>*Outputs JSON to terminal or a file.*</doc>
+<msg timestamp="20211101 15:39:06.859" level="INFO">
+{
+    "data": {
+        "v2SuggestSearch": {
+            "products": [
+                {
+                    "id": "612749",
+                    "type": "SIMPLE",
+                    "name": "Even Better Clinical™ Radical Dark Spot Corrector + Interrupter 50ML",
+                    "sku": "CDS24645805",
+                    "urlKey": "clinique-even-better-clinical-radical-dark-spot-corrector-interrupter-50ml-cds24645805",
+                    "overlayImageUrl": null,
+                    "thumbnailUrl": "https://backend.central.co.th/media/catalog/product/c/d/cdscontent.jpg",
+                    "brand": {
+                        "id": "116",
+                        "name": "CLINIQUE",
+                        "urlKey": "clinique",
+                        "__typename": "V2Brand"
+                    },
+                    "priceSummary": {
+                        "original": 4100,
+                        "final": 4100,
+                        "discount": {
+                            "amount": 0,
+                            "percentage": 0,
+                            "effectiveDateRange": null,
+                            "__typename": "V2Discount"
+                        },
+                        "__typename": "V2PriceSummary"
+                    },
+                    "__typename": "V2SimpleProduct"
+                },
+                {
+                    "id": "63770",
+                    "type": "SIMPLE",
+                    "name": "Repairwear Smooths, Restores, Corrects 50ML",
+                    "sku": "CDS10475157",
+                    "urlKey": "clinique-repairwear-smooths-restores-corrects-50ml-cds10475157",
+                    "overlayImageUrl": null,
+                    "thumbnailUrl": "https://backend.central.co.th/media/catalog/product/C/D/CDS10475157.jpg",
+                    "brand": {
+                        "id": "116",
+                        "name": "CLINIQUE",
+                        "urlKey": "clinique",
+                        "__typename": "V2Brand"
+                    },
+                    "priceSummary": {
+                        "original": 3950,
+                        "final": 3950,
+                        "discount": {
+                            "amount": 0,
+                            "percentage": 0,
+                            "effectiveDateRange": null,
+                            "__typename": "V2Discount"
+                        },
+                        "__typename": "V2PriceSummary"
+                    },
+                    "__typename": "V2SimpleProduct"
+                },
+                {
+                    "id": "376535",
+                    "type": "SIMPLE",
+                    "name": "MS EYE HYDRO-FILLER CNCT",
+                    "sku": "CDS18782141",
+                    "urlKey": "clinique-moisture-surge-eye-hydro-filler-concentrate-cds18782141",
+                    "overlayImageUrl": null,
+                    "thumbnailUrl": "https://backend.central.co.th/media/catalog/product/c/d/cds18782141.jpg",
+                    "brand": {
+                        "id": "116",
+                        "name": "CLINIQUE",
+                        "urlKey": "clinique",
+                        "__typename": "V2Brand"
+                    },
+                    "priceSummary": {
+                        "original": 1600,
+                        "final": 1600,
+                        "discount": {
+                            "amount": 0,
+                            "percentage": 0,
+                            "effectiveDateRange": null,
+                            "__typename": "V2Discount"
+                        },
+                        "__typename": "V2PriceSummary"
+                    },
+                    "__typename": "V2SimpleProduct"
+                },
+                {
+                    "id": "128284",
+                    "type": "SIMPLE",
+                    "name": "LIQUID FACIAL SOAP MILD",
+                    "sku": "CDS89717509",
+                    "urlKey": "clinique-liquid-facial-soap-mild-cds89717509",
+                    "overlayImageUrl": null,
+                    "thumbnailUrl": "https://backend.central.co.th/media/catalog/product/c/d/cds89717509.jpg",
+                    "brand": {
+                        "id": "116",
+                        "name": "CLINIQUE",
+                        "urlKey": "clinique",
+                        "__typename": "V2Brand"
+                    },
+                    "priceSummary": {
+                        "original": 1100,
+                        "final": 1100,
+                        "discount": {
+                            "amount": 0,
+                            "percentage": 0,
+                            "effectiveDateRange": null,
+                            "__typename": "V2Discount"
+                        },
+                        "__typename": "V2PriceSummary"
+                    },
+                    "__typename": "V2SimpleProduct"
+                },
+                {
+                    "id": "127803",
+                    "type": "SIMPLE",
+                    "name": "RINS OFF FOAMING CLEANSR",
+                    "sku": "CDS4800347",
+                    "urlKey": "clinique-rins-off-foaming-cleansr-cds4800347",
+                    "overlayImageUrl": null,
+                    "thumbnailUrl": "https://backend.central.co.th/media/catalog/product/C/D/CDS4800347.jpg",
+                    "brand": {
+                        "id": "116",
+                        "name": "CLINIQUE",
+                        "urlKey": "clinique",
+                        "__typename": "V2Brand"
+                    },
+                    "priceSummary": {
+                        "original": 1250,
+                        "final": 1250,
+                        "discount": {
+                            "amount": 0,
+                            "percentage": 0,
+                            "effectiveDateRange": null,
+                            "__typename": "V2Discount"
+                        },
+                        "__typename": "V2PriceSummary"
+                    },
+                    "__typename": "V2SimpleProduct"
+                },
+                {
+                    "id": "129421",
+                    "type": "SIMPLE",
+                    "name": "TAKE THE DAY OFF CLEANSING BAL",
+                    "sku": "CDS89940419",
+                    "urlKey": "clinique-take-the-day-off-cleansing-bal-cds89940419",
+                    "overlayImageUrl": null,
+                    "thumbnailUrl": "https://backend.central.co.th/media/catalog/product/c/d/cds89940419.jpg",
+                    "brand": {
+                        "id": "116",
+                        "name": "CLINIQUE",
+                        "urlKey": "clinique",
+                        "__typename": "V2Brand"
+                    },
+                    "priceSummary": {
+                        "original": 1600,
+                        "final": 1600,
+                        "discount": {
+                            "amount": 0,
+                            "percentage": 0,
+                            "effectiveDateRange": null,
+                            "__typename": "V2Discount"
+                        },
+                        "__typename": "V2PriceSummary"
+                    },
+                    "__typename": "V2SimpleProduct"
+                }
+            ],
+            "categories": [
+                {
+                    "id": "3060",
+                    "name": "Beauty",
+                    "parentId": "260",
+                    "urlPath": "beauty",
+                    "isGtm": null,
+                    "__typename": "V2SuggestSearchCategory"
+                },
+                {
+                    "id": "8400",
+                    "name": "CAMPAIGN",
+                    "parentId": "260",
+                    "urlPath": "promotion-campaign",
+                    "isGtm": null,
+                    "__typename": "V2SuggestSearchCategory"
+                },
+                {
+                    "id": "3135",
+                    "name": "Skincare",
+                    "parentId": "3060",
+                    "urlPath": "beauty/skincare",
+                    "isGtm": null,
+                    "__typename": "V2SuggestSearchCategory"
+                }
+            ],
+            "suggestionTerms": [
+                "clinique",
+                "clinique moisture surge",
+                "clinique happy"
+            ],
+            "__typename": "V2SuggestSearchResult"
+        }
+    }
+}</msg>
+<msg timestamp="20211101 15:39:06.904" level="INFO">${response} = {'data': {'v2SuggestSearch': {'products': [{'id': '612749', 'type': 'SIMPLE', 'name': 'Even Better Clinical™ Radical Dark Spot Corrector + Interrupter 50ML', 'sku': 'CDS24645805', 'urlKey': 'clinique-...</msg>
+<status status="PASS" starttime="20211101 15:39:06.858" endtime="20211101 15:39:06.904"/>
+</kw>
+<kw name="Get category name in suggestion data" library="search_api">
+<var>${category_name_list}</var>
+<arg>${response}</arg>
+<kw name="Get Value From Json" library="JSONLibrary">
+<var>${category_name_arr}</var>
+<arg>${response}</arg>
+<arg>$..categories[*].name</arg>
+<doc>Get Value From JSON using JSONPath</doc>
+<msg timestamp="20211101 15:39:06.946" level="INFO">${category_name_arr} = ['Beauty', 'CAMPAIGN', 'Skincare']</msg>
+<status status="PASS" starttime="20211101 15:39:06.908" endtime="20211101 15:39:06.947"/>
+</kw>
+<kw name="Convert To List" library="Collections">
+<var>${category_name_list}</var>
+<arg>${category_name_arr}</arg>
+<doc>Converts the given ``item`` to a Python ``list`` type.</doc>
+<msg timestamp="20211101 15:39:06.947" level="INFO">${category_name_list} = ['Beauty', 'CAMPAIGN', 'Skincare']</msg>
+<status status="PASS" starttime="20211101 15:39:06.947" endtime="20211101 15:39:06.947"/>
+</kw>
+<msg timestamp="20211101 15:39:06.948" level="INFO">${category_name_list} = ['Beauty', 'CAMPAIGN', 'Skincare']</msg>
+<status status="PASS" starttime="20211101 15:39:06.905" endtime="20211101 15:39:06.948"/>
+</kw>
+<kw name="Get suggestion term in suggestion data" library="search_api">
+<var>${suggestion_term_list}</var>
+<var>${is_display_suggestion_term}</var>
+<arg>${response}</arg>
+<kw name="Get Value From Json" library="JSONLibrary">
+<var>${suggestion_term_arr}</var>
+<arg>${response}</arg>
+<arg>$..suggestionTerms[*]</arg>
+<doc>Get Value From JSON using JSONPath</doc>
+<msg timestamp="20211101 15:39:06.972" level="INFO">${suggestion_term_arr} = ['clinique', 'clinique moisture surge', 'clinique happy']</msg>
+<status status="PASS" starttime="20211101 15:39:06.948" endtime="20211101 15:39:06.972"/>
+</kw>
+<kw name="Convert To List" library="Collections">
+<var>${suggestion_term_list}</var>
+<arg>${suggestion_term_arr}</arg>
+<doc>Converts the given ``item`` to a Python ``list`` type.</doc>
+<msg timestamp="20211101 15:39:06.975" level="INFO">${suggestion_term_list} = ['clinique', 'clinique moisture surge', 'clinique happy']</msg>
+<status status="PASS" starttime="20211101 15:39:06.974" endtime="20211101 15:39:06.975"/>
+</kw>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${is_display_suggestion_term}</var>
+<arg>Should Be True</arg>
+<arg>len(${suggestion_term_list})&gt;0</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<kw name="Should Be True" library="BuiltIn">
+<arg>len(${suggestion_term_list})&gt;0</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" starttime="20211101 15:39:06.977" endtime="20211101 15:39:06.978"/>
+</kw>
+<msg timestamp="20211101 15:39:06.979" level="INFO">${is_display_suggestion_term} = True</msg>
+<status status="PASS" starttime="20211101 15:39:06.976" endtime="20211101 15:39:06.979"/>
+</kw>
+<msg timestamp="20211101 15:39:06.980" level="INFO">${suggestion_term_list} = ['clinique', 'clinique moisture surge', 'clinique happy']</msg>
+<msg timestamp="20211101 15:39:06.980" level="INFO">${is_display_suggestion_term} = True</msg>
+<status status="PASS" starttime="20211101 15:39:06.948" endtime="20211101 15:39:06.980"/>
+</kw>
+<kw name="Get product data in suggestion data" library="search_api">
+<var>${product_sku_arr}</var>
+<var>${product_detail_dict}</var>
+<arg>${response}</arg>
+<kw name="Get Value From Json" library="JSONLibrary">
+<var>${product_sku_arr}</var>
+<arg>${response}</arg>
+<arg>$..products[*].sku</arg>
+<doc>Get Value From JSON using JSONPath</doc>
+<msg timestamp="20211101 15:39:07.016" level="INFO">${product_sku_arr} = ['CDS24645805', 'CDS10475157', 'CDS18782141', 'CDS89717509', 'CDS4800347', 'CDS89940419']</msg>
+<status status="PASS" starttime="20211101 15:39:06.981" endtime="20211101 15:39:07.016"/>
+</kw>
+<kw name="Get Value From Json" library="JSONLibrary">
+<var>${product_name_arr}</var>
+<arg>${response}</arg>
+<arg>$..products[*].name</arg>
+<doc>Get Value From JSON using JSONPath</doc>
+<msg timestamp="20211101 15:39:07.048" level="INFO">${product_name_arr} = ['Even Better Clinical™ Radical Dark Spot Corrector + Interrupter 50ML', 'Repairwear Smooths, Restores, Corrects 50ML', 'MS EYE HYDRO-FILLER CNCT', 'LIQUID FACIAL SOAP MILD', 'RINS OFF FOAMING CLEANSR...</msg>
+<status status="PASS" starttime="20211101 15:39:07.017" endtime="20211101 15:39:07.048"/>
+</kw>
+<kw name="Get Value From Json" library="JSONLibrary">
+<var>${orignal_price_arr}</var>
+<arg>${response}</arg>
+<arg>$..products[*].priceSummary.original</arg>
+<doc>Get Value From JSON using JSONPath</doc>
+<msg timestamp="20211101 15:39:07.076" level="INFO">${orignal_price_arr} = [4100, 3950, 1600, 1100, 1250, 1600]</msg>
+<status status="PASS" starttime="20211101 15:39:07.048" endtime="20211101 15:39:07.076"/>
+</kw>
+<kw name="Get Value From Json" library="JSONLibrary">
+<var>${special_price_arr}</var>
+<arg>${response}</arg>
+<arg>$..products[*].priceSummary.final</arg>
+<doc>Get Value From JSON using JSONPath</doc>
+<msg timestamp="20211101 15:39:07.104" level="INFO">${special_price_arr} = [4100, 3950, 1600, 1100, 1250, 1600]</msg>
+<status status="PASS" starttime="20211101 15:39:07.077" endtime="20211101 15:39:07.104"/>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${product_detail_dict}</var>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20211101 15:39:07.105" level="INFO">${product_detail_dict} = {}</msg>
+<status status="PASS" starttime="20211101 15:39:07.104" endtime="20211101 15:39:07.105"/>
+</kw>
+<for flavor="IN RANGE">
+<var>${idx}</var>
+<value>${0}</value>
+<value>len(${product_sku_arr})</value>
+<iter>
+<var name="${idx}">0</var>
+<kw name="Set Variable" library="BuiltIn">
+<var>${prefix}</var>
+<arg>${product_sku_arr}[${idx}]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20211101 15:39:07.108" level="INFO">${prefix} = CDS24645805</msg>
+<status status="PASS" starttime="20211101 15:39:07.107" endtime="20211101 15:39:07.109"/>
+</kw>
+<kw name="Convert To Number" library="BuiltIn">
+<var>${orignal_price}</var>
+<arg>${orignal_price_arr}[${idx}]</arg>
+<doc>Converts the given item to a floating point number.</doc>
+<msg timestamp="20211101 15:39:07.110" level="INFO">${orignal_price} = 4100.0</msg>
+<status status="PASS" starttime="20211101 15:39:07.109" endtime="20211101 15:39:07.110"/>
+</kw>
+<kw name="Convert To Number" library="BuiltIn">
+<var>${special_price}</var>
+<arg>${special_price_arr}[${idx}]</arg>
+<doc>Converts the given item to a floating point number.</doc>
+<msg timestamp="20211101 15:39:07.111" level="INFO">${special_price} = 4100.0</msg>
+<status status="PASS" starttime="20211101 15:39:07.110" endtime="20211101 15:39:07.111"/>
+</kw>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${is_product_discount}</var>
+<arg>Should Be True</arg>
+<arg>${special_price}&lt;${orignal_price}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<kw name="Should Be True" library="BuiltIn">
+<arg>${special_price}&lt;${orignal_price}</arg>
+<doc>Fails if the given condition is not true.</doc>
+<msg timestamp="20211101 15:39:07.114" level="FAIL">'4100.0&lt;4100.0' should be true.</msg>
+<status status="FAIL" starttime="20211101 15:39:07.112" endtime="20211101 15:39:07.114"/>
+</kw>
+<msg timestamp="20211101 15:39:07.114" level="INFO">${is_product_discount} = False</msg>
+<status status="PASS" starttime="20211101 15:39:07.111" endtime="20211101 15:39:07.114"/>
+</kw>
+<kw name="Set To Dictionary" library="Collections">
+<arg>${product_detail_dict}</arg>
+<arg>${prefix}_name=${product_name_arr}[${idx}]</arg>
+<arg>${prefix}_orignal_price=${orignal_price}</arg>
+<arg>${prefix}_special_price=${special_price}</arg>
+<arg>${prefix}_is_discount=${is_product_discount}</arg>
+<doc>Adds the given ``key_value_pairs`` and ``items`` to the ``dictionary``.</doc>
+<status status="PASS" starttime="20211101 15:39:07.114" endtime="20211101 15:39:07.117"/>
+</kw>
+<status status="PASS" starttime="20211101 15:39:07.106" endtime="20211101 15:39:07.117"/>
+</iter>
+<iter>
+<var name="${idx}">1</var>
+<kw name="Set Variable" library="BuiltIn">
+<var>${prefix}</var>
+<arg>${product_sku_arr}[${idx}]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20211101 15:39:07.118" level="INFO">${prefix} = CDS10475157</msg>
+<status status="PASS" starttime="20211101 15:39:07.118" endtime="20211101 15:39:07.118"/>
+</kw>
+<kw name="Convert To Number" library="BuiltIn">
+<var>${orignal_price}</var>
+<arg>${orignal_price_arr}[${idx}]</arg>
+<doc>Converts the given item to a floating point number.</doc>
+<msg timestamp="20211101 15:39:07.119" level="INFO">${orignal_price} = 3950.0</msg>
+<status status="PASS" starttime="20211101 15:39:07.118" endtime="20211101 15:39:07.119"/>
+</kw>
+<kw name="Convert To Number" library="BuiltIn">
+<var>${special_price}</var>
+<arg>${special_price_arr}[${idx}]</arg>
+<doc>Converts the given item to a floating point number.</doc>
+<msg timestamp="20211101 15:39:07.119" level="INFO">${special_price} = 3950.0</msg>
+<status status="PASS" starttime="20211101 15:39:07.119" endtime="20211101 15:39:07.119"/>
+</kw>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${is_product_discount}</var>
+<arg>Should Be True</arg>
+<arg>${special_price}&lt;${orignal_price}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<kw name="Should Be True" library="BuiltIn">
+<arg>${special_price}&lt;${orignal_price}</arg>
+<doc>Fails if the given condition is not true.</doc>
+<msg timestamp="20211101 15:39:07.120" level="FAIL">'3950.0&lt;3950.0' should be true.</msg>
+<status status="FAIL" starttime="20211101 15:39:07.120" endtime="20211101 15:39:07.120"/>
+</kw>
+<msg timestamp="20211101 15:39:07.120" level="INFO">${is_product_discount} = False</msg>
+<status status="PASS" starttime="20211101 15:39:07.119" endtime="20211101 15:39:07.120"/>
+</kw>
+<kw name="Set To Dictionary" library="Collections">
+<arg>${product_detail_dict}</arg>
+<arg>${prefix}_name=${product_name_arr}[${idx}]</arg>
+<arg>${prefix}_orignal_price=${orignal_price}</arg>
+<arg>${prefix}_special_price=${special_price}</arg>
+<arg>${prefix}_is_discount=${is_product_discount}</arg>
+<doc>Adds the given ``key_value_pairs`` and ``items`` to the ``dictionary``.</doc>
+<status status="PASS" starttime="20211101 15:39:07.121" endtime="20211101 15:39:07.122"/>
+</kw>
+<status status="PASS" starttime="20211101 15:39:07.117" endtime="20211101 15:39:07.122"/>
+</iter>
+<iter>
+<var name="${idx}">2</var>
+<kw name="Set Variable" library="BuiltIn">
+<var>${prefix}</var>
+<arg>${product_sku_arr}[${idx}]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20211101 15:39:07.122" level="INFO">${prefix} = CDS18782141</msg>
+<status status="PASS" starttime="20211101 15:39:07.122" endtime="20211101 15:39:07.123"/>
+</kw>
+<kw name="Convert To Number" library="BuiltIn">
+<var>${orignal_price}</var>
+<arg>${orignal_price_arr}[${idx}]</arg>
+<doc>Converts the given item to a floating point number.</doc>
+<msg timestamp="20211101 15:39:07.123" level="INFO">${orignal_price} = 1600.0</msg>
+<status status="PASS" starttime="20211101 15:39:07.123" endtime="20211101 15:39:07.123"/>
+</kw>
+<kw name="Convert To Number" library="BuiltIn">
+<var>${special_price}</var>
+<arg>${special_price_arr}[${idx}]</arg>
+<doc>Converts the given item to a floating point number.</doc>
+<msg timestamp="20211101 15:39:07.125" level="INFO">${special_price} = 1600.0</msg>
+<status status="PASS" starttime="20211101 15:39:07.124" endtime="20211101 15:39:07.125"/>
+</kw>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${is_product_discount}</var>
+<arg>Should Be True</arg>
+<arg>${special_price}&lt;${orignal_price}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<kw name="Should Be True" library="BuiltIn">
+<arg>${special_price}&lt;${orignal_price}</arg>
+<doc>Fails if the given condition is not true.</doc>
+<msg timestamp="20211101 15:39:07.126" level="FAIL">'1600.0&lt;1600.0' should be true.</msg>
+<status status="FAIL" starttime="20211101 15:39:07.125" endtime="20211101 15:39:07.126"/>
+</kw>
+<msg timestamp="20211101 15:39:07.126" level="INFO">${is_product_discount} = False</msg>
+<status status="PASS" starttime="20211101 15:39:07.125" endtime="20211101 15:39:07.126"/>
+</kw>
+<kw name="Set To Dictionary" library="Collections">
+<arg>${product_detail_dict}</arg>
+<arg>${prefix}_name=${product_name_arr}[${idx}]</arg>
+<arg>${prefix}_orignal_price=${orignal_price}</arg>
+<arg>${prefix}_special_price=${special_price}</arg>
+<arg>${prefix}_is_discount=${is_product_discount}</arg>
+<doc>Adds the given ``key_value_pairs`` and ``items`` to the ``dictionary``.</doc>
+<status status="PASS" starttime="20211101 15:39:07.127" endtime="20211101 15:39:07.128"/>
+</kw>
+<status status="PASS" starttime="20211101 15:39:07.122" endtime="20211101 15:39:07.128"/>
+</iter>
+<iter>
+<var name="${idx}">3</var>
+<kw name="Set Variable" library="BuiltIn">
+<var>${prefix}</var>
+<arg>${product_sku_arr}[${idx}]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20211101 15:39:07.129" level="INFO">${prefix} = CDS89717509</msg>
+<status status="PASS" starttime="20211101 15:39:07.128" endtime="20211101 15:39:07.129"/>
+</kw>
+<kw name="Convert To Number" library="BuiltIn">
+<var>${orignal_price}</var>
+<arg>${orignal_price_arr}[${idx}]</arg>
+<doc>Converts the given item to a floating point number.</doc>
+<msg timestamp="20211101 15:39:07.130" level="INFO">${orignal_price} = 1100.0</msg>
+<status status="PASS" starttime="20211101 15:39:07.129" endtime="20211101 15:39:07.130"/>
+</kw>
+<kw name="Convert To Number" library="BuiltIn">
+<var>${special_price}</var>
+<arg>${special_price_arr}[${idx}]</arg>
+<doc>Converts the given item to a floating point number.</doc>
+<msg timestamp="20211101 15:39:07.131" level="INFO">${special_price} = 1100.0</msg>
+<status status="PASS" starttime="20211101 15:39:07.131" endtime="20211101 15:39:07.131"/>
+</kw>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${is_product_discount}</var>
+<arg>Should Be True</arg>
+<arg>${special_price}&lt;${orignal_price}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<kw name="Should Be True" library="BuiltIn">
+<arg>${special_price}&lt;${orignal_price}</arg>
+<doc>Fails if the given condition is not true.</doc>
+<msg timestamp="20211101 15:39:07.134" level="FAIL">'1100.0&lt;1100.0' should be true.</msg>
+<status status="FAIL" starttime="20211101 15:39:07.133" endtime="20211101 15:39:07.134"/>
+</kw>
+<msg timestamp="20211101 15:39:07.134" level="INFO">${is_product_discount} = False</msg>
+<status status="PASS" starttime="20211101 15:39:07.132" endtime="20211101 15:39:07.134"/>
+</kw>
+<kw name="Set To Dictionary" library="Collections">
+<arg>${product_detail_dict}</arg>
+<arg>${prefix}_name=${product_name_arr}[${idx}]</arg>
+<arg>${prefix}_orignal_price=${orignal_price}</arg>
+<arg>${prefix}_special_price=${special_price}</arg>
+<arg>${prefix}_is_discount=${is_product_discount}</arg>
+<doc>Adds the given ``key_value_pairs`` and ``items`` to the ``dictionary``.</doc>
+<status status="PASS" starttime="20211101 15:39:07.135" endtime="20211101 15:39:07.137"/>
+</kw>
+<status status="PASS" starttime="20211101 15:39:07.128" endtime="20211101 15:39:07.137"/>
+</iter>
+<iter>
+<var name="${idx}">4</var>
+<kw name="Set Variable" library="BuiltIn">
+<var>${prefix}</var>
+<arg>${product_sku_arr}[${idx}]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20211101 15:39:07.138" level="INFO">${prefix} = CDS4800347</msg>
+<status status="PASS" starttime="20211101 15:39:07.138" endtime="20211101 15:39:07.138"/>
+</kw>
+<kw name="Convert To Number" library="BuiltIn">
+<var>${orignal_price}</var>
+<arg>${orignal_price_arr}[${idx}]</arg>
+<doc>Converts the given item to a floating point number.</doc>
+<msg timestamp="20211101 15:39:07.139" level="INFO">${orignal_price} = 1250.0</msg>
+<status status="PASS" starttime="20211101 15:39:07.139" endtime="20211101 15:39:07.139"/>
+</kw>
+<kw name="Convert To Number" library="BuiltIn">
+<var>${special_price}</var>
+<arg>${special_price_arr}[${idx}]</arg>
+<doc>Converts the given item to a floating point number.</doc>
+<msg timestamp="20211101 15:39:07.140" level="INFO">${special_price} = 1250.0</msg>
+<status status="PASS" starttime="20211101 15:39:07.140" endtime="20211101 15:39:07.140"/>
+</kw>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${is_product_discount}</var>
+<arg>Should Be True</arg>
+<arg>${special_price}&lt;${orignal_price}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<kw name="Should Be True" library="BuiltIn">
+<arg>${special_price}&lt;${orignal_price}</arg>
+<doc>Fails if the given condition is not true.</doc>
+<msg timestamp="20211101 15:39:07.142" level="FAIL">'1250.0&lt;1250.0' should be true.</msg>
+<status status="FAIL" starttime="20211101 15:39:07.141" endtime="20211101 15:39:07.142"/>
+</kw>
+<msg timestamp="20211101 15:39:07.143" level="INFO">${is_product_discount} = False</msg>
+<status status="PASS" starttime="20211101 15:39:07.140" endtime="20211101 15:39:07.143"/>
+</kw>
+<kw name="Set To Dictionary" library="Collections">
+<arg>${product_detail_dict}</arg>
+<arg>${prefix}_name=${product_name_arr}[${idx}]</arg>
+<arg>${prefix}_orignal_price=${orignal_price}</arg>
+<arg>${prefix}_special_price=${special_price}</arg>
+<arg>${prefix}_is_discount=${is_product_discount}</arg>
+<doc>Adds the given ``key_value_pairs`` and ``items`` to the ``dictionary``.</doc>
+<status status="PASS" starttime="20211101 15:39:07.143" endtime="20211101 15:39:07.145"/>
+</kw>
+<status status="PASS" starttime="20211101 15:39:07.138" endtime="20211101 15:39:07.146"/>
+</iter>
+<iter>
+<var name="${idx}">5</var>
+<kw name="Set Variable" library="BuiltIn">
+<var>${prefix}</var>
+<arg>${product_sku_arr}[${idx}]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20211101 15:39:07.148" level="INFO">${prefix} = CDS89940419</msg>
+<status status="PASS" starttime="20211101 15:39:07.147" endtime="20211101 15:39:07.148"/>
+</kw>
+<kw name="Convert To Number" library="BuiltIn">
+<var>${orignal_price}</var>
+<arg>${orignal_price_arr}[${idx}]</arg>
+<doc>Converts the given item to a floating point number.</doc>
+<msg timestamp="20211101 15:39:07.150" level="INFO">${orignal_price} = 1600.0</msg>
+<status status="PASS" starttime="20211101 15:39:07.149" endtime="20211101 15:39:07.150"/>
+</kw>
+<kw name="Convert To Number" library="BuiltIn">
+<var>${special_price}</var>
+<arg>${special_price_arr}[${idx}]</arg>
+<doc>Converts the given item to a floating point number.</doc>
+<msg timestamp="20211101 15:39:07.150" level="INFO">${special_price} = 1600.0</msg>
+<status status="PASS" starttime="20211101 15:39:07.150" endtime="20211101 15:39:07.150"/>
+</kw>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${is_product_discount}</var>
+<arg>Should Be True</arg>
+<arg>${special_price}&lt;${orignal_price}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<kw name="Should Be True" library="BuiltIn">
+<arg>${special_price}&lt;${orignal_price}</arg>
+<doc>Fails if the given condition is not true.</doc>
+<msg timestamp="20211101 15:39:07.152" level="FAIL">'1600.0&lt;1600.0' should be true.</msg>
+<status status="FAIL" starttime="20211101 15:39:07.151" endtime="20211101 15:39:07.152"/>
+</kw>
+<msg timestamp="20211101 15:39:07.152" level="INFO">${is_product_discount} = False</msg>
+<status status="PASS" starttime="20211101 15:39:07.151" endtime="20211101 15:39:07.152"/>
+</kw>
+<kw name="Set To Dictionary" library="Collections">
+<arg>${product_detail_dict}</arg>
+<arg>${prefix}_name=${product_name_arr}[${idx}]</arg>
+<arg>${prefix}_orignal_price=${orignal_price}</arg>
+<arg>${prefix}_special_price=${special_price}</arg>
+<arg>${prefix}_is_discount=${is_product_discount}</arg>
+<doc>Adds the given ``key_value_pairs`` and ``items`` to the ``dictionary``.</doc>
+<status status="PASS" starttime="20211101 15:39:07.152" endtime="20211101 15:39:07.153"/>
+</kw>
+<status status="PASS" starttime="20211101 15:39:07.147" endtime="20211101 15:39:07.154"/>
+</iter>
+<status status="PASS" starttime="20211101 15:39:07.105" endtime="20211101 15:39:07.154"/>
+</for>
+<msg timestamp="20211101 15:39:07.154" level="INFO">${product_sku_arr} = ['CDS24645805', 'CDS10475157', 'CDS18782141', 'CDS89717509', 'CDS4800347', 'CDS89940419']</msg>
+<msg timestamp="20211101 15:39:07.154" level="INFO">${product_detail_dict} = {'CDS24645805_name': 'Even Better Clinical™ Radical Dark Spot Corrector + Interrupter 50ML', 'CDS24645805_orignal_price': 4100.0, 'CDS24645805_special_price': 4100.0, 'CDS24645805_is_discount': False,...</msg>
+<status status="PASS" starttime="20211101 15:39:06.980" endtime="20211101 15:39:07.154"/>
+</kw>
+<kw name="Set Test Variable" library="BuiltIn">
+<arg>${api_category_name_list}</arg>
+<arg>${category_name_list}</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<msg timestamp="20211101 15:39:07.157" level="INFO">${api_category_name_list} = ['Beauty', 'CAMPAIGN', 'Skincare']</msg>
+<status status="PASS" starttime="20211101 15:39:07.155" endtime="20211101 15:39:07.157"/>
+</kw>
+<kw name="Set Test Variable" library="BuiltIn">
+<arg>${api_suggestion_term_list}</arg>
+<arg>${suggestion_term_list}</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<msg timestamp="20211101 15:39:07.160" level="INFO">${api_suggestion_term_list} = ['clinique', 'clinique moisture surge', 'clinique happy']</msg>
+<status status="PASS" starttime="20211101 15:39:07.158" endtime="20211101 15:39:07.161"/>
+</kw>
+<kw name="Set Test Variable" library="BuiltIn">
+<arg>${is_display_suggestion_term}</arg>
+<arg>${is_display_suggestion_term}</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<msg timestamp="20211101 15:39:07.164" level="INFO">${is_display_suggestion_term} = True</msg>
+<status status="PASS" starttime="20211101 15:39:07.162" endtime="20211101 15:39:07.165"/>
+</kw>
+<kw name="Set Test Variable" library="BuiltIn">
+<arg>${api_product_sku_arr}</arg>
+<arg>${product_sku_arr}</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<msg timestamp="20211101 15:39:07.168" level="INFO">${api_product_sku_arr} = ['CDS24645805', 'CDS10475157', 'CDS18782141', 'CDS89717509', 'CDS4800347', 'CDS89940419']</msg>
+<status status="PASS" starttime="20211101 15:39:07.166" endtime="20211101 15:39:07.168"/>
+</kw>
+<kw name="Set Test Variable" library="BuiltIn">
+<arg>${api_product_detail_dict}</arg>
+<arg>${product_detail_dict}</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<msg timestamp="20211101 15:39:07.172" level="INFO">${api_product_detail_dict} = {'CDS24645805_name': 'Even Better Clinical™ Radical Dark Spot Corrector + Interrupter 50ML', 'CDS24645805_orignal_price': 4100.0, 'CDS24645805_special_price': 4100.0, 'CDS24645805_is_discount': False,...</msg>
+<status status="PASS" starttime="20211101 15:39:07.169" endtime="20211101 15:39:07.173"/>
+</kw>
+<status status="PASS" starttime="20211101 15:39:06.636" endtime="20211101 15:39:07.175"/>
+</kw>
+<kw name="Get random element from array" library="common_keywords">
+<var>${rand_product_sku}</var>
+<arg>${api_product_sku_arr}</arg>
+<kw name="Evaluate" library="BuiltIn">
+<var>${rand_idx}</var>
+<arg>random.randint(0, len(${elems_arr}))</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20211101 15:39:07.179" level="INFO">${rand_idx} = 3</msg>
+<status status="PASS" starttime="20211101 15:39:07.178" endtime="20211101 15:39:07.179"/>
+</kw>
+<msg timestamp="20211101 15:39:07.180" level="INFO">${rand_product_sku} = CDS89717509</msg>
+<status status="PASS" starttime="20211101 15:39:07.176" endtime="20211101 15:39:07.180"/>
+</kw>
+<kw name="Input text on search box" library="header_fragment">
+<arg>${brand.clinique.name}</arg>
+<doc>Input search keyword in search box</doc>
+<kw name="Input Text" library="common_keywords">
+<arg>${headerFragmentLocator}[input_search_box]</arg>
+<arg>${keyword}</arg>
+<doc>Input text into target element
+${locator} - Locator of target element</doc>
+<kw name="Wait Element Is Visible" library="common_keywords">
+<arg>${locator}</arg>
+<arg>${timeout}</arg>
+<doc>Wait element is visible
+xpath=(//*[@id='txt-searchProductOnSearchBar'])[1] - Locator of target element
+30 - Waiting time for target element visible</doc>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>timeout=${timeout}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20211101 15:39:07.187" endtime="20211101 15:39:08.454"/>
+</kw>
+<status status="PASS" starttime="20211101 15:39:07.186" endtime="20211101 15:39:08.455"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20211101 15:39:08.455" level="INFO">Clicking element 'xpath=(//*[@id='txt-searchProductOnSearchBar'])[1]'.</msg>
+<status status="PASS" starttime="20211101 15:39:08.455" endtime="20211101 15:39:08.523"/>
+</kw>
+<kw name="Clear Element Text" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
+<status status="PASS" starttime="20211101 15:39:08.523" endtime="20211101 15:39:09.291"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>${keyword}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20211101 15:39:09.292" level="INFO">Typing text 'clinique' into text field 'xpath=(//*[@id='txt-searchProductOnSearchBar'])[1]'.</msg>
+<status status="PASS" starttime="20211101 15:39:09.292" endtime="20211101 15:39:09.376"/>
+</kw>
+<status status="PASS" starttime="20211101 15:39:07.185" endtime="20211101 15:39:09.376"/>
+</kw>
+<status status="PASS" starttime="20211101 15:39:07.181" endtime="20211101 15:39:09.376"/>
+</kw>
+<kw name="Click product name in suggestion list" library="suggestion_fragment">
+<arg>${rand_product_sku}</arg>
+<kw name="Format String" library="String">
+<var>${locator}</var>
+<arg>${suggestionFragmentLocator}[txt_product_name]</arg>
+<arg>product_sku=${product_sku}</arg>
+<doc>Formats a ``template`` using the given ``positional`` and ``named`` arguments.</doc>
+<msg timestamp="20211101 15:39:09.378" level="INFO">${locator} = xpath=//*[@id='inf-viewProductOnProductSearchPreview-CDS89717509']</msg>
+<status status="PASS" starttime="20211101 15:39:09.378" endtime="20211101 15:39:09.378"/>
+</kw>
+<kw name="Click Element" library="common_keywords">
+<arg>${locator}</arg>
+<doc>Click to target element
+xpath=//*[@id='inf-viewProductOnProductSearchPreview-CDS89717509'] - Locator of target element
+${timeout} - Waiting time for target element visible</doc>
+<kw name="Wait Element Is Visible" library="common_keywords">
+<arg>${locator}</arg>
+<arg>timeout=${timeout}</arg>
+<doc>Wait element is visible
+xpath=//*[@id='inf-viewProductOnProductSearchPreview-CDS89717509'] - Locator of target element
+30 - Waiting time for target element visible</doc>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>timeout=${timeout}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20211101 15:39:09.380" endtime="20211101 15:39:10.472"/>
+</kw>
+<status status="PASS" starttime="20211101 15:39:09.379" endtime="20211101 15:39:10.473"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20211101 15:39:10.473" level="INFO">Clicking element 'xpath=//*[@id='inf-viewProductOnProductSearchPreview-CDS89717509']'.</msg>
+<status status="PASS" starttime="20211101 15:39:10.473" endtime="20211101 15:39:10.684"/>
+</kw>
+<status status="PASS" starttime="20211101 15:39:09.379" endtime="20211101 15:39:10.684"/>
+</kw>
+<status status="PASS" starttime="20211101 15:39:09.377" endtime="20211101 15:39:10.684"/>
+</kw>
+<kw name="Verify product detail page is navigated correctly with API verify" library="product_detail_page_feature">
+<arg>${rand_product_sku}</arg>
+<kw name="Wait until page is completely loaded" library="common_keywords">
+<kw name="Instrument Browser" library="SeleniumLibrary">
+<tag>plugin</tag>
+<doc>Instruments the current webpage for testability. This should happen automatically vie SeleniumTestability's internal `Event Firing Webdriver` support but keyword is provided also. Calls `Inject Testability` keyword automatically.</doc>
+<status status="PASS" starttime="20211101 15:39:10.688" endtime="20211101 15:39:10.698"/>
+</kw>
+<kw name="Wait For Testability Ready" library="SeleniumLibrary">
+<tag>plugin</tag>
+<doc>Explicitly waits until testability is ready or timeout happens.
+Parameters:
+- ``timeout`` Amount of time to wait until giving up for testability to be ready. Robot framework timestring
+- ``error_on_timeout`` if timeout occurs, should we throw an error</doc>
+<status status="PASS" starttime="20211101 15:39:10.699" endtime="20211101 15:39:14.666"/>
+</kw>
+<status status="PASS" starttime="20211101 15:39:10.687" endtime="20211101 15:39:14.666"/>
+</kw>
+<kw name="Get Variable Value" library="BuiltIn">
+<var>${api_product_detail_dict}</var>
+<arg>${api_product_detail_dict}</arg>
+<doc>Returns variable value or ``default`` if the variable does not exist.</doc>
+<msg timestamp="20211101 15:39:14.667" level="INFO">${api_product_detail_dict} = {'CDS24645805_name': 'Even Better Clinical™ Radical Dark Spot Corrector + Interrupter 50ML', 'CDS24645805_orignal_price': 4100.0, 'CDS24645805_special_price': 4100.0, 'CDS24645805_is_discount': False,...</msg>
+<status status="PASS" starttime="20211101 15:39:14.666" endtime="20211101 15:39:14.667"/>
+</kw>
+<kw name="Get From Dictionary" library="Collections">
+<var>${is_product_discount}</var>
+<arg>${api_product_detail_dict}</arg>
+<arg>${product_sku}_is_discount</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<msg timestamp="20211101 15:39:14.667" level="INFO">${is_product_discount} = False</msg>
+<status status="PASS" starttime="20211101 15:39:14.667" endtime="20211101 15:39:14.667"/>
+</kw>
+<kw name="Verify product name is displayed correctly" library="product_detail_page">
+<arg>${product_sku}</arg>
+<kw name="Format String" library="String">
+<var>${locator}</var>
+<arg>${productDetailPageLocator}[txt_product_name]</arg>
+<arg>product_sku=${product_sku}</arg>
+<doc>Formats a ``template`` using the given ``positional`` and ``named`` arguments.</doc>
+<msg timestamp="20211101 15:39:14.668" level="INFO">${locator} = xpath=//*[@id='inf-viewProduct-CDS89717509']</msg>
+<status status="PASS" starttime="20211101 15:39:14.668" endtime="20211101 15:39:14.668"/>
+</kw>
+<kw name="Wait Element Is Visible" library="common_keywords">
+<arg>${locator}</arg>
+<doc>Wait element is visible
+xpath=//*[@id='inf-viewProduct-CDS89717509'] - Locator of target element
+${timeout} - Waiting time for target element visible</doc>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>timeout=${timeout}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20211101 15:39:14.670" endtime="20211101 15:39:14.698"/>
+</kw>
+<status status="PASS" starttime="20211101 15:39:14.669" endtime="20211101 15:39:14.698"/>
+</kw>
+<status status="PASS" starttime="20211101 15:39:14.668" endtime="20211101 15:39:14.698"/>
+</kw>
+<kw name="Verify product original price is displayed correctly" library="product_detail_page_feature">
+<arg>${product_sku}</arg>
+<arg>${api_product_detail_dict}</arg>
+<arg>${is_product_discount}</arg>
+<kw name="Run Keyword If" library="BuiltIn">
+<var>${product_original_price_UI}</var>
+<arg>${is_product_discount}</arg>
+<arg>product_detail_page.Get product original price</arg>
+<arg>${product_sku}</arg>
+<arg>ELSE</arg>
+<arg>product_detail_page.Get product original price in case product no discount</arg>
+<arg>${product_sku}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Get product original price in case product no discount" library="product_detail_page">
+<arg>${product_sku}</arg>
+<kw name="Format String" library="String">
+<var>${locator}</var>
+<arg>${productDetailPageLocator}[txt_orignal_price_no_discount]</arg>
+<arg>product_sku=${product_sku}</arg>
+<doc>Formats a ``template`` using the given ``positional`` and ``named`` arguments.</doc>
+<msg timestamp="20211101 15:39:14.700" level="INFO">${locator} = xpath=//*[@data-testid='inf-viewProductPriceV2ViewOnPriceSell']</msg>
+<status status="PASS" starttime="20211101 15:39:14.700" endtime="20211101 15:39:14.700"/>
+</kw>
+<kw name="Get Text" library="common_keywords">
+<var>${product_original_price_str}</var>
+<arg>${locator}</arg>
+<doc>Get text of target element
+xpath=//*[@data-testid='inf-viewProductPriceV2ViewOnPriceSell'] - Locator of target element</doc>
+<kw name="Wait Element Is Visible" library="common_keywords">
+<arg>${locator}</arg>
+<doc>Wait element is visible
+xpath=//*[@data-testid='inf-viewProductPriceV2ViewOnPriceSell'] - Locator of target element
+${timeout} - Waiting time for target element visible</doc>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>timeout=${timeout}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20211101 15:39:14.702" endtime="20211101 15:39:14.734"/>
+</kw>
+<status status="PASS" starttime="20211101 15:39:14.701" endtime="20211101 15:39:14.734"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${text}</var>
+<arg>${locator}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20211101 15:39:14.758" level="INFO">${text} = ฿1,100</msg>
+<status status="PASS" starttime="20211101 15:39:14.734" endtime="20211101 15:39:14.758"/>
+</kw>
+<msg timestamp="20211101 15:39:14.759" level="INFO">${product_original_price_str} = ฿1,100</msg>
+<status status="PASS" starttime="20211101 15:39:14.700" endtime="20211101 15:39:14.759"/>
+</kw>
+<kw name="Convert price string to number format" library="common_keywords">
+<var>${product_original_price}</var>
+<arg>${product_original_price_str}</arg>
+<kw name="Remove String" library="String">
+<var>${price}</var>
+<arg>${price}</arg>
+<arg>฿</arg>
+<doc>Removes all ``removables`` from the given ``string``.</doc>
+<msg timestamp="20211101 15:39:14.760" level="INFO">${price} = 1,100</msg>
+<status status="PASS" starttime="20211101 15:39:14.759" endtime="20211101 15:39:14.760"/>
+</kw>
+<kw name="Remove String" library="String">
+<var>${price}</var>
+<arg>${price}</arg>
+<arg>,</arg>
+<doc>Removes all ``removables`` from the given ``string``.</doc>
+<msg timestamp="20211101 15:39:14.760" level="INFO">${price} = 1100</msg>
+<status status="PASS" starttime="20211101 15:39:14.760" endtime="20211101 15:39:14.760"/>
+</kw>
+<kw name="Convert To Number" library="BuiltIn">
+<var>${price}</var>
+<arg>${price}</arg>
+<doc>Converts the given item to a floating point number.</doc>
+<msg timestamp="20211101 15:39:14.761" level="INFO">${price} = 1100.0</msg>
+<status status="PASS" starttime="20211101 15:39:14.760" endtime="20211101 15:39:14.761"/>
+</kw>
+<msg timestamp="20211101 15:39:14.761" level="INFO">${product_original_price} = 1100.0</msg>
+<status status="PASS" starttime="20211101 15:39:14.759" endtime="20211101 15:39:14.761"/>
+</kw>
+<status status="PASS" starttime="20211101 15:39:14.699" endtime="20211101 15:39:14.761"/>
+</kw>
+<msg timestamp="20211101 15:39:14.761" level="INFO">${product_original_price_UI} = 1100.0</msg>
+<status status="PASS" starttime="20211101 15:39:14.699" endtime="20211101 15:39:14.761"/>
+</kw>
+<kw name="Get From Dictionary" library="Collections">
+<var>${product_original_price_api}</var>
+<arg>${api_product_detail_dict}</arg>
+<arg>${product_sku}_special_price</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<msg timestamp="20211101 15:39:14.762" level="INFO">${product_original_price_api} = 1100.0</msg>
+<status status="PASS" starttime="20211101 15:39:14.761" endtime="20211101 15:39:14.762"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${product_original_price_UI}</arg>
+<arg>${product_original_price_api}</arg>
+<arg>msg=Product original price with sku ${product_sku} display incorrectly</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20211101 15:39:14.762" endtime="20211101 15:39:14.762"/>
+</kw>
+<status status="PASS" starttime="20211101 15:39:14.698" endtime="20211101 15:39:14.762"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>${is_product_discount}</arg>
+<arg>Verify product discount price is displayed correctly</arg>
+<arg>${product_sku}</arg>
+<arg>${api_product_detail_dict}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20211101 15:39:14.762" endtime="20211101 15:39:14.763"/>
+</kw>
+<status status="PASS" starttime="20211101 15:39:10.686" endtime="20211101 15:39:14.763"/>
+</kw>
+<kw name="Tear Down Test" library="common_keywords" type="TEARDOWN">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20211101 15:39:14.764" endtime="20211101 15:39:17.098"/>
+</kw>
+<status status="PASS" starttime="20211101 15:39:14.763" endtime="20211101 15:39:17.099"/>
+</kw>
+<tag>navigate_product_detail_page</tag>
+<tag>Search_029</tag>
+<tag>search_brand</tag>
+<tag>search_function</tag>
+<status status="PASS" starttime="20211101 15:38:56.258" endtime="20211101 15:39:17.100"/>
+</test>
+<status status="PASS" starttime="20211101 15:38:55.585" endtime="20211101 15:39:17.105"/>
+</suite>
+<status status="PASS" starttime="20211101 15:38:55.582" endtime="20211101 15:39:17.113"/>
+</suite>
+<status status="PASS" starttime="20211101 15:38:55.561" endtime="20211101 15:39:17.120"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0" skip="0">navigate_product_detail_page</stat>
+<stat pass="1" fail="0" skip="0">Search_029</stat>
+<stat pass="1" fail="0" skip="0">search_brand</stat>
+<stat pass="1" fail="0" skip="0">search_function</stat>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Testcases">Testcases</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1" name="Search Brand">Testcases.Search Brand</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1-s1" name="Navigate Product Detail Page">Testcases.Search Brand.Navigate Product Detail Page</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

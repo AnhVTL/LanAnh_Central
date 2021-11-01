@@ -1,0 +1,3316 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 4.1.1 (Python 3.9.7 on win32)" generated="20211101 14:06:43.912" rpa="false" schemaversion="2">
+<suite id="s1" name="Testcases" source="C:\Users\Public\CDS_LanAnh\testcases">
+<suite id="s1-s1" name="Search Brand" source="C:\Users\Public\CDS_LanAnh\testcases\search_brand">
+<suite id="s1-s1-s1" name="Navigate Brand Page" source="C:\Users\Public\CDS_LanAnh\testcases\search_brand\navigate_brand_page.robot">
+<test id="s1-s1-s1-t1" name="Verify user is navigated to brand page after search by brand by keyword">
+<kw name="Open chrome browser and redirect to brand page" library="common_keywords" type="SETUP">
+<arg>${brand.clinique.url_key}</arg>
+<kw name="Open chrome browser and redirect to page" library="common_keywords">
+<doc>Open chrome browser and redirect to page
+${url} - Target url
+${delay} - Delay that is waited after each Selenium command
+${is_headless} - Turn on headless browser with True, default False</doc>
+<kw name="Evaluate" library="BuiltIn">
+<var>${options}</var>
+<arg>sys.modules['selenium.webdriver'].ChromeOptions()</arg>
+<arg>sys</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20211101 14:06:44.648" level="INFO">${options} = &lt;selenium.webdriver.chrome.options.Options object at 0x00000213F3742E20&gt;</msg>
+<status status="PASS" starttime="20211101 14:06:44.648" endtime="20211101 14:06:44.648"/>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-notifications</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" starttime="20211101 14:06:44.648" endtime="20211101 14:06:44.648"/>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-infobars</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" starttime="20211101 14:06:44.648" endtime="20211101 14:06:44.649"/>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>start-maximized</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" starttime="20211101 14:06:44.649" endtime="20211101 14:06:44.649"/>
+</kw>
+<kw name="Create Webdriver" library="SeleniumLibrary">
+<arg>Chrome</arg>
+<arg>chrome_options=${options}</arg>
+<doc>Creates an instance of Selenium WebDriver.</doc>
+<msg timestamp="20211101 14:06:44.649" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
+<status status="PASS" starttime="20211101 14:06:44.649" endtime="20211101 14:06:46.149"/>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${url}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20211101 14:06:46.149" level="INFO">Opening url 'https://www.central.co.th/en'</msg>
+<status status="PASS" starttime="20211101 14:06:46.149" endtime="20211101 14:06:51.486"/>
+</kw>
+<kw name="Wait until page is completely loaded" library="common_keywords">
+<kw name="Instrument Browser" library="SeleniumLibrary">
+<tag>plugin</tag>
+<doc>Instruments the current webpage for testability. This should happen automatically vie SeleniumTestability's internal `Event Firing Webdriver` support but keyword is provided also. Calls `Inject Testability` keyword automatically.</doc>
+<status status="PASS" starttime="20211101 14:06:51.487" endtime="20211101 14:06:51.506"/>
+</kw>
+<kw name="Wait For Testability Ready" library="SeleniumLibrary">
+<tag>plugin</tag>
+<doc>Explicitly waits until testability is ready or timeout happens.
+Parameters:
+- ``timeout`` Amount of time to wait until giving up for testability to be ready. Robot framework timestring
+- ``error_on_timeout`` if timeout occurs, should we throw an error</doc>
+<status status="PASS" starttime="20211101 14:06:51.506" endtime="20211101 14:06:53.190"/>
+</kw>
+<status status="PASS" starttime="20211101 14:06:51.487" endtime="20211101 14:06:53.190"/>
+</kw>
+<status status="PASS" starttime="20211101 14:06:44.647" endtime="20211101 14:06:53.191"/>
+</kw>
+<kw name="Catenate" library="BuiltIn">
+<var>${target_url}</var>
+<arg>SEPARATOR=/</arg>
+<arg>${base_url}</arg>
+<arg>${brand_url_key}</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<msg timestamp="20211101 14:06:53.192" level="INFO">${target_url} = https://www.central.co.th/en/clinique</msg>
+<status status="PASS" starttime="20211101 14:06:53.191" endtime="20211101 14:06:53.192"/>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${target_url}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20211101 14:06:53.192" level="INFO">Opening url 'https://www.central.co.th/en/clinique'</msg>
+<status status="PASS" starttime="20211101 14:06:53.192" endtime="20211101 14:06:57.120"/>
+</kw>
+<kw name="Wait until page is completely loaded" library="common_keywords">
+<kw name="Instrument Browser" library="SeleniumLibrary">
+<tag>plugin</tag>
+<doc>Instruments the current webpage for testability. This should happen automatically vie SeleniumTestability's internal `Event Firing Webdriver` support but keyword is provided also. Calls `Inject Testability` keyword automatically.</doc>
+<status status="PASS" starttime="20211101 14:06:57.121" endtime="20211101 14:06:57.125"/>
+</kw>
+<kw name="Wait For Testability Ready" library="SeleniumLibrary">
+<tag>plugin</tag>
+<doc>Explicitly waits until testability is ready or timeout happens.
+Parameters:
+- ``timeout`` Amount of time to wait until giving up for testability to be ready. Robot framework timestring
+- ``error_on_timeout`` if timeout occurs, should we throw an error</doc>
+<status status="PASS" starttime="20211101 14:06:57.125" endtime="20211101 14:06:57.132"/>
+</kw>
+<status status="PASS" starttime="20211101 14:06:57.120" endtime="20211101 14:06:57.132"/>
+</kw>
+<status status="PASS" starttime="20211101 14:06:44.645" endtime="20211101 14:06:57.132"/>
+</kw>
+<kw name="Get brand detail and input keyword into search box">
+<arg>${brand.clinique.id}</arg>
+<arg>${brand.clinique.name}</arg>
+<kw name="Get brand detail with brand id" library="brand_api">
+<arg>${brand_id}</arg>
+<kw name="Load JSON From File" library="JSONLibrary">
+<var>${request}</var>
+<arg>C:\\Users\\Public\\CDS_LanAnh\\keywords\\api/payload/get_brand_detail.json</arg>
+<doc>Load JSON from file.</doc>
+<msg timestamp="20211101 14:06:57.135" level="INFO">${request} = {'operationName': 'brandDetail', 'variables': {'brandId': 1}, 'query': 'query brandDetail($brandId: Int) { brandDetail(brandId: $brandId) { brand_id attribute_id attribute_code option_id name website_...</msg>
+<status status="PASS" starttime="20211101 14:06:57.134" endtime="20211101 14:06:57.135"/>
+</kw>
+<kw name="Convert To Integer" library="BuiltIn">
+<var>${brand_id}</var>
+<arg>${brand_id}</arg>
+<doc>Converts the given item to an integer number.</doc>
+<msg timestamp="20211101 14:06:57.135" level="INFO">${brand_id} = 116</msg>
+<status status="PASS" starttime="20211101 14:06:57.135" endtime="20211101 14:06:57.135"/>
+</kw>
+<kw name="Update Value To Json" library="JSONLibrary">
+<var>${request}</var>
+<arg>${request}</arg>
+<arg>$..brandId</arg>
+<arg>${brand_id}</arg>
+<doc>Update value to JSON using JSONPath</doc>
+<msg timestamp="20211101 14:06:57.157" level="INFO">${request} = {'operationName': 'brandDetail', 'variables': {'brandId': 116}, 'query': 'query brandDetail($brandId: Int) { brandDetail(brandId: $brandId) { brand_id attribute_id attribute_code option_id name websit...</msg>
+<status status="PASS" starttime="20211101 14:06:57.135" endtime="20211101 14:06:57.157"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${body}</var>
+<arg>json.dumps($request)</arg>
+<arg>json</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20211101 14:06:57.160" level="INFO">${body} = {"operationName": "brandDetail", "variables": {"brandId": 116}, "query": "query brandDetail($brandId: Int) { brandDetail(brandId: $brandId) { brand_id attribute_id attribute_code option_id name websit...</msg>
+<status status="PASS" starttime="20211101 14:06:57.157" endtime="20211101 14:06:57.160"/>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${headers}</var>
+<arg>store=en</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20211101 14:06:57.161" level="INFO">${headers} = {'store': 'en'}</msg>
+<status status="PASS" starttime="20211101 14:06:57.161" endtime="20211101 14:06:57.161"/>
+</kw>
+<kw name="Post" library="REST">
+<var>${response}</var>
+<arg>endpoint=${api_end_point}</arg>
+<arg>body=${body}</arg>
+<arg>headers=${headers}</arg>
+<tag>http</tag>
+<doc>*Sends a POST request to the endpoint.*</doc>
+<msg timestamp="20211101 14:06:57.456" level="INFO">${response} = {'seconds': 0.283519, 'status': 200, 'body': {'data': {'brandDetail': {'brand_id': '116', 'attribute_id': 390, 'attribute_code': 'brand_name', 'option_id': 722, 'name': 'CLINIQUE', 'website_ids': [1],...</msg>
+<status status="PASS" starttime="20211101 14:06:57.161" endtime="20211101 14:06:57.456"/>
+</kw>
+<kw name="Integer" library="REST">
+<arg>response status</arg>
+<arg>200</arg>
+<tag>assertions</tag>
+<doc>*Asserts the field as JSON integer.*</doc>
+<status status="PASS" starttime="20211101 14:06:57.456" endtime="20211101 14:06:57.457"/>
+</kw>
+<kw name="Output" library="REST">
+<var>${response}</var>
+<arg>response body</arg>
+<tag>I/O</tag>
+<doc>*Outputs JSON to terminal or a file.*</doc>
+<msg timestamp="20211101 14:06:57.460" level="INFO">
+{
+    "data": {
+        "brandDetail": {
+            "brand_id": "116",
+            "attribute_id": 390,
+            "attribute_code": "brand_name",
+            "option_id": 722,
+            "name": "CLINIQUE",
+            "website_ids": [
+                1
+            ],
+            "url_key": "clinique",
+            "logo": "clinique-logo-2_1.png",
+            "is_featured": false,
+            "content": [
+                {
+                    "brand_id": 116,
+                    "store_id": 0,
+                    "meta_title": "CLINIQUE | ผลิตภัณฑ์ความงามเพื่อผิวที่แพ้ง่าย | Central Online",
+                    "meta_description": "เผยผิวสุขภาพดี CLINIQUE คลีนิกข์ สกินแคร์และเครื่องสำอางเพื่อคุณผู้หญิงทุกสภาพผิว ช้อปสินค้าราคาพิเศษพร้อมส่วนลดทุกวันได้ที่ Central Online ส่งเร็วทั่วประเทศ",
+                    "description": "&lt;div class=\"kenzo\"&gt;\r\n&lt;div&gt;\r\n&lt;div class=\"Block-root\"&gt;&amp;nbsp;&lt;/div&gt;\r\n&lt;div class=\"flex\"&gt;\r\n&lt;div&gt;&lt;img title=\"Clinique\" src=\"https://backend.central.co.th/media/wysiwyg/Boutique/CL_AboutTheBrand.jpg\" alt=\"Clinique\"&gt;&lt;/div&gt;\r\n&lt;div class=\"right\"&gt;\r\n&lt;div&gt;&lt;img title=\"Clinique\" src=\"https://backend.central.co.th/media/wysiwyg/clinique-logo-1.png\" alt=\"Clinique\" width=\"211\" height=\"82\"&gt;&lt;/div&gt;\r\n&lt;div&gt;No parabens. No phthalates. No fragrance. Just happy skin. Clinique avoids using allergens, irritants and ingredients that harm skin to ensure it meets the highest standards for safety and efficacy.&lt;/div&gt;\r\n&lt;div&gt;&lt;strong&gt;&lt;a href=\"/clinique/products\"&gt;&lt;span class=\"underline\"&gt;Shop all Clinique products&lt;/span&gt; &amp;gt;&amp;gt;&lt;/a&gt;&lt;/strong&gt;&lt;/div&gt;\r\n&lt;/div&gt;\r\n&lt;/div&gt;\r\n&lt;/div&gt;\r\n&lt;/div&gt;",
+                    "__typename": "BrandContent"
+                },
+                {
+                    "brand_id": 116,
+                    "store_id": 2,
+                    "meta_title": "CLINIQUE | ผลิตภัณฑ์ความงามเพื่อผิวที่แพ้ง่าย | Central Online",
+                    "meta_description": "เผยผิวสุขภาพดี CLINIQUE คลีนิกข์ สกินแคร์และเครื่องสำอางเพื่อคุณผู้หญิงทุกสภาพผิว ช้อปสินค้าราคาพิเศษพร้อมส่วนลดทุกวันได้ที่ Central Online ส่งเร็วทั่วประเทศ",
+                    "description": "&lt;div class=\"kenzo\"&gt;\r\n&lt;div&gt;\r\n&lt;div class=\"Block-root\"&gt;&amp;nbsp;&lt;/div&gt;\r\n&lt;div class=\"flex\"&gt;\r\n&lt;div&gt;&lt;img title=\"Clinique\" src=\"https://backend.central.co.th/media/wysiwyg/Boutique/CL_AboutTheBrand.jpg\" alt=\"Clinique\"&gt;&lt;/div&gt;\r\n&lt;div class=\"right\"&gt;\r\n&lt;div&gt;&lt;img title=\"Clinique\" src=\"https://backend.central.co.th/media/wysiwyg/clinique-logo-1.png\" alt=\"Clinique\" width=\"211\" height=\"82\"&gt;&lt;/div&gt;\r\n&lt;div&gt;คลีนิกข์ได้รับการคิดค้นและพัฒนาจากการวิจัยมากว่า 50 ปี ได้มาตรฐานสูงสุดทั้งความปลอดภัยและประสิทธิภาพ ผลิตภัณฑ์เป็นสูตรไม่ผสมพาราเบน พาทาเลต และน้ำหอม ไม่ก่อให้เกิดการแพ้ ผิวปลอดภัย แลดูสุขภาพดี&lt;/div&gt;\r\n&lt;div&gt;&lt;strong&gt;&lt;a href=\"/clinique/products\"&gt;&lt;span class=\"underline\"&gt;Shop all Clinique products&lt;/span&gt; &amp;gt;&amp;gt;&lt;/a&gt;&lt;/strong&gt;&lt;/div&gt;\r\n&lt;/div&gt;\r\n&lt;/div&gt;\r\n&lt;/div&gt;\r\n&lt;/div&gt;",
+                    "__typename": "BrandContent"
+                }
+            ],
+            "meta_title": "CLINIQUE | ผลิตภัณฑ์ความงามเพื่อผิวที่แพ้ง่าย | Central Online",
+            "meta_description": "เผยผิวสุขภาพดี CLINIQUE คลีนิกข์ สกินแคร์และเครื่องสำอางเพื่อคุณผู้หญิงทุกสภาพผิว ช้อปสินค้าราคาพิเศษพร้อมส่วนลดทุกวันได้ที่ Central Online ส่งเร็วทั่วประเทศ",
+            "description": "&lt;div class=\"kenzo\"&gt;\r\n&lt;div&gt;\r\n&lt;div class=\"Block-root\"&gt;&amp;nbsp;&lt;/div&gt;\r\n&lt;div class=\"flex\"&gt;\r\n&lt;div&gt;&lt;img title=\"Clinique\" src=\"https://backend.central.co.th/media/wysiwyg/Boutique/CL_AboutTheBrand.jpg\" alt=\"Clinique\"&gt;&lt;/div&gt;\r\n&lt;div class=\"right\"&gt;\r\n&lt;div&gt;&lt;img title=\"Clinique\" src=\"https://backend.central.co.th/media/wysiwyg/clinique-logo-1.png\" alt=\"Clinique\" width=\"211\" height=\"82\"&gt;&lt;/div&gt;\r\n&lt;div&gt;No parabens. No phthalates. No fragrance. Just happy skin. Clinique avoids using allergens, irritants and ingredients that harm skin to ensure it meets the highest standards for safety and efficacy.&lt;/div&gt;\r\n&lt;div&gt;&lt;strong&gt;&lt;a href=\"/clinique/products\"&gt;&lt;span class=\"underline\"&gt;Shop all Clinique products&lt;/span&gt; &amp;gt;&amp;gt;&lt;/a&gt;&lt;/strong&gt;&lt;/div&gt;\r\n&lt;/div&gt;\r\n&lt;/div&gt;\r\n&lt;/div&gt;\r\n&lt;/div&gt;",
+            "brand_additional_products": [
+                {
+                    "product_id": 6064,
+                    "position": 1000,
+                    "__typename": "BrandAdditionalProduct"
+                },
+                {
+                    "product_id": 7923,
+                    "position": 1000,
+                    "__typename": "BrandAdditionalProduct"
+                },
+                {
+                    "product_id": 14126,
+                    "position": 1000,
+                    "__typename": "BrandAdditionalProduct"
+                },
+                {
+                    "product_id": 14313,
+                    "position": 1000,
+                    "__typename": "BrandAdditionalProduct"
+                },
+                {
+                    "product_id": 14314,
+                    "position": 1000,
+                    "__typename": "BrandAdditionalProduct"
+                },
+                {
+                    "product_id": 25036,
+                    "position": 1000,
+                    "__typename": "BrandAdditionalProduct"
+                },
+                {
+                    "product_id": 36246,
+                    "position": 1000,
+                    "__typename": "BrandAdditionalProduct"
+                },
+                {
+                    "product_id": 36365,
+                    "position": 1000,
+                    "__typename": "BrandAdditionalProduct"
+                },
+                {
+                    "product_id": 40344,
+                    "position": 1000,
+                    "__typename": "BrandAdditionalProduct"
+                },
+                {
+                    "product_id": 40698,
+                    "position": 1000,
+                    "__typename": "BrandAdditionalProduct"
+                },
+                {
+                    "product_id": 54349,
+                    "position": 1000,
+                    "__typename": "BrandAdditionalProduct"
+                },
+                {
+                    "product_id": 61594,
+                    "position": 1000,
+                    "__typename": "BrandAdditionalProduct"
+                },
+                {
+                    "product_id": 62026,
+                    "position": 1000,
+                    "__typename": "BrandAdditionalProduct"
+                },
+                {
+                    "product_id": 62027,
+                    "position": 1000,
+                    "__typename": "BrandAdditionalProduct"
+                },
+                {
+                    "product_id": 62052,
+                    "position": 1000,
+                    "__typename": "BrandAdditionalProduct"
+                },
+                {
+                    "product_id": 62053,
+                    "position": 1000,
+                    "__typename": "BrandAdditionalProduct"
+                },
+                {
+                    "product_id": 63770,
+                    "position": 1000,
+                    "__typename": "BrandAdditionalProduct"
+                },
+                {
+                    "product_id": 68946,
+                    "position": 1000,
+                    "__typename": "BrandAdditionalProduct"
+                },
+                {
+                    "product_id": 70305,
+                    "position": 1000,
+                    "__typename": "BrandAdditionalProduct"
+                },
+                {
+                    "product_id": 94204,
+                    "position": 1000,
+                    "__typename": "BrandAdditionalProduct"
+                },
+                {
+                    "product_id": 94207,
+                    "position": 1000,
+                    "__typename": "BrandAdditionalProduct"
+                },
+                {
+                    "product_id": 94658,
+                    "position": 1000,
+                    "__typename": "BrandAdditionalProduct"
+                },
+                {
+                    "product_id": 114485,
+                    "position": 1000,
+                    "__typename": "BrandAdditionalProduct"
+                },
+                {
+                    "product_id": 119582,
+                    "position": 1000,
+                    "__typename": "BrandAdditionalProduct"
+                },
+                {
+                    "product_id": 119583,
+                    "position": 1000,
+                    "__typename": "BrandAdditionalProduct"
+                },
+                {
+                    "product_id": 120786,
+                    "position": 1000,
+                    "__typename": "BrandAdditionalProduct"
+                },
+                {
+                    "product_id": 127702,
+                    "position": 1000,
+                    "__typename": "BrandAdditionalProduct"
+                },
+                {
+                    "product_id": 127703,
+                    "position": 1000,
+                    "__typename": "BrandAdditionalProduct"
+                },
+                {
+                    "product_id": 127704,
+                    "position": 1000,
+                    "__typename": "BrandAdditionalProduct"
+                },
+                {
+                    "product_id": 127705,
+                    "position": 1000,
+                    "__typename": "BrandAdditionalProduct"
+                },
+                {
+                    "product_id": 127706,
+                    "position": 1000,
+                    "__typename": "BrandAdditionalProduct"
+                },
+                {
+                    "product_id": 127708,
+                    "position": 1000,
+                    "__typename": "BrandAdditionalProduct"
+                },
+                {
+                    "product_id": 127803,
+                    "position": 1000,
+                    "__typename": "BrandAdditionalProduct"
+                },
+                {
+                    "product_id": 127804,
+                    "position": 1000,
+                    "__typename": "BrandAdditionalProduct"
+                },
+                {
+                    "product_id": 127805,
+                    "position": 1000,
+                    "__typename": "BrandAdditionalProduct"
+                },
+                {
+                    "product_id": 127808,
+                    "position": 1000,
+                    "__typename": "BrandAdditionalProduct"
+                },
+                {
+                    "product_id": 128068,
+                    "position": 1000,
+                    "__typename": "BrandAdditionalProduct"
+                },
+                {
+                    "product_id": 128070,
+                    "position": 1000,
+                    "__typename": "BrandAdditionalProduct"
+                },
+                {
+                    "product_id": 128072,
+                    "position": 1000,
+                    "__typename": "BrandAdditionalProduct"
+                },
+                {
+                    "product_id": 128074,
+                    "position": 1000,
+                    "__typename": "BrandAdditionalProduct"
+                },
+                {
+                    "product_id": 128077,
+                    "position": 1000,
+                    "__typename": "BrandAdditionalProduct"
+                },
+                {
+                    "product_id": 128078,
+                    "position": 1000,
+                    "__typename": "BrandAdditionalProduct"
+                },
+                {
+                    "product_id": 128080,
+                    "position": 1000,
+                    "__typename": "BrandAdditionalProduct"
+                },
+                {
+                    "product_id": 128082,
+                    "position": 1000,
+                    "__typename": "BrandAdditionalProduct"
+                },
+                {
+                    "product_id": 128284,
+                    "position": 1000,
+                    "__typename": "BrandAdditionalProduct"
+                },
+                {
+                    "product_id": 128286,
+                    "position": 1000,
+                    "__typename": "BrandAdditionalProduct"
+                },
+                {
+                    "product_id": 128287,
+                    "position": 1000,
+                    "__typename": "BrandAdditionalProduct"
+                },
+                {
+                    "product_id": 128291,
+                    "position": 1000,
+                    "__typename": "BrandAdditionalProduct"
+                },
+                {
+                    "product_id": 128292,
+                    "position": 1000,
+                    "__typename": "BrandAdditionalProduct"
+                },
+                {
+                    "product_id": 128293,
+                    "position": 1000,
+                    "__typename": "BrandAdditionalProduct"
+                },
+                {
+                    "product_id": 128294,
+                    "position": 1000,
+                    "__typename": "BrandAdditionalProduct"
+                },
+                {
+                    "product_id": 128295,
+                    "position": 1000,
+                    "__typename": "BrandAdditionalProduct"
+                },
+                {
+                    "product_id": 128299,
+                    "position": 1000,
+                    "__typename": "BrandAdditionalProduct"
+                },
+                {
+                    "product_id": 128328,
+                    "position": 1000,
+                    "__typename": "BrandAdditionalProduct"
+                },
+                {
+                    "product_id": 128329,
+                    "position": 1000,
+                    "__typename": "BrandAdditionalProduct"
+                },
+                {
+                    "product_id": 128330,
+                    "position": 1000,
+                    "__typename": "BrandAdditionalProduct"
+                },
+                {
+                    "product_id": 128332,
+                    "position": 1000,
+                    "__typename": "BrandAdditionalProduct"
+                },
+                {
+                    "product_id": 128334,
+                    "position": 1000,
+                    "__typename": "BrandAdditionalProduct"
+                },
+                {
+                    "product_id": 128406,
+                    "position": 1000,
+                    "__typename": "BrandAdditionalProduct"
+                },
+                {
+                    "product_id": 128407,
+                    "position": 1000,
+                    "__typename": "BrandAdditionalProduct"
+                },
+                {
+                    "product_id": 128408,
+                    "position": 1000,
+                    "__typename": "BrandAdditionalProduct"
+                },
+                {
+                    "product_id": 128419,
+                    "position": 1000,
+                    "__typename": "BrandAdditionalProduct"
+                },
+                {
+                    "product_id": 128492,
+                    "position": 1000,
+                    "__typename": "BrandAdditionalProduct"
+                },
+                {
+                    "product_id": 128493,
+                    "position": 1000,
+                    "__typename": "BrandAdditionalProduct"
+                },
+                {
+                    "product_id": 128494,
+                    "position": 1000,
+                    "__typename": "BrandAdditionalProduct"
+                },
+                {
+                    "product_id": 129421,
+                    "position": 1000,
+                    "__typename": "BrandAdditionalProduct"
+                },
+                {
+                    "product_id": 129422,
+                    "position": 1000,
+                    "__typename": "BrandAdditionalProduct"
+                },
+                {
+                    "product_id": 184909,
+                    "position": 1000,
+                    "__typename": "BrandAdditionalProduct"
+                },
+                {
+                    "product_id": 339418,
+                    "position": 1000,
+                    "__typename": "BrandAdditionalProduct"
+                },
+                {
+                    "product_id": 340405,
+                    "position": 1000,
+                    "__typename": "BrandAdditionalProduct"
+                },
+                {
+                    "product_id": 354150,
+                    "position": 1000,
+                    "__typename": "BrandAdditionalProduct"
+                },
+                {
+                    "product_id": 376535,
+                    "position": 1000,
+                    "__typename": "BrandAdditionalProduct"
+                },
+                {
+                    "product_id": 433809,
+                    "position": 1000,
+                    "__typename": "BrandAdditionalProduct"
+                },
+                {
+                    "product_id": 433810,
+                    "position": 1000,
+                    "__typename": "BrandAdditionalProduct"
+                },
+                {
+                    "product_id": 433811,
+                    "position": 1000,
+                    "__typename": "BrandAdditionalProduct"
+                },
+                {
+                    "product_id": 612749,
+                    "position": 1000,
+                    "__typename": "BrandAdditionalProduct"
+                },
+                {
+                    "product_id": 634051,
+                    "position": 1000,
+                    "__typename": "BrandAdditionalProduct"
+                },
+                {
+                    "product_id": 634055,
+                    "position": 1000,
+                    "__typename": "BrandAdditionalProduct"
+                },
+                {
+                    "product_id": 634056,
+                    "position": 1000,
+                    "__typename": "BrandAdditionalProduct"
+                },
+                {
+                    "product_id": 634058,
+                    "position": 1000,
+                    "__typename": "BrandAdditionalProduct"
+                },
+                {
+                    "product_id": 634059,
+                    "position": 1000,
+                    "__typename": "BrandAdditionalProduct"
+                },
+                {
+                    "product_id": 634060,
+                    "position": 1000,
+                    "__typename": "BrandAdditionalProduct"
+                },
+                {
+                    "product_id": 634067,
+                    "position": 1000,
+                    "__typename": "BrandAdditionalProduct"
+                },
+                {
+                    "product_id": 634068,
+                    "position": 1000,
+                    "__typename": "BrandAdditionalProduct"
+                },
+                {
+                    "product_id": 634446,
+                    "position": 1000,
+                    "__typename": "BrandAdditionalProduct"
+                },
+                {
+                    "product_id": 634448,
+                    "position": 1000,
+                    "__typename": "BrandAdditionalProduct"
+                },
+                {
+                    "product_id": 634449,
+                    "position": 1000,
+                    "__typename": "BrandAdditionalProduct"
+                },
+                {
+                    "product_id": 634450,
+                    "position": 1000,
+                    "__typename": "BrandAdditionalProduct"
+                },
+                {
+                    "product_id": 634457,
+                    "position": 1000,
+                    "__typename": "BrandAdditionalProduct"
+                },
+                {
+                    "product_id": 634458,
+                    "position": 1000,
+                    "__typename": "BrandAdditionalProduct"
+                },
+                {
+                    "product_id": 634459,
+                    "position": 1000,
+                    "__typename": "BrandAdditionalProduct"
+                },
+                {
+                    "product_id": 634460,
+                    "position": 1000,
+                    "__typename": "BrandAdditionalProduct"
+                },
+                {
+                    "product_id": 634463,
+                    "position": 1000,
+                    "__typename": "BrandAdditionalProduct"
+                },
+                {
+                    "product_id": 773894,
+                    "position": 1000,
+                    "__typename": "BrandAdditionalProduct"
+                },
+                {
+                    "product_id": 773895,
+                    "position": 1000,
+                    "__typename": "BrandAdditionalProduct"
+                },
+                {
+                    "product_id": 773896,
+                    "position": 1000,
+                    "__typename": "BrandAdditionalProduct"
+                },
+                {
+                    "product_id": 773898,
+                    "position": 1000,
+                    "__typename": "BrandAdditionalProduct"
+                },
+                {
+                    "product_id": 783075,
+                    "position": 1000,
+                    "__typename": "BrandAdditionalProduct"
+                },
+                {
+                    "product_id": 783076,
+                    "position": 1000,
+                    "__typename": "BrandAdditionalProduct"
+                },
+                {
+                    "product_id": 783078,
+                    "position": 1000,
+                    "__typename": "BrandAdditionalProduct"
+                },
+                {
+                    "product_id": 783079,
+                    "position": 1000,
+                    "__typename": "BrandAdditionalProduct"
+                },
+                {
+                    "product_id": 818884,
+                    "position": 1000,
+                    "__typename": "BrandAdditionalProduct"
+                },
+                {
+                    "product_id": 918311,
+                    "position": 1000,
+                    "__typename": "BrandAdditionalProduct"
+                },
+                {
+                    "product_id": 918327,
+                    "position": 1000,
+                    "__typename": "BrandAdditionalProduct"
+                },
+                {
+                    "product_id": 918333,
+                    "position": 1000,
+                    "__typename": "BrandAdditionalProduct"
+                },
+                {
+                    "product_id": 980512,
+                    "position": 1000,
+                    "__typename": "BrandAdditionalProduct"
+                },
+                {
+                    "product_id": 980545,
+                    "position": 1000,
+                    "__typename": "BrandAdditionalProduct"
+                },
+                {
+                    "product_id": 980553,
+                    "position": 1000,
+                    "__typename": "BrandAdditionalProduct"
+                },
+                {
+                    "product_id": 980557,
+                    "position": 1000,
+                    "__typename": "BrandAdditionalProduct"
+                },
+                {
+                    "product_id": 994674,
+                    "position": 1000,
+                    "__typename": "BrandAdditionalProduct"
+                },
+                {
+                    "product_id": 1137917,
+                    "position": 1000,
+                    "__typename": "BrandAdditionalProduct"
+                },
+                {
+                    "product_id": 1176081,
+                    "position": 1000,
+                    "__typename": "BrandAdditionalProduct"
+                },
+                {
+                    "product_id": 1176181,
+                    "position": 1000,
+                    "__typename": "BrandAdditionalProduct"
+                },
+                {
+                    "product_id": 1242527,
+                    "position": 1000,
+                    "__typename": "BrandAdditionalProduct"
+                },
+                {
+                    "product_id": 1264057,
+                    "position": 1000,
+                    "__typename": "BrandAdditionalProduct"
+                },
+                {
+                    "product_id": 1267298,
+                    "position": 1000,
+                    "__typename": "BrandAdditionalProduct"
+                },
+                {
+                    "product_id": 1436356,
+                    "position": 1000,
+                    "__typename": "BrandAdditionalProduct"
+                },
+                {
+                    "product_id": 5595967,
+                    "position": 1000,
+                    "__typename": "BrandAdditionalProduct"
+                },
+                {
+                    "product_id": 5596090,
+                    "position": 1000,
+                    "__typename": "BrandAdditionalProduct"
+                },
+                {
+                    "product_id": 5804779,
+                    "position": 1000,
+                    "__typename": "BrandAdditionalProduct"
+                },
+                {
+                    "product_id": 5804803,
+                    "position": 1000,
+                    "__typename": "BrandAdditionalProduct"
+                },
+                {
+                    "product_id": 5804805,
+                    "position": 1000,
+                    "__typename": "BrandAdditionalProduct"
+                },
+                {
+                    "product_id": 6000282,
+                    "position": 1000,
+                    "__typename": "BrandAdditionalProduct"
+                },
+                {
+                    "product_id": 6000289,
+                    "position": 1000,
+                    "__typename": "BrandAdditionalProduct"
+                },
+                {
+                    "product_id": 6000290,
+                    "position": 1000,
+                    "__typename": "BrandAdditionalProduct"
+                },
+                {
+                    "product_id": 6000296,
+                    "position": 1000,
+                    "__typename": "BrandAdditionalProduct"
+                },
+                {
+                    "product_id": 6000321,
+                    "position": 1000,
+                    "__typename": "BrandAdditionalProduct"
+                },
+                {
+                    "product_id": 6099947,
+                    "position": 1000,
+                    "__typename": "BrandAdditionalProduct"
+                },
+                {
+                    "product_id": 6100005,
+                    "position": 1000,
+                    "__typename": "BrandAdditionalProduct"
+                },
+                {
+                    "product_id": 6100266,
+                    "position": 1000,
+                    "__typename": "BrandAdditionalProduct"
+                },
+                {
+                    "product_id": 6296918,
+                    "position": 1000,
+                    "__typename": "BrandAdditionalProduct"
+                },
+                {
+                    "product_id": 6296919,
+                    "position": 1000,
+                    "__typename": "BrandAdditionalProduct"
+                },
+                {
+                    "product_id": 6296924,
+                    "position": 1000,
+                    "__typename": "BrandAdditionalProduct"
+                },
+                {
+                    "product_id": 6296930,
+                    "position": 1000,
+                    "__typename": "BrandAdditionalProduct"
+                },
+                {
+                    "product_id": 6296937,
+                    "position": 1000,
+                    "__typename": "BrandAdditionalProduct"
+                }
+            ],
+            "extension_attributes": {
+                "disable_new_arrival_section": true,
+                "disable_best_seller_section": true,
+                "parent_category": 2,
+                "menu_css": ".brandHeader {\r\n    background-color: #000;\r\n}",
+                "content_css": "._3Pflr {\r\n    min-height: 0!important;\r\n}\r\n.kenzo {\r\n    max-width: 1440px;\r\n    margin: 40px auto;\r\n    text-align: center;\r\nwidth:100%;\r\n}\r\n.flex {\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: space-between;\r\n    margin-top: 20px;\r\n}\r\n .Block-root {\r\n    position: relative;\r\n}\r\n.Block-root .Block-header {\r\n    display: flex;\r\n    justify-content: center;\r\n    align-items: center;\r\n}\r\n.Block-root .Block-header .Block-title {\r\n    font-size: 26px;\r\n    font-weight: bold;\r\n    text-transform: uppercase;\r\n    color: #333333;\r\n    margin-bottom: 24px;\r\n    margin-top: 24px;\r\n}\r\n.Block-root .Block-header .Block-title .Block-borderLines {\r\n    overflow: hidden;\r\n    text-align: center;\r\n}\r\n.Block-root .Block-header .Block-title .Block-borderLines::before {\r\n    right: 30px;\r\n    width: 200px;\r\n}\r\n\r\n.Block-root .Block-header .Block-title .Block-borderLines::before, .Block-root .Block-header .Block-title .Block-borderLines::after {\r\n    content: '';\r\n    display: inline-block;\r\n    position: relative;\r\n    vertical-align: middle;\r\n    background-color: #aaaaaa;\r\n    height: 1px;\r\n}\r\n.Block-root .Block-header .Block-title .Block-borderLines::after {\r\n    left: 30px;\r\n    width: 200px;\r\n}\r\n\r\n.Block-root .Block-header .Block-title .Block-borderLines::before, .Block-root .Block-header .Block-title .Block-borderLines-LlSzQ::after {\r\n    content: '';\r\n    display: inline-block;\r\n    position: relative;\r\n    vertical-align: middle;\r\n    background-color: #aaaaaa;\r\n    height: 1px;\r\n}\r\n.right, .right a {\r\n    text-align: left;\r\n    color: #000;\r\n    font-size: 14px;\r\n    text-decoration: none;\r\n}\r\n.right a {\r\n    font-size: 13px;\r\n}\r\n.right div {\r\n    padding-bottom: 25px;\r\n  }\r\n.underline {\r\n    text-decoration: underline;\r\n}\r\n.flex div {\r\n    flex: 1 1 50%;\r\n}\r\n.flex img{\r\nwidth:100%;\r\nheight:auto;\r\n}\r\n.flex .right img {\r\n    width: auto;\r\n}\r\n.right{\r\nmargin-left:30px;\r\n    max-width: 512px;\r\n}\r\n\r\n\r\n\r\n\r\n\r\n@media (max-width: 768px){\r\n  .Block-root .Block-header .Block-title .Block-borderLines span {\r\n    background: #ffffff;\r\n    padding: 0 10px;\r\n}\r\n.Block-root .Block-header .Block-title .Block-borderLines::after{\r\n  display: none;\r\n}\r\n.Block-root .Block-header .Block-title .Block-borderLines::before {\r\n    position: relative;\r\n    z-index: 1;\r\n    content: '';\r\n    margin: 0 auto;\r\n    position: absolute;\r\n    top: 50%;\r\n    left: 0;\r\n    right: 0;\r\n    bottom: 0;\r\n    width: 95%;\r\n    z-index: -1;\r\n}\r\n.Block-root .Block-header .Block-title .Block-borderLines {\r\n    position: relative;\r\n}\r\n.Block-root .Block-header .Block-title .Block-borderLines {\r\n    position: relative;\r\n}\r\n.Block-root .Block-header {\r\n    width: 100%;\r\n}\r\n\r\n.flex {\r\n    flex-direction: column;\r\n}\r\n.right {\r\n    margin: 20px 20px 0;\r\n}\r\n.right, .right a{\r\n  text-align: center;\r\n  font-size: 10px;\r\n}\r\n.flex .right img {\r\n    max-width: 109px;\r\n}\r\n.Block-root .Block-header .Block-title {\r\n    width: 100%;\r\n    padding: 0 10px;\r\n    font-size: 18px;\r\n}\r\n@media (max-width: 479px){\r\n  .Block-root .Block-header .Block-title .Block-borderLines::before {\r\n    width: 99%;\r\n}\r\n}\r\n\r\n}",
+                "brand_image_url": "aw_sbb/brand_image/01_banner_sec1_en.jpg",
+                "position": 0,
+                "product_collections": [
+                    {
+                        "brand_collection_id": "53",
+                        "brand_id": 116,
+                        "url": "https://www.central.co.th/clinique/products",
+                        "content": null,
+                        "identification": "Clinique - SKINCARECUSTOMER FAVORITE",
+                        "name": "SKINCARECUSTOMER FAVORITE",
+                        "description": "&lt;div&gt;ผลิตภัณฑ์คลีนิกข์ยอดนิยม&lt;/div&gt;\r\n&lt;p&gt;&lt;img title=\"Clinique\" src=\"https://backend.central.co.th/media/wysiwyg/Boutique/CL_ROW_01_Customer_Fav.jpg\" alt=\"Clinique\"&gt;&lt;/p&gt;",
+                        "brand_collection_products": [
+                            {
+                                "product_id": 24151,
+                                "position": 1000,
+                                "__typename": "BrandAdditionalProduct"
+                            },
+                            {
+                                "product_id": 128083,
+                                "position": 11,
+                                "__typename": "BrandAdditionalProduct"
+                            },
+                            {
+                                "product_id": 128078,
+                                "position": 10,
+                                "__typename": "BrandAdditionalProduct"
+                            },
+                            {
+                                "product_id": 63770,
+                                "position": 9,
+                                "__typename": "BrandAdditionalProduct"
+                            },
+                            {
+                                "product_id": 6174,
+                                "position": 2,
+                                "__typename": "BrandAdditionalProduct"
+                            },
+                            {
+                                "product_id": 128286,
+                                "position": 5,
+                                "__typename": "BrandAdditionalProduct"
+                            },
+                            {
+                                "product_id": 376535,
+                                "position": 7,
+                                "__typename": "BrandAdditionalProduct"
+                            },
+                            {
+                                "product_id": 354150,
+                                "position": 8,
+                                "__typename": "BrandAdditionalProduct"
+                            },
+                            {
+                                "product_id": 612749,
+                                "position": 1,
+                                "__typename": "BrandAdditionalProduct"
+                            },
+                            {
+                                "product_id": 634446,
+                                "position": 16,
+                                "__typename": "BrandAdditionalProduct"
+                            },
+                            {
+                                "product_id": 127803,
+                                "position": 4,
+                                "__typename": "BrandAdditionalProduct"
+                            },
+                            {
+                                "product_id": 119582,
+                                "position": 6,
+                                "__typename": "BrandAdditionalProduct"
+                            },
+                            {
+                                "product_id": 128329,
+                                "position": 14,
+                                "__typename": "BrandAdditionalProduct"
+                            },
+                            {
+                                "product_id": 128284,
+                                "position": 3,
+                                "__typename": "BrandAdditionalProduct"
+                            },
+                            {
+                                "product_id": 129421,
+                                "position": 13,
+                                "__typename": "BrandAdditionalProduct"
+                            },
+                            {
+                                "product_id": 128332,
+                                "position": 15,
+                                "__typename": "BrandAdditionalProduct"
+                            },
+                            {
+                                "product_id": 222481,
+                                "position": 1000,
+                                "__typename": "BrandAdditionalProduct"
+                            }
+                        ],
+                        "position": 1,
+                        "deep_link": "central://product-list?brand_name=CLINIQUE",
+                        "is_official": false,
+                        "collection_products_textarea": null,
+                        "__typename": "BrandProductCollection"
+                    },
+                    {
+                        "brand_collection_id": "54",
+                        "brand_id": 116,
+                        "url": "https://www.central.co.th/clinique/products?page=1&amp;category_id=3144,3145,3136,3143,3146,3139,3138,3137,3142,3147,3141,3135",
+                        "content": null,
+                        "identification": "Clinique - SKINCARE",
+                        "name": "SKINCARE",
+                        "description": "&lt;div&gt;ผลิตภัณฑ์ดูแลผิว เพื่อรับมือกับปัญหาผิว คลีนิกข์ขอแนะนำผลิตภัณฑ์ที่ตรงเข้าดูแลผิวอย่างตรงจุด&lt;/div&gt;\r\n&lt;p&gt;&lt;img title=\"Clinique\" src=\"https://backend.central.co.th/media/wysiwyg/Boutique/CL_ROW_02_Skincare.jpg\" alt=\"Clinique\"&gt;&lt;/p&gt;",
+                        "brand_collection_products": [
+                            {
+                                "product_id": 128083,
+                                "position": 11,
+                                "__typename": "BrandAdditionalProduct"
+                            },
+                            {
+                                "product_id": 128078,
+                                "position": 10,
+                                "__typename": "BrandAdditionalProduct"
+                            },
+                            {
+                                "product_id": 63770,
+                                "position": 9,
+                                "__typename": "BrandAdditionalProduct"
+                            },
+                            {
+                                "product_id": 6174,
+                                "position": 14,
+                                "__typename": "BrandAdditionalProduct"
+                            },
+                            {
+                                "product_id": 6064,
+                                "position": 13,
+                                "__typename": "BrandAdditionalProduct"
+                            },
+                            {
+                                "product_id": 25036,
+                                "position": 12,
+                                "__typename": "BrandAdditionalProduct"
+                            },
+                            {
+                                "product_id": 184909,
+                                "position": 1,
+                                "__typename": "BrandAdditionalProduct"
+                            },
+                            {
+                                "product_id": 128286,
+                                "position": 5,
+                                "__typename": "BrandAdditionalProduct"
+                            },
+                            {
+                                "product_id": 376535,
+                                "position": 15,
+                                "__typename": "BrandAdditionalProduct"
+                            },
+                            {
+                                "product_id": 340405,
+                                "position": 4,
+                                "__typename": "BrandAdditionalProduct"
+                            },
+                            {
+                                "product_id": 612749,
+                                "position": 16,
+                                "__typename": "BrandAdditionalProduct"
+                            },
+                            {
+                                "product_id": 783078,
+                                "position": 3,
+                                "__typename": "BrandAdditionalProduct"
+                            },
+                            {
+                                "product_id": 918327,
+                                "position": 7,
+                                "__typename": "BrandAdditionalProduct"
+                            },
+                            {
+                                "product_id": 128299,
+                                "position": 6,
+                                "__typename": "BrandAdditionalProduct"
+                            },
+                            {
+                                "product_id": 119583,
+                                "position": 2,
+                                "__typename": "BrandAdditionalProduct"
+                            },
+                            {
+                                "product_id": 128284,
+                                "position": 8,
+                                "__typename": "BrandAdditionalProduct"
+                            }
+                        ],
+                        "position": 2,
+                        "deep_link": "central://product-list?categories.id=3144%2C3145%2C3136%2C3143%2C3146%2C3139%2C3138%2C3137%2C3142%2C3147%2C3141%2C3135-in&amp;brand_name=CLINIQUE",
+                        "is_official": false,
+                        "collection_products_textarea": null,
+                        "__typename": "BrandProductCollection"
+                    },
+                    {
+                        "brand_collection_id": "55",
+                        "brand_id": 116,
+                        "url": "https://www.central.co.th/clinique/products?page=1&amp;category_id=3099,3097,3102,3098,3100,3095,3101,3093,3112,3115,3113,3116,3119,3111,3105,3106,3107,3103,3126,3127,3125,3134,3128,3092",
+                        "content": null,
+                        "identification": "Clinique - MAKEUP",
+                        "name": "MAKEUP",
+                        "description": "&lt;div&gt;หลากหลายผลิตภัณฑ์ ตั้งแต่รองพื้นที่เป็นเสมือนผิวชั้นที่สอง ไปจนถึงบลัชออนที่ช่วยแต่งแต้มสีสันเติมความสดใส&lt;/div&gt;\r\n&lt;p&gt;&lt;img title=\"Clinique\" src=\"https://backend.central.co.th/media/wysiwyg/Boutique/CL_ROW_03_Makeup.jpg\" alt=\"Clinique\"&gt;&lt;/p&gt;",
+                        "brand_collection_products": [
+                            {
+                                "product_id": 634051,
+                                "position": 10,
+                                "__typename": "BrandAdditionalProduct"
+                            },
+                            {
+                                "product_id": 634068,
+                                "position": 6,
+                                "__typename": "BrandAdditionalProduct"
+                            },
+                            {
+                                "product_id": 773894,
+                                "position": 11,
+                                "__typename": "BrandAdditionalProduct"
+                            },
+                            {
+                                "product_id": 773895,
+                                "position": 12,
+                                "__typename": "BrandAdditionalProduct"
+                            },
+                            {
+                                "product_id": 128291,
+                                "position": 2,
+                                "__typename": "BrandAdditionalProduct"
+                            },
+                            {
+                                "product_id": 620136,
+                                "position": 13,
+                                "__typename": "BrandAdditionalProduct"
+                            },
+                            {
+                                "product_id": 620145,
+                                "position": 14,
+                                "__typename": "BrandAdditionalProduct"
+                            },
+                            {
+                                "product_id": 725146,
+                                "position": 9,
+                                "__typename": "BrandAdditionalProduct"
+                            },
+                            {
+                                "product_id": 638489,
+                                "position": 15,
+                                "__typename": "BrandAdditionalProduct"
+                            },
+                            {
+                                "product_id": 246870,
+                                "position": 8,
+                                "__typename": "BrandAdditionalProduct"
+                            },
+                            {
+                                "product_id": 417048,
+                                "position": 4,
+                                "__typename": "BrandAdditionalProduct"
+                            },
+                            {
+                                "product_id": 419531,
+                                "position": 5,
+                                "__typename": "BrandAdditionalProduct"
+                            },
+                            {
+                                "product_id": 222481,
+                                "position": 1,
+                                "__typename": "BrandAdditionalProduct"
+                            },
+                            {
+                                "product_id": 222505,
+                                "position": 7,
+                                "__typename": "BrandAdditionalProduct"
+                            },
+                            {
+                                "product_id": 222607,
+                                "position": 3,
+                                "__typename": "BrandAdditionalProduct"
+                            }
+                        ],
+                        "position": 3,
+                        "deep_link": "central://product-list?categories.id=3099%2C3097%2C3102%2C3098%2C3100%2C3095%2C3101%2C3093%2C3112%2C3115%2C3113%2C3116%2C3119%2C3111%2C3105%2C3106%2C3107%2C3103%2C3126%2C3127%2C3125%2C3134%2C3128%2C3092-in&amp;brand_name=CLINIQUE",
+                        "is_official": false,
+                        "collection_products_textarea": null,
+                        "__typename": "BrandProductCollection"
+                    },
+                    {
+                        "brand_collection_id": "56",
+                        "brand_id": 116,
+                        "url": "https://www.central.co.th/th/search/clinique%20?page=1&amp;category_id=4787,4785,4790,4784",
+                        "content": null,
+                        "identification": "Clinique - FOR MEN",
+                        "name": "FOR MEN",
+                        "description": "&lt;div&gt;ดูแลผิวทุกวันของคุณผู้ชาย ด้วยผลิตภัณฑ์ที่เปี่ยมประสิทธิภาพ และดูแลได้อย่างตรงจุด&lt;/div&gt;\r\n&lt;p&gt;&lt;img title=\"Clinique\" src=\"https://backend.central.co.th/media/wysiwyg/Boutique/CL_ROW_04_CFM.jpg\" alt=\"Clinique\"&gt;&lt;/p&gt;",
+                        "brand_collection_products": [
+                            {
+                                "product_id": 634056,
+                                "position": 9,
+                                "__typename": "BrandAdditionalProduct"
+                            },
+                            {
+                                "product_id": 339418,
+                                "position": 14,
+                                "__typename": "BrandAdditionalProduct"
+                            },
+                            {
+                                "product_id": 634446,
+                                "position": 3,
+                                "__typename": "BrandAdditionalProduct"
+                            },
+                            {
+                                "product_id": 128329,
+                                "position": 1,
+                                "__typename": "BrandAdditionalProduct"
+                            },
+                            {
+                                "product_id": 128330,
+                                "position": 5,
+                                "__typename": "BrandAdditionalProduct"
+                            },
+                            {
+                                "product_id": 128334,
+                                "position": 16,
+                                "__typename": "BrandAdditionalProduct"
+                            },
+                            {
+                                "product_id": 128494,
+                                "position": 13,
+                                "__typename": "BrandAdditionalProduct"
+                            },
+                            {
+                                "product_id": 128496,
+                                "position": 15,
+                                "__typename": "BrandAdditionalProduct"
+                            },
+                            {
+                                "product_id": 127813,
+                                "position": 10,
+                                "__typename": "BrandAdditionalProduct"
+                            },
+                            {
+                                "product_id": 127716,
+                                "position": 11,
+                                "__typename": "BrandAdditionalProduct"
+                            },
+                            {
+                                "product_id": 634457,
+                                "position": 4,
+                                "__typename": "BrandAdditionalProduct"
+                            },
+                            {
+                                "product_id": 128492,
+                                "position": 6,
+                                "__typename": "BrandAdditionalProduct"
+                            },
+                            {
+                                "product_id": 128493,
+                                "position": 7,
+                                "__typename": "BrandAdditionalProduct"
+                            },
+                            {
+                                "product_id": 634458,
+                                "position": 12,
+                                "__typename": "BrandAdditionalProduct"
+                            },
+                            {
+                                "product_id": 128328,
+                                "position": 8,
+                                "__typename": "BrandAdditionalProduct"
+                            },
+                            {
+                                "product_id": 128332,
+                                "position": 2,
+                                "__typename": "BrandAdditionalProduct"
+                            }
+                        ],
+                        "position": 4,
+                        "deep_link": "central://product-list?categories.id=4787%2C4785%2C4790%2C4784-in&amp;brand_name=CLINIQUE",
+                        "is_official": false,
+                        "collection_products_textarea": null,
+                        "__typename": "BrandProductCollection"
+                    },
+                    {
+                        "brand_collection_id": "57",
+                        "brand_id": 116,
+                        "url": "https://www.central.co.th/th/search/clinique%20?page=1&amp;category_id=3151,3150,3149",
+                        "content": null,
+                        "identification": "Clinique - FRAGRANCE",
+                        "name": "FRAGRANCE",
+                        "description": "&lt;div&gt;น้ำหอมคลีนิกข์ให้กลิ่นสัมผัสที่มีความสดชื่น ร่าเริงเบิกบานและเสน่ห์ดึงดูดใจ เหมาะที่สุดสำหรับเติมพลังให้ผิวมีชีวิตชีวา&lt;/div&gt;\r\n&lt;p&gt;&lt;img title=\"Clinique\" src=\"https://backend.central.co.th/media/wysiwyg/Boutique/CL_ROW_05_Fragrance_Happy.jpg\" alt=\"Clinique\"&gt;&lt;/p&gt;",
+                        "brand_collection_products": [
+                            {
+                                "product_id": 40344,
+                                "position": 1,
+                                "__typename": "BrandAdditionalProduct"
+                            },
+                            {
+                                "product_id": 40698,
+                                "position": 9,
+                                "__typename": "BrandAdditionalProduct"
+                            },
+                            {
+                                "product_id": 918309,
+                                "position": 3,
+                                "__typename": "BrandAdditionalProduct"
+                            },
+                            {
+                                "product_id": 918329,
+                                "position": 5,
+                                "__typename": "BrandAdditionalProduct"
+                            },
+                            {
+                                "product_id": 918310,
+                                "position": 4,
+                                "__typename": "BrandAdditionalProduct"
+                            },
+                            {
+                                "product_id": 127809,
+                                "position": 11,
+                                "__typename": "BrandAdditionalProduct"
+                            },
+                            {
+                                "product_id": 127810,
+                                "position": 10,
+                                "__typename": "BrandAdditionalProduct"
+                            },
+                            {
+                                "product_id": 128385,
+                                "position": 2,
+                                "__typename": "BrandAdditionalProduct"
+                            },
+                            {
+                                "product_id": 127813,
+                                "position": 6,
+                                "__typename": "BrandAdditionalProduct"
+                            },
+                            {
+                                "product_id": 127716,
+                                "position": 7,
+                                "__typename": "BrandAdditionalProduct"
+                            },
+                            {
+                                "product_id": 634457,
+                                "position": 12,
+                                "__typename": "BrandAdditionalProduct"
+                            },
+                            {
+                                "product_id": 634458,
+                                "position": 8,
+                                "__typename": "BrandAdditionalProduct"
+                            }
+                        ],
+                        "position": 5,
+                        "deep_link": "central://product-list?categories.id=3151%2C3150%2C3149-in&amp;brand_name=CLINIQUE",
+                        "is_official": false,
+                        "collection_products_textarea": null,
+                        "__typename": "BrandProductCollection"
+                    },
+                    {
+                        "brand_collection_id": "300",
+                        "brand_id": 116,
+                        "url": "https://www.central.co.th/clinique/products?page=1&amp;sort=news_from_date,desc",
+                        "content": null,
+                        "identification": "Clinique - What's New",
+                        "name": "What's New",
+                        "description": "",
+                        "brand_collection_products": [
+                            {
+                                "product_id": 773896,
+                                "position": 8,
+                                "__typename": "BrandAdditionalProduct"
+                            },
+                            {
+                                "product_id": 918328,
+                                "position": 4,
+                                "__typename": "BrandAdditionalProduct"
+                            },
+                            {
+                                "product_id": 918309,
+                                "position": 7,
+                                "__typename": "BrandAdditionalProduct"
+                            },
+                            {
+                                "product_id": 918329,
+                                "position": 5,
+                                "__typename": "BrandAdditionalProduct"
+                            },
+                            {
+                                "product_id": 918310,
+                                "position": 6,
+                                "__typename": "BrandAdditionalProduct"
+                            },
+                            {
+                                "product_id": 918311,
+                                "position": 2,
+                                "__typename": "BrandAdditionalProduct"
+                            },
+                            {
+                                "product_id": 918334,
+                                "position": 3,
+                                "__typename": "BrandAdditionalProduct"
+                            },
+                            {
+                                "product_id": 918312,
+                                "position": 1,
+                                "__typename": "BrandAdditionalProduct"
+                            },
+                            {
+                                "product_id": 222481,
+                                "position": 1000,
+                                "__typename": "BrandAdditionalProduct"
+                            }
+                        ],
+                        "position": 0,
+                        "deep_link": "central://product-list?brand_name=CLINIQUE&amp;sort=news_from_date%7CDESC",
+                        "is_official": false,
+                        "collection_products_textarea": null,
+                        "__typename": "BrandProductCollection"
+                    }
+                ],
+                "product_count": 135,
+                "product_name_special": false,
+                "hide_product_original_price": false,
+                "hide_t1c_redeemable_amount": false,
+                "allow_product_review": false,
+                "banners": [],
+                "sort_orders": [],
+                "__typename": "BrandDetailExtensionAttributess"
+            },
+            "__typename": "BrandDetail"
+        }
+    }
+}</msg>
+<msg timestamp="20211101 14:06:57.663" level="INFO">${response} = {'data': {'brandDetail': {'brand_id': '116', 'attribute_id': 390, 'attribute_code': 'brand_name', 'option_id': 722, 'name': 'CLINIQUE', 'website_ids': [1], 'url_key': 'clinique', 'logo': 'clinique-log...</msg>
+<status status="PASS" starttime="20211101 14:06:57.458" endtime="20211101 14:06:57.663"/>
+</kw>
+<kw name="Get logo source of brand" library="brand_api">
+<var>${brand_logo_src}</var>
+<arg>${response}</arg>
+<kw name="Get Value From Json" library="JSONLibrary">
+<var>${brand_logo_arr}</var>
+<arg>${response}</arg>
+<arg>$..logo</arg>
+<doc>Get Value From JSON using JSONPath</doc>
+<msg timestamp="20211101 14:06:57.696" level="INFO">${brand_logo_arr} = ['clinique-logo-2_1.png']</msg>
+<status status="PASS" starttime="20211101 14:06:57.665" endtime="20211101 14:06:57.697"/>
+</kw>
+<msg timestamp="20211101 14:06:57.697" level="INFO">${brand_logo_src} = clinique-logo-2_1.png</msg>
+<status status="PASS" starttime="20211101 14:06:57.664" endtime="20211101 14:06:57.697"/>
+</kw>
+<kw name="Get url key of brand" library="brand_api">
+<var>${brand_url_key}</var>
+<arg>${response}</arg>
+<kw name="Get Value From Json" library="JSONLibrary">
+<var>${brand_url_key_arr}</var>
+<arg>${response}</arg>
+<arg>$..url_key</arg>
+<doc>Get Value From JSON using JSONPath</doc>
+<msg timestamp="20211101 14:06:57.727" level="INFO">${brand_url_key_arr} = ['clinique']</msg>
+<status status="PASS" starttime="20211101 14:06:57.698" endtime="20211101 14:06:57.727"/>
+</kw>
+<msg timestamp="20211101 14:06:57.728" level="INFO">${brand_url_key} = clinique</msg>
+<status status="PASS" starttime="20211101 14:06:57.698" endtime="20211101 14:06:57.728"/>
+</kw>
+<kw name="Set Test Variable" library="BuiltIn">
+<arg>${brand_logo_src}</arg>
+<arg>${brand_logo_src}</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<msg timestamp="20211101 14:06:57.729" level="INFO">${brand_logo_src} = clinique-logo-2_1.png</msg>
+<status status="PASS" starttime="20211101 14:06:57.729" endtime="20211101 14:06:57.729"/>
+</kw>
+<kw name="Set Test Variable" library="BuiltIn">
+<arg>${brand_url_key}</arg>
+<arg>${brand_url_key}</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<msg timestamp="20211101 14:06:57.730" level="INFO">${brand_url_key} = clinique</msg>
+<status status="PASS" starttime="20211101 14:06:57.729" endtime="20211101 14:06:57.730"/>
+</kw>
+<status status="PASS" starttime="20211101 14:06:57.134" endtime="20211101 14:06:57.730"/>
+</kw>
+<kw name="Input text on search box" library="header_fragment">
+<arg>${brand_name}</arg>
+<doc>Input search keyword in search box</doc>
+<kw name="Input Text" library="common_keywords">
+<arg>${headerFragmentLocator}[input_search_box]</arg>
+<arg>${keyword}</arg>
+<doc>Input text into target element
+${locator} - Locator of target element</doc>
+<kw name="Wait Element Is Visible" library="common_keywords">
+<arg>${locator}</arg>
+<arg>${timeout}</arg>
+<doc>Wait element is visible
+xpath=(//*[@id='txt-searchProductOnSearchBar'])[1] - Locator of target element
+30 - Waiting time for target element visible</doc>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>timeout=${timeout}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20211101 14:06:57.733" endtime="20211101 14:06:58.829"/>
+</kw>
+<status status="PASS" starttime="20211101 14:06:57.732" endtime="20211101 14:06:58.829"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20211101 14:06:58.830" level="INFO">Clicking element 'xpath=(//*[@id='txt-searchProductOnSearchBar'])[1]'.</msg>
+<status status="PASS" starttime="20211101 14:06:58.830" endtime="20211101 14:06:59.004"/>
+</kw>
+<kw name="Clear Element Text" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
+<status status="PASS" starttime="20211101 14:06:59.004" endtime="20211101 14:06:59.784"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>${keyword}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20211101 14:06:59.785" level="INFO">Typing text 'clinique' into text field 'xpath=(//*[@id='txt-searchProductOnSearchBar'])[1]'.</msg>
+<status status="PASS" starttime="20211101 14:06:59.784" endtime="20211101 14:07:00.964"/>
+</kw>
+<status status="PASS" starttime="20211101 14:06:57.731" endtime="20211101 14:07:00.964"/>
+</kw>
+<status status="PASS" starttime="20211101 14:06:57.730" endtime="20211101 14:07:00.964"/>
+</kw>
+<status status="PASS" starttime="20211101 14:06:57.132" endtime="20211101 14:07:00.964"/>
+</kw>
+<kw name="Press Enter key" library="common_keywords">
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>None</arg>
+<arg>RETURN</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20211101 14:07:00.966" level="INFO">Sending key(s) ('RETURN',) to page.</msg>
+<msg timestamp="20211101 14:07:00.966" level="INFO">Pressing special key RETURN to browser.</msg>
+<msg timestamp="20211101 14:07:00.966" level="INFO">Releasing special key RETURN.</msg>
+<status status="PASS" starttime="20211101 14:07:00.965" endtime="20211101 14:07:01.004"/>
+</kw>
+<status status="PASS" starttime="20211101 14:07:00.965" endtime="20211101 14:07:01.004"/>
+</kw>
+<kw name="Verify brand page is navigated correctly" library="brand_page_feature">
+<kw name="Wait until page is completely loaded" library="common_keywords">
+<kw name="Instrument Browser" library="SeleniumLibrary">
+<tag>plugin</tag>
+<doc>Instruments the current webpage for testability. This should happen automatically vie SeleniumTestability's internal `Event Firing Webdriver` support but keyword is provided also. Calls `Inject Testability` keyword automatically.</doc>
+<status status="PASS" starttime="20211101 14:07:01.006" endtime="20211101 14:07:01.010"/>
+</kw>
+<kw name="Wait For Testability Ready" library="SeleniumLibrary">
+<tag>plugin</tag>
+<doc>Explicitly waits until testability is ready or timeout happens.
+Parameters:
+- ``timeout`` Amount of time to wait until giving up for testability to be ready. Robot framework timestring
+- ``error_on_timeout`` if timeout occurs, should we throw an error</doc>
+<status status="PASS" starttime="20211101 14:07:01.011" endtime="20211101 14:07:02.826"/>
+</kw>
+<status status="PASS" starttime="20211101 14:07:01.005" endtime="20211101 14:07:02.827"/>
+</kw>
+<kw name="Get Variable Value" library="BuiltIn">
+<var>${brand_url_key}</var>
+<arg>${brand_url_key}</arg>
+<doc>Returns variable value or ``default`` if the variable does not exist.</doc>
+<msg timestamp="20211101 14:07:02.827" level="INFO">${brand_url_key} = clinique</msg>
+<status status="PASS" starttime="20211101 14:07:02.827" endtime="20211101 14:07:02.827"/>
+</kw>
+<kw name="Get Variable Value" library="BuiltIn">
+<var>${brand_logo_src}</var>
+<arg>${brand_logo_src}</arg>
+<doc>Returns variable value or ``default`` if the variable does not exist.</doc>
+<msg timestamp="20211101 14:07:02.828" level="INFO">${brand_logo_src} = clinique-logo-2_1.png</msg>
+<status status="PASS" starttime="20211101 14:07:02.827" endtime="20211101 14:07:02.828"/>
+</kw>
+<kw name="Verify brand link is correct" library="brand_page">
+<arg>${brand_url_key}</arg>
+<kw name="Get path of current url" library="common_keywords">
+<var>${current_path}</var>
+<kw name="Get Location" library="SeleniumLibrary">
+<var>${current_url}</var>
+<doc>Returns the current browser window URL.</doc>
+<msg timestamp="20211101 14:07:02.833" level="INFO">${current_url} = https://www.central.co.th/en/clinique</msg>
+<status status="PASS" starttime="20211101 14:07:02.829" endtime="20211101 14:07:02.833"/>
+</kw>
+<kw name="Replace String" library="String">
+<var>${path}</var>
+<arg>${current_url}</arg>
+<arg>search_for=${base_url}/</arg>
+<arg>replace_with=${EMPTY}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<msg timestamp="20211101 14:07:02.834" level="INFO">${path} = clinique</msg>
+<status status="PASS" starttime="20211101 14:07:02.834" endtime="20211101 14:07:02.834"/>
+</kw>
+<msg timestamp="20211101 14:07:02.834" level="INFO">${current_path} = clinique</msg>
+<status status="PASS" starttime="20211101 14:07:02.828" endtime="20211101 14:07:02.835"/>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${current_path}</arg>
+<arg>${brand_url_key}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" starttime="20211101 14:07:02.835" endtime="20211101 14:07:02.835"/>
+</kw>
+<status status="PASS" starttime="20211101 14:07:02.828" endtime="20211101 14:07:02.835"/>
+</kw>
+<kw name="Verify brand logo is displayed correctly" library="brand_page">
+<arg>${brand_logo_src}</arg>
+<kw name="Format String" library="String">
+<var>${locator}</var>
+<arg>${brandPageLocator}[img_brand_logo]</arg>
+<arg>brand_logo_src=${brand_logo_src}</arg>
+<doc>Formats a ``template`` using the given ``positional`` and ``named`` arguments.</doc>
+<msg timestamp="20211101 14:07:02.836" level="INFO">${locator} = xpath=//img[@src='https://backend.central.co.th/media/aw_sbb/brand/clinique-logo-2_1.png']</msg>
+<status status="PASS" starttime="20211101 14:07:02.836" endtime="20211101 14:07:02.837"/>
+</kw>
+<kw name="Wait Element Is Visible" library="common_keywords">
+<arg>${locator}</arg>
+<doc>Wait element is visible
+xpath=//img[@src='https://backend.central.co.th/media/aw_sbb/brand/clinique-logo-2_1.png'] - Locator of target element
+${timeout} - Waiting time for target element visible</doc>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>timeout=${timeout}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20211101 14:07:02.838" endtime="20211101 14:07:02.867"/>
+</kw>
+<status status="PASS" starttime="20211101 14:07:02.837" endtime="20211101 14:07:02.868"/>
+</kw>
+<status status="PASS" starttime="20211101 14:07:02.835" endtime="20211101 14:07:02.868"/>
+</kw>
+<status status="PASS" starttime="20211101 14:07:01.005" endtime="20211101 14:07:02.868"/>
+</kw>
+<kw name="Tear Down Test" library="common_keywords" type="TEARDOWN">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20211101 14:07:02.869" endtime="20211101 14:07:05.370"/>
+</kw>
+<status status="PASS" starttime="20211101 14:07:02.869" endtime="20211101 14:07:05.370"/>
+</kw>
+<tag>navigate_brand_page</tag>
+<tag>Search_025</tag>
+<tag>search_brand</tag>
+<tag>search_function</tag>
+<status status="PASS" starttime="20211101 14:06:44.644" endtime="20211101 14:07:05.372"/>
+</test>
+<test id="s1-s1-s1-t2" name="Verify user is navigated to brand page after search by brand and click brand name is suggestion">
+<kw name="Open chrome browser and redirect to brand page" library="common_keywords" type="SETUP">
+<arg>${brand.clinique.url_key}</arg>
+<kw name="Open chrome browser and redirect to page" library="common_keywords">
+<doc>Open chrome browser and redirect to page
+${url} - Target url
+${delay} - Delay that is waited after each Selenium command
+${is_headless} - Turn on headless browser with True, default False</doc>
+<kw name="Evaluate" library="BuiltIn">
+<var>${options}</var>
+<arg>sys.modules['selenium.webdriver'].ChromeOptions()</arg>
+<arg>sys</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20211101 14:07:05.389" level="INFO">${options} = &lt;selenium.webdriver.chrome.options.Options object at 0x00000213F37A3E50&gt;</msg>
+<status status="PASS" starttime="20211101 14:07:05.388" endtime="20211101 14:07:05.390"/>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-notifications</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" starttime="20211101 14:07:05.391" endtime="20211101 14:07:05.392"/>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-infobars</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" starttime="20211101 14:07:05.392" endtime="20211101 14:07:05.393"/>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>start-maximized</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" starttime="20211101 14:07:05.393" endtime="20211101 14:07:05.394"/>
+</kw>
+<kw name="Create Webdriver" library="SeleniumLibrary">
+<arg>Chrome</arg>
+<arg>chrome_options=${options}</arg>
+<doc>Creates an instance of Selenium WebDriver.</doc>
+<msg timestamp="20211101 14:07:05.396" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
+<status status="PASS" starttime="20211101 14:07:05.395" endtime="20211101 14:07:06.821"/>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${url}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20211101 14:07:06.821" level="INFO">Opening url 'https://www.central.co.th/en'</msg>
+<status status="PASS" starttime="20211101 14:07:06.821" endtime="20211101 14:07:13.285"/>
+</kw>
+<kw name="Wait until page is completely loaded" library="common_keywords">
+<kw name="Instrument Browser" library="SeleniumLibrary">
+<tag>plugin</tag>
+<doc>Instruments the current webpage for testability. This should happen automatically vie SeleniumTestability's internal `Event Firing Webdriver` support but keyword is provided also. Calls `Inject Testability` keyword automatically.</doc>
+<status status="PASS" starttime="20211101 14:07:13.286" endtime="20211101 14:07:13.310"/>
+</kw>
+<kw name="Wait For Testability Ready" library="SeleniumLibrary">
+<tag>plugin</tag>
+<doc>Explicitly waits until testability is ready or timeout happens.
+Parameters:
+- ``timeout`` Amount of time to wait until giving up for testability to be ready. Robot framework timestring
+- ``error_on_timeout`` if timeout occurs, should we throw an error</doc>
+<status status="PASS" starttime="20211101 14:07:13.310" endtime="20211101 14:07:14.964"/>
+</kw>
+<status status="PASS" starttime="20211101 14:07:13.286" endtime="20211101 14:07:14.964"/>
+</kw>
+<status status="PASS" starttime="20211101 14:07:05.386" endtime="20211101 14:07:14.964"/>
+</kw>
+<kw name="Catenate" library="BuiltIn">
+<var>${target_url}</var>
+<arg>SEPARATOR=/</arg>
+<arg>${base_url}</arg>
+<arg>${brand_url_key}</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<msg timestamp="20211101 14:07:14.965" level="INFO">${target_url} = https://www.central.co.th/en/clinique</msg>
+<status status="PASS" starttime="20211101 14:07:14.964" endtime="20211101 14:07:14.965"/>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${target_url}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20211101 14:07:14.965" level="INFO">Opening url 'https://www.central.co.th/en/clinique'</msg>
+<status status="PASS" starttime="20211101 14:07:14.965" endtime="20211101 14:07:17.239"/>
+</kw>
+<kw name="Wait until page is completely loaded" library="common_keywords">
+<kw name="Instrument Browser" library="SeleniumLibrary">
+<tag>plugin</tag>
+<doc>Instruments the current webpage for testability. This should happen automatically vie SeleniumTestability's internal `Event Firing Webdriver` support but keyword is provided also. Calls `Inject Testability` keyword automatically.</doc>
+<status status="PASS" starttime="20211101 14:07:17.239" endtime="20211101 14:07:17.243"/>
+</kw>
+<kw name="Wait For Testability Ready" library="SeleniumLibrary">
+<tag>plugin</tag>
+<doc>Explicitly waits until testability is ready or timeout happens.
+Parameters:
+- ``timeout`` Amount of time to wait until giving up for testability to be ready. Robot framework timestring
+- ``error_on_timeout`` if timeout occurs, should we throw an error</doc>
+<status status="PASS" starttime="20211101 14:07:17.243" endtime="20211101 14:07:17.248"/>
+</kw>
+<status status="PASS" starttime="20211101 14:07:17.239" endtime="20211101 14:07:17.249"/>
+</kw>
+<status status="PASS" starttime="20211101 14:07:05.377" endtime="20211101 14:07:17.249"/>
+</kw>
+<kw name="Get brand detail and input keyword into search box">
+<arg>${brand.clinique.id}</arg>
+<arg>${brand.clinique.name}</arg>
+<kw name="Get brand detail with brand id" library="brand_api">
+<arg>${brand_id}</arg>
+<kw name="Load JSON From File" library="JSONLibrary">
+<var>${request}</var>
+<arg>C:\\Users\\Public\\CDS_LanAnh\\keywords\\api/payload/get_brand_detail.json</arg>
+<doc>Load JSON from file.</doc>
+<msg timestamp="20211101 14:07:17.251" level="INFO">${request} = {'operationName': 'brandDetail', 'variables': {'brandId': 1}, 'query': 'query brandDetail($brandId: Int) { brandDetail(brandId: $brandId) { brand_id attribute_id attribute_code option_id name website_...</msg>
+<status status="PASS" starttime="20211101 14:07:17.251" endtime="20211101 14:07:17.251"/>
+</kw>
+<kw name="Convert To Integer" library="BuiltIn">
+<var>${brand_id}</var>
+<arg>${brand_id}</arg>
+<doc>Converts the given item to an integer number.</doc>
+<msg timestamp="20211101 14:07:17.252" level="INFO">${brand_id} = 116</msg>
+<status status="PASS" starttime="20211101 14:07:17.252" endtime="20211101 14:07:17.252"/>
+</kw>
+<kw name="Update Value To Json" library="JSONLibrary">
+<var>${request}</var>
+<arg>${request}</arg>
+<arg>$..brandId</arg>
+<arg>${brand_id}</arg>
+<doc>Update value to JSON using JSONPath</doc>
+<msg timestamp="20211101 14:07:17.270" level="INFO">${request} = {'operationName': 'brandDetail', 'variables': {'brandId': 116}, 'query': 'query brandDetail($brandId: Int) { brandDetail(brandId: $brandId) { brand_id attribute_id attribute_code option_id name websit...</msg>
+<status status="PASS" starttime="20211101 14:07:17.252" endtime="20211101 14:07:17.270"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${body}</var>
+<arg>json.dumps($request)</arg>
+<arg>json</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20211101 14:07:17.270" level="INFO">${body} = {"operationName": "brandDetail", "variables": {"brandId": 116}, "query": "query brandDetail($brandId: Int) { brandDetail(brandId: $brandId) { brand_id attribute_id attribute_code option_id name websit...</msg>
+<status status="PASS" starttime="20211101 14:07:17.270" endtime="20211101 14:07:17.270"/>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${headers}</var>
+<arg>store=en</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20211101 14:07:17.271" level="INFO">${headers} = {'store': 'en'}</msg>
+<status status="PASS" starttime="20211101 14:07:17.271" endtime="20211101 14:07:17.271"/>
+</kw>
+<kw name="Post" library="REST">
+<var>${response}</var>
+<arg>endpoint=${api_end_point}</arg>
+<arg>body=${body}</arg>
+<arg>headers=${headers}</arg>
+<tag>http</tag>
+<doc>*Sends a POST request to the endpoint.*</doc>
+<msg timestamp="20211101 14:07:17.504" level="INFO">${response} = {'seconds': 0.223306, 'status': 200, 'body': {'data': {'brandDetail': {'brand_id': '116', 'attribute_id': 390, 'attribute_code': 'brand_name', 'option_id': 722, 'name': 'CLINIQUE', 'website_ids': [1],...</msg>
+<status status="PASS" starttime="20211101 14:07:17.271" endtime="20211101 14:07:17.504"/>
+</kw>
+<kw name="Integer" library="REST">
+<arg>response status</arg>
+<arg>200</arg>
+<tag>assertions</tag>
+<doc>*Asserts the field as JSON integer.*</doc>
+<status status="PASS" starttime="20211101 14:07:17.505" endtime="20211101 14:07:17.505"/>
+</kw>
+<kw name="Output" library="REST">
+<var>${response}</var>
+<arg>response body</arg>
+<tag>I/O</tag>
+<doc>*Outputs JSON to terminal or a file.*</doc>
+<msg timestamp="20211101 14:07:17.507" level="INFO">
+{
+    "data": {
+        "brandDetail": {
+            "brand_id": "116",
+            "attribute_id": 390,
+            "attribute_code": "brand_name",
+            "option_id": 722,
+            "name": "CLINIQUE",
+            "website_ids": [
+                1
+            ],
+            "url_key": "clinique",
+            "logo": "clinique-logo-2_1.png",
+            "is_featured": false,
+            "content": [
+                {
+                    "brand_id": 116,
+                    "store_id": 0,
+                    "meta_title": "CLINIQUE | ผลิตภัณฑ์ความงามเพื่อผิวที่แพ้ง่าย | Central Online",
+                    "meta_description": "เผยผิวสุขภาพดี CLINIQUE คลีนิกข์ สกินแคร์และเครื่องสำอางเพื่อคุณผู้หญิงทุกสภาพผิว ช้อปสินค้าราคาพิเศษพร้อมส่วนลดทุกวันได้ที่ Central Online ส่งเร็วทั่วประเทศ",
+                    "description": "&lt;div class=\"kenzo\"&gt;\r\n&lt;div&gt;\r\n&lt;div class=\"Block-root\"&gt;&amp;nbsp;&lt;/div&gt;\r\n&lt;div class=\"flex\"&gt;\r\n&lt;div&gt;&lt;img title=\"Clinique\" src=\"https://backend.central.co.th/media/wysiwyg/Boutique/CL_AboutTheBrand.jpg\" alt=\"Clinique\"&gt;&lt;/div&gt;\r\n&lt;div class=\"right\"&gt;\r\n&lt;div&gt;&lt;img title=\"Clinique\" src=\"https://backend.central.co.th/media/wysiwyg/clinique-logo-1.png\" alt=\"Clinique\" width=\"211\" height=\"82\"&gt;&lt;/div&gt;\r\n&lt;div&gt;No parabens. No phthalates. No fragrance. Just happy skin. Clinique avoids using allergens, irritants and ingredients that harm skin to ensure it meets the highest standards for safety and efficacy.&lt;/div&gt;\r\n&lt;div&gt;&lt;strong&gt;&lt;a href=\"/clinique/products\"&gt;&lt;span class=\"underline\"&gt;Shop all Clinique products&lt;/span&gt; &amp;gt;&amp;gt;&lt;/a&gt;&lt;/strong&gt;&lt;/div&gt;\r\n&lt;/div&gt;\r\n&lt;/div&gt;\r\n&lt;/div&gt;\r\n&lt;/div&gt;",
+                    "__typename": "BrandContent"
+                },
+                {
+                    "brand_id": 116,
+                    "store_id": 2,
+                    "meta_title": "CLINIQUE | ผลิตภัณฑ์ความงามเพื่อผิวที่แพ้ง่าย | Central Online",
+                    "meta_description": "เผยผิวสุขภาพดี CLINIQUE คลีนิกข์ สกินแคร์และเครื่องสำอางเพื่อคุณผู้หญิงทุกสภาพผิว ช้อปสินค้าราคาพิเศษพร้อมส่วนลดทุกวันได้ที่ Central Online ส่งเร็วทั่วประเทศ",
+                    "description": "&lt;div class=\"kenzo\"&gt;\r\n&lt;div&gt;\r\n&lt;div class=\"Block-root\"&gt;&amp;nbsp;&lt;/div&gt;\r\n&lt;div class=\"flex\"&gt;\r\n&lt;div&gt;&lt;img title=\"Clinique\" src=\"https://backend.central.co.th/media/wysiwyg/Boutique/CL_AboutTheBrand.jpg\" alt=\"Clinique\"&gt;&lt;/div&gt;\r\n&lt;div class=\"right\"&gt;\r\n&lt;div&gt;&lt;img title=\"Clinique\" src=\"https://backend.central.co.th/media/wysiwyg/clinique-logo-1.png\" alt=\"Clinique\" width=\"211\" height=\"82\"&gt;&lt;/div&gt;\r\n&lt;div&gt;คลีนิกข์ได้รับการคิดค้นและพัฒนาจากการวิจัยมากว่า 50 ปี ได้มาตรฐานสูงสุดทั้งความปลอดภัยและประสิทธิภาพ ผลิตภัณฑ์เป็นสูตรไม่ผสมพาราเบน พาทาเลต และน้ำหอม ไม่ก่อให้เกิดการแพ้ ผิวปลอดภัย แลดูสุขภาพดี&lt;/div&gt;\r\n&lt;div&gt;&lt;strong&gt;&lt;a href=\"/clinique/products\"&gt;&lt;span class=\"underline\"&gt;Shop all Clinique products&lt;/span&gt; &amp;gt;&amp;gt;&lt;/a&gt;&lt;/strong&gt;&lt;/div&gt;\r\n&lt;/div&gt;\r\n&lt;/div&gt;\r\n&lt;/div&gt;\r\n&lt;/div&gt;",
+                    "__typename": "BrandContent"
+                }
+            ],
+            "meta_title": "CLINIQUE | ผลิตภัณฑ์ความงามเพื่อผิวที่แพ้ง่าย | Central Online",
+            "meta_description": "เผยผิวสุขภาพดี CLINIQUE คลีนิกข์ สกินแคร์และเครื่องสำอางเพื่อคุณผู้หญิงทุกสภาพผิว ช้อปสินค้าราคาพิเศษพร้อมส่วนลดทุกวันได้ที่ Central Online ส่งเร็วทั่วประเทศ",
+            "description": "&lt;div class=\"kenzo\"&gt;\r\n&lt;div&gt;\r\n&lt;div class=\"Block-root\"&gt;&amp;nbsp;&lt;/div&gt;\r\n&lt;div class=\"flex\"&gt;\r\n&lt;div&gt;&lt;img title=\"Clinique\" src=\"https://backend.central.co.th/media/wysiwyg/Boutique/CL_AboutTheBrand.jpg\" alt=\"Clinique\"&gt;&lt;/div&gt;\r\n&lt;div class=\"right\"&gt;\r\n&lt;div&gt;&lt;img title=\"Clinique\" src=\"https://backend.central.co.th/media/wysiwyg/clinique-logo-1.png\" alt=\"Clinique\" width=\"211\" height=\"82\"&gt;&lt;/div&gt;\r\n&lt;div&gt;No parabens. No phthalates. No fragrance. Just happy skin. Clinique avoids using allergens, irritants and ingredients that harm skin to ensure it meets the highest standards for safety and efficacy.&lt;/div&gt;\r\n&lt;div&gt;&lt;strong&gt;&lt;a href=\"/clinique/products\"&gt;&lt;span class=\"underline\"&gt;Shop all Clinique products&lt;/span&gt; &amp;gt;&amp;gt;&lt;/a&gt;&lt;/strong&gt;&lt;/div&gt;\r\n&lt;/div&gt;\r\n&lt;/div&gt;\r\n&lt;/div&gt;\r\n&lt;/div&gt;",
+            "brand_additional_products": [
+                {
+                    "product_id": 6064,
+                    "position": 1000,
+                    "__typename": "BrandAdditionalProduct"
+                },
+                {
+                    "product_id": 7923,
+                    "position": 1000,
+                    "__typename": "BrandAdditionalProduct"
+                },
+                {
+                    "product_id": 14126,
+                    "position": 1000,
+                    "__typename": "BrandAdditionalProduct"
+                },
+                {
+                    "product_id": 14313,
+                    "position": 1000,
+                    "__typename": "BrandAdditionalProduct"
+                },
+                {
+                    "product_id": 14314,
+                    "position": 1000,
+                    "__typename": "BrandAdditionalProduct"
+                },
+                {
+                    "product_id": 25036,
+                    "position": 1000,
+                    "__typename": "BrandAdditionalProduct"
+                },
+                {
+                    "product_id": 36246,
+                    "position": 1000,
+                    "__typename": "BrandAdditionalProduct"
+                },
+                {
+                    "product_id": 36365,
+                    "position": 1000,
+                    "__typename": "BrandAdditionalProduct"
+                },
+                {
+                    "product_id": 40344,
+                    "position": 1000,
+                    "__typename": "BrandAdditionalProduct"
+                },
+                {
+                    "product_id": 40698,
+                    "position": 1000,
+                    "__typename": "BrandAdditionalProduct"
+                },
+                {
+                    "product_id": 54349,
+                    "position": 1000,
+                    "__typename": "BrandAdditionalProduct"
+                },
+                {
+                    "product_id": 61594,
+                    "position": 1000,
+                    "__typename": "BrandAdditionalProduct"
+                },
+                {
+                    "product_id": 62026,
+                    "position": 1000,
+                    "__typename": "BrandAdditionalProduct"
+                },
+                {
+                    "product_id": 62027,
+                    "position": 1000,
+                    "__typename": "BrandAdditionalProduct"
+                },
+                {
+                    "product_id": 62052,
+                    "position": 1000,
+                    "__typename": "BrandAdditionalProduct"
+                },
+                {
+                    "product_id": 62053,
+                    "position": 1000,
+                    "__typename": "BrandAdditionalProduct"
+                },
+                {
+                    "product_id": 63770,
+                    "position": 1000,
+                    "__typename": "BrandAdditionalProduct"
+                },
+                {
+                    "product_id": 68946,
+                    "position": 1000,
+                    "__typename": "BrandAdditionalProduct"
+                },
+                {
+                    "product_id": 70305,
+                    "position": 1000,
+                    "__typename": "BrandAdditionalProduct"
+                },
+                {
+                    "product_id": 94204,
+                    "position": 1000,
+                    "__typename": "BrandAdditionalProduct"
+                },
+                {
+                    "product_id": 94207,
+                    "position": 1000,
+                    "__typename": "BrandAdditionalProduct"
+                },
+                {
+                    "product_id": 94658,
+                    "position": 1000,
+                    "__typename": "BrandAdditionalProduct"
+                },
+                {
+                    "product_id": 114485,
+                    "position": 1000,
+                    "__typename": "BrandAdditionalProduct"
+                },
+                {
+                    "product_id": 119582,
+                    "position": 1000,
+                    "__typename": "BrandAdditionalProduct"
+                },
+                {
+                    "product_id": 119583,
+                    "position": 1000,
+                    "__typename": "BrandAdditionalProduct"
+                },
+                {
+                    "product_id": 120786,
+                    "position": 1000,
+                    "__typename": "BrandAdditionalProduct"
+                },
+                {
+                    "product_id": 127702,
+                    "position": 1000,
+                    "__typename": "BrandAdditionalProduct"
+                },
+                {
+                    "product_id": 127703,
+                    "position": 1000,
+                    "__typename": "BrandAdditionalProduct"
+                },
+                {
+                    "product_id": 127704,
+                    "position": 1000,
+                    "__typename": "BrandAdditionalProduct"
+                },
+                {
+                    "product_id": 127705,
+                    "position": 1000,
+                    "__typename": "BrandAdditionalProduct"
+                },
+                {
+                    "product_id": 127706,
+                    "position": 1000,
+                    "__typename": "BrandAdditionalProduct"
+                },
+                {
+                    "product_id": 127708,
+                    "position": 1000,
+                    "__typename": "BrandAdditionalProduct"
+                },
+                {
+                    "product_id": 127803,
+                    "position": 1000,
+                    "__typename": "BrandAdditionalProduct"
+                },
+                {
+                    "product_id": 127804,
+                    "position": 1000,
+                    "__typename": "BrandAdditionalProduct"
+                },
+                {
+                    "product_id": 127805,
+                    "position": 1000,
+                    "__typename": "BrandAdditionalProduct"
+                },
+                {
+                    "product_id": 127808,
+                    "position": 1000,
+                    "__typename": "BrandAdditionalProduct"
+                },
+                {
+                    "product_id": 128068,
+                    "position": 1000,
+                    "__typename": "BrandAdditionalProduct"
+                },
+                {
+                    "product_id": 128070,
+                    "position": 1000,
+                    "__typename": "BrandAdditionalProduct"
+                },
+                {
+                    "product_id": 128072,
+                    "position": 1000,
+                    "__typename": "BrandAdditionalProduct"
+                },
+                {
+                    "product_id": 128074,
+                    "position": 1000,
+                    "__typename": "BrandAdditionalProduct"
+                },
+                {
+                    "product_id": 128077,
+                    "position": 1000,
+                    "__typename": "BrandAdditionalProduct"
+                },
+                {
+                    "product_id": 128078,
+                    "position": 1000,
+                    "__typename": "BrandAdditionalProduct"
+                },
+                {
+                    "product_id": 128080,
+                    "position": 1000,
+                    "__typename": "BrandAdditionalProduct"
+                },
+                {
+                    "product_id": 128082,
+                    "position": 1000,
+                    "__typename": "BrandAdditionalProduct"
+                },
+                {
+                    "product_id": 128284,
+                    "position": 1000,
+                    "__typename": "BrandAdditionalProduct"
+                },
+                {
+                    "product_id": 128286,
+                    "position": 1000,
+                    "__typename": "BrandAdditionalProduct"
+                },
+                {
+                    "product_id": 128287,
+                    "position": 1000,
+                    "__typename": "BrandAdditionalProduct"
+                },
+                {
+                    "product_id": 128291,
+                    "position": 1000,
+                    "__typename": "BrandAdditionalProduct"
+                },
+                {
+                    "product_id": 128292,
+                    "position": 1000,
+                    "__typename": "BrandAdditionalProduct"
+                },
+                {
+                    "product_id": 128293,
+                    "position": 1000,
+                    "__typename": "BrandAdditionalProduct"
+                },
+                {
+                    "product_id": 128294,
+                    "position": 1000,
+                    "__typename": "BrandAdditionalProduct"
+                },
+                {
+                    "product_id": 128295,
+                    "position": 1000,
+                    "__typename": "BrandAdditionalProduct"
+                },
+                {
+                    "product_id": 128299,
+                    "position": 1000,
+                    "__typename": "BrandAdditionalProduct"
+                },
+                {
+                    "product_id": 128328,
+                    "position": 1000,
+                    "__typename": "BrandAdditionalProduct"
+                },
+                {
+                    "product_id": 128329,
+                    "position": 1000,
+                    "__typename": "BrandAdditionalProduct"
+                },
+                {
+                    "product_id": 128330,
+                    "position": 1000,
+                    "__typename": "BrandAdditionalProduct"
+                },
+                {
+                    "product_id": 128332,
+                    "position": 1000,
+                    "__typename": "BrandAdditionalProduct"
+                },
+                {
+                    "product_id": 128334,
+                    "position": 1000,
+                    "__typename": "BrandAdditionalProduct"
+                },
+                {
+                    "product_id": 128406,
+                    "position": 1000,
+                    "__typename": "BrandAdditionalProduct"
+                },
+                {
+                    "product_id": 128407,
+                    "position": 1000,
+                    "__typename": "BrandAdditionalProduct"
+                },
+                {
+                    "product_id": 128408,
+                    "position": 1000,
+                    "__typename": "BrandAdditionalProduct"
+                },
+                {
+                    "product_id": 128419,
+                    "position": 1000,
+                    "__typename": "BrandAdditionalProduct"
+                },
+                {
+                    "product_id": 128492,
+                    "position": 1000,
+                    "__typename": "BrandAdditionalProduct"
+                },
+                {
+                    "product_id": 128493,
+                    "position": 1000,
+                    "__typename": "BrandAdditionalProduct"
+                },
+                {
+                    "product_id": 128494,
+                    "position": 1000,
+                    "__typename": "BrandAdditionalProduct"
+                },
+                {
+                    "product_id": 129421,
+                    "position": 1000,
+                    "__typename": "BrandAdditionalProduct"
+                },
+                {
+                    "product_id": 129422,
+                    "position": 1000,
+                    "__typename": "BrandAdditionalProduct"
+                },
+                {
+                    "product_id": 184909,
+                    "position": 1000,
+                    "__typename": "BrandAdditionalProduct"
+                },
+                {
+                    "product_id": 339418,
+                    "position": 1000,
+                    "__typename": "BrandAdditionalProduct"
+                },
+                {
+                    "product_id": 340405,
+                    "position": 1000,
+                    "__typename": "BrandAdditionalProduct"
+                },
+                {
+                    "product_id": 354150,
+                    "position": 1000,
+                    "__typename": "BrandAdditionalProduct"
+                },
+                {
+                    "product_id": 376535,
+                    "position": 1000,
+                    "__typename": "BrandAdditionalProduct"
+                },
+                {
+                    "product_id": 433809,
+                    "position": 1000,
+                    "__typename": "BrandAdditionalProduct"
+                },
+                {
+                    "product_id": 433810,
+                    "position": 1000,
+                    "__typename": "BrandAdditionalProduct"
+                },
+                {
+                    "product_id": 433811,
+                    "position": 1000,
+                    "__typename": "BrandAdditionalProduct"
+                },
+                {
+                    "product_id": 612749,
+                    "position": 1000,
+                    "__typename": "BrandAdditionalProduct"
+                },
+                {
+                    "product_id": 634051,
+                    "position": 1000,
+                    "__typename": "BrandAdditionalProduct"
+                },
+                {
+                    "product_id": 634055,
+                    "position": 1000,
+                    "__typename": "BrandAdditionalProduct"
+                },
+                {
+                    "product_id": 634056,
+                    "position": 1000,
+                    "__typename": "BrandAdditionalProduct"
+                },
+                {
+                    "product_id": 634058,
+                    "position": 1000,
+                    "__typename": "BrandAdditionalProduct"
+                },
+                {
+                    "product_id": 634059,
+                    "position": 1000,
+                    "__typename": "BrandAdditionalProduct"
+                },
+                {
+                    "product_id": 634060,
+                    "position": 1000,
+                    "__typename": "BrandAdditionalProduct"
+                },
+                {
+                    "product_id": 634067,
+                    "position": 1000,
+                    "__typename": "BrandAdditionalProduct"
+                },
+                {
+                    "product_id": 634068,
+                    "position": 1000,
+                    "__typename": "BrandAdditionalProduct"
+                },
+                {
+                    "product_id": 634446,
+                    "position": 1000,
+                    "__typename": "BrandAdditionalProduct"
+                },
+                {
+                    "product_id": 634448,
+                    "position": 1000,
+                    "__typename": "BrandAdditionalProduct"
+                },
+                {
+                    "product_id": 634449,
+                    "position": 1000,
+                    "__typename": "BrandAdditionalProduct"
+                },
+                {
+                    "product_id": 634450,
+                    "position": 1000,
+                    "__typename": "BrandAdditionalProduct"
+                },
+                {
+                    "product_id": 634457,
+                    "position": 1000,
+                    "__typename": "BrandAdditionalProduct"
+                },
+                {
+                    "product_id": 634458,
+                    "position": 1000,
+                    "__typename": "BrandAdditionalProduct"
+                },
+                {
+                    "product_id": 634459,
+                    "position": 1000,
+                    "__typename": "BrandAdditionalProduct"
+                },
+                {
+                    "product_id": 634460,
+                    "position": 1000,
+                    "__typename": "BrandAdditionalProduct"
+                },
+                {
+                    "product_id": 634463,
+                    "position": 1000,
+                    "__typename": "BrandAdditionalProduct"
+                },
+                {
+                    "product_id": 773894,
+                    "position": 1000,
+                    "__typename": "BrandAdditionalProduct"
+                },
+                {
+                    "product_id": 773895,
+                    "position": 1000,
+                    "__typename": "BrandAdditionalProduct"
+                },
+                {
+                    "product_id": 773896,
+                    "position": 1000,
+                    "__typename": "BrandAdditionalProduct"
+                },
+                {
+                    "product_id": 773898,
+                    "position": 1000,
+                    "__typename": "BrandAdditionalProduct"
+                },
+                {
+                    "product_id": 783075,
+                    "position": 1000,
+                    "__typename": "BrandAdditionalProduct"
+                },
+                {
+                    "product_id": 783076,
+                    "position": 1000,
+                    "__typename": "BrandAdditionalProduct"
+                },
+                {
+                    "product_id": 783078,
+                    "position": 1000,
+                    "__typename": "BrandAdditionalProduct"
+                },
+                {
+                    "product_id": 783079,
+                    "position": 1000,
+                    "__typename": "BrandAdditionalProduct"
+                },
+                {
+                    "product_id": 818884,
+                    "position": 1000,
+                    "__typename": "BrandAdditionalProduct"
+                },
+                {
+                    "product_id": 918311,
+                    "position": 1000,
+                    "__typename": "BrandAdditionalProduct"
+                },
+                {
+                    "product_id": 918327,
+                    "position": 1000,
+                    "__typename": "BrandAdditionalProduct"
+                },
+                {
+                    "product_id": 918333,
+                    "position": 1000,
+                    "__typename": "BrandAdditionalProduct"
+                },
+                {
+                    "product_id": 980512,
+                    "position": 1000,
+                    "__typename": "BrandAdditionalProduct"
+                },
+                {
+                    "product_id": 980545,
+                    "position": 1000,
+                    "__typename": "BrandAdditionalProduct"
+                },
+                {
+                    "product_id": 980553,
+                    "position": 1000,
+                    "__typename": "BrandAdditionalProduct"
+                },
+                {
+                    "product_id": 980557,
+                    "position": 1000,
+                    "__typename": "BrandAdditionalProduct"
+                },
+                {
+                    "product_id": 994674,
+                    "position": 1000,
+                    "__typename": "BrandAdditionalProduct"
+                },
+                {
+                    "product_id": 1137917,
+                    "position": 1000,
+                    "__typename": "BrandAdditionalProduct"
+                },
+                {
+                    "product_id": 1176081,
+                    "position": 1000,
+                    "__typename": "BrandAdditionalProduct"
+                },
+                {
+                    "product_id": 1176181,
+                    "position": 1000,
+                    "__typename": "BrandAdditionalProduct"
+                },
+                {
+                    "product_id": 1242527,
+                    "position": 1000,
+                    "__typename": "BrandAdditionalProduct"
+                },
+                {
+                    "product_id": 1264057,
+                    "position": 1000,
+                    "__typename": "BrandAdditionalProduct"
+                },
+                {
+                    "product_id": 1267298,
+                    "position": 1000,
+                    "__typename": "BrandAdditionalProduct"
+                },
+                {
+                    "product_id": 1436356,
+                    "position": 1000,
+                    "__typename": "BrandAdditionalProduct"
+                },
+                {
+                    "product_id": 5595967,
+                    "position": 1000,
+                    "__typename": "BrandAdditionalProduct"
+                },
+                {
+                    "product_id": 5596090,
+                    "position": 1000,
+                    "__typename": "BrandAdditionalProduct"
+                },
+                {
+                    "product_id": 5804779,
+                    "position": 1000,
+                    "__typename": "BrandAdditionalProduct"
+                },
+                {
+                    "product_id": 5804803,
+                    "position": 1000,
+                    "__typename": "BrandAdditionalProduct"
+                },
+                {
+                    "product_id": 5804805,
+                    "position": 1000,
+                    "__typename": "BrandAdditionalProduct"
+                },
+                {
+                    "product_id": 6000282,
+                    "position": 1000,
+                    "__typename": "BrandAdditionalProduct"
+                },
+                {
+                    "product_id": 6000289,
+                    "position": 1000,
+                    "__typename": "BrandAdditionalProduct"
+                },
+                {
+                    "product_id": 6000290,
+                    "position": 1000,
+                    "__typename": "BrandAdditionalProduct"
+                },
+                {
+                    "product_id": 6000296,
+                    "position": 1000,
+                    "__typename": "BrandAdditionalProduct"
+                },
+                {
+                    "product_id": 6000321,
+                    "position": 1000,
+                    "__typename": "BrandAdditionalProduct"
+                },
+                {
+                    "product_id": 6099947,
+                    "position": 1000,
+                    "__typename": "BrandAdditionalProduct"
+                },
+                {
+                    "product_id": 6100005,
+                    "position": 1000,
+                    "__typename": "BrandAdditionalProduct"
+                },
+                {
+                    "product_id": 6100266,
+                    "position": 1000,
+                    "__typename": "BrandAdditionalProduct"
+                },
+                {
+                    "product_id": 6296918,
+                    "position": 1000,
+                    "__typename": "BrandAdditionalProduct"
+                },
+                {
+                    "product_id": 6296919,
+                    "position": 1000,
+                    "__typename": "BrandAdditionalProduct"
+                },
+                {
+                    "product_id": 6296924,
+                    "position": 1000,
+                    "__typename": "BrandAdditionalProduct"
+                },
+                {
+                    "product_id": 6296930,
+                    "position": 1000,
+                    "__typename": "BrandAdditionalProduct"
+                },
+                {
+                    "product_id": 6296937,
+                    "position": 1000,
+                    "__typename": "BrandAdditionalProduct"
+                }
+            ],
+            "extension_attributes": {
+                "disable_new_arrival_section": true,
+                "disable_best_seller_section": true,
+                "parent_category": 2,
+                "menu_css": ".brandHeader {\r\n    background-color: #000;\r\n}",
+                "content_css": "._3Pflr {\r\n    min-height: 0!important;\r\n}\r\n.kenzo {\r\n    max-width: 1440px;\r\n    margin: 40px auto;\r\n    text-align: center;\r\nwidth:100%;\r\n}\r\n.flex {\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: space-between;\r\n    margin-top: 20px;\r\n}\r\n .Block-root {\r\n    position: relative;\r\n}\r\n.Block-root .Block-header {\r\n    display: flex;\r\n    justify-content: center;\r\n    align-items: center;\r\n}\r\n.Block-root .Block-header .Block-title {\r\n    font-size: 26px;\r\n    font-weight: bold;\r\n    text-transform: uppercase;\r\n    color: #333333;\r\n    margin-bottom: 24px;\r\n    margin-top: 24px;\r\n}\r\n.Block-root .Block-header .Block-title .Block-borderLines {\r\n    overflow: hidden;\r\n    text-align: center;\r\n}\r\n.Block-root .Block-header .Block-title .Block-borderLines::before {\r\n    right: 30px;\r\n    width: 200px;\r\n}\r\n\r\n.Block-root .Block-header .Block-title .Block-borderLines::before, .Block-root .Block-header .Block-title .Block-borderLines::after {\r\n    content: '';\r\n    display: inline-block;\r\n    position: relative;\r\n    vertical-align: middle;\r\n    background-color: #aaaaaa;\r\n    height: 1px;\r\n}\r\n.Block-root .Block-header .Block-title .Block-borderLines::after {\r\n    left: 30px;\r\n    width: 200px;\r\n}\r\n\r\n.Block-root .Block-header .Block-title .Block-borderLines::before, .Block-root .Block-header .Block-title .Block-borderLines-LlSzQ::after {\r\n    content: '';\r\n    display: inline-block;\r\n    position: relative;\r\n    vertical-align: middle;\r\n    background-color: #aaaaaa;\r\n    height: 1px;\r\n}\r\n.right, .right a {\r\n    text-align: left;\r\n    color: #000;\r\n    font-size: 14px;\r\n    text-decoration: none;\r\n}\r\n.right a {\r\n    font-size: 13px;\r\n}\r\n.right div {\r\n    padding-bottom: 25px;\r\n  }\r\n.underline {\r\n    text-decoration: underline;\r\n}\r\n.flex div {\r\n    flex: 1 1 50%;\r\n}\r\n.flex img{\r\nwidth:100%;\r\nheight:auto;\r\n}\r\n.flex .right img {\r\n    width: auto;\r\n}\r\n.right{\r\nmargin-left:30px;\r\n    max-width: 512px;\r\n}\r\n\r\n\r\n\r\n\r\n\r\n@media (max-width: 768px){\r\n  .Block-root .Block-header .Block-title .Block-borderLines span {\r\n    background: #ffffff;\r\n    padding: 0 10px;\r\n}\r\n.Block-root .Block-header .Block-title .Block-borderLines::after{\r\n  display: none;\r\n}\r\n.Block-root .Block-header .Block-title .Block-borderLines::before {\r\n    position: relative;\r\n    z-index: 1;\r\n    content: '';\r\n    margin: 0 auto;\r\n    position: absolute;\r\n    top: 50%;\r\n    left: 0;\r\n    right: 0;\r\n    bottom: 0;\r\n    width: 95%;\r\n    z-index: -1;\r\n}\r\n.Block-root .Block-header .Block-title .Block-borderLines {\r\n    position: relative;\r\n}\r\n.Block-root .Block-header .Block-title .Block-borderLines {\r\n    position: relative;\r\n}\r\n.Block-root .Block-header {\r\n    width: 100%;\r\n}\r\n\r\n.flex {\r\n    flex-direction: column;\r\n}\r\n.right {\r\n    margin: 20px 20px 0;\r\n}\r\n.right, .right a{\r\n  text-align: center;\r\n  font-size: 10px;\r\n}\r\n.flex .right img {\r\n    max-width: 109px;\r\n}\r\n.Block-root .Block-header .Block-title {\r\n    width: 100%;\r\n    padding: 0 10px;\r\n    font-size: 18px;\r\n}\r\n@media (max-width: 479px){\r\n  .Block-root .Block-header .Block-title .Block-borderLines::before {\r\n    width: 99%;\r\n}\r\n}\r\n\r\n}",
+                "brand_image_url": "aw_sbb/brand_image/01_banner_sec1_en.jpg",
+                "position": 0,
+                "product_collections": [
+                    {
+                        "brand_collection_id": "53",
+                        "brand_id": 116,
+                        "url": "https://www.central.co.th/clinique/products",
+                        "content": null,
+                        "identification": "Clinique - SKINCARECUSTOMER FAVORITE",
+                        "name": "SKINCARECUSTOMER FAVORITE",
+                        "description": "&lt;div&gt;ผลิตภัณฑ์คลีนิกข์ยอดนิยม&lt;/div&gt;\r\n&lt;p&gt;&lt;img title=\"Clinique\" src=\"https://backend.central.co.th/media/wysiwyg/Boutique/CL_ROW_01_Customer_Fav.jpg\" alt=\"Clinique\"&gt;&lt;/p&gt;",
+                        "brand_collection_products": [
+                            {
+                                "product_id": 24151,
+                                "position": 1000,
+                                "__typename": "BrandAdditionalProduct"
+                            },
+                            {
+                                "product_id": 128083,
+                                "position": 11,
+                                "__typename": "BrandAdditionalProduct"
+                            },
+                            {
+                                "product_id": 128078,
+                                "position": 10,
+                                "__typename": "BrandAdditionalProduct"
+                            },
+                            {
+                                "product_id": 63770,
+                                "position": 9,
+                                "__typename": "BrandAdditionalProduct"
+                            },
+                            {
+                                "product_id": 6174,
+                                "position": 2,
+                                "__typename": "BrandAdditionalProduct"
+                            },
+                            {
+                                "product_id": 128286,
+                                "position": 5,
+                                "__typename": "BrandAdditionalProduct"
+                            },
+                            {
+                                "product_id": 376535,
+                                "position": 7,
+                                "__typename": "BrandAdditionalProduct"
+                            },
+                            {
+                                "product_id": 354150,
+                                "position": 8,
+                                "__typename": "BrandAdditionalProduct"
+                            },
+                            {
+                                "product_id": 612749,
+                                "position": 1,
+                                "__typename": "BrandAdditionalProduct"
+                            },
+                            {
+                                "product_id": 634446,
+                                "position": 16,
+                                "__typename": "BrandAdditionalProduct"
+                            },
+                            {
+                                "product_id": 127803,
+                                "position": 4,
+                                "__typename": "BrandAdditionalProduct"
+                            },
+                            {
+                                "product_id": 119582,
+                                "position": 6,
+                                "__typename": "BrandAdditionalProduct"
+                            },
+                            {
+                                "product_id": 128329,
+                                "position": 14,
+                                "__typename": "BrandAdditionalProduct"
+                            },
+                            {
+                                "product_id": 128284,
+                                "position": 3,
+                                "__typename": "BrandAdditionalProduct"
+                            },
+                            {
+                                "product_id": 129421,
+                                "position": 13,
+                                "__typename": "BrandAdditionalProduct"
+                            },
+                            {
+                                "product_id": 128332,
+                                "position": 15,
+                                "__typename": "BrandAdditionalProduct"
+                            },
+                            {
+                                "product_id": 222481,
+                                "position": 1000,
+                                "__typename": "BrandAdditionalProduct"
+                            }
+                        ],
+                        "position": 1,
+                        "deep_link": "central://product-list?brand_name=CLINIQUE",
+                        "is_official": false,
+                        "collection_products_textarea": null,
+                        "__typename": "BrandProductCollection"
+                    },
+                    {
+                        "brand_collection_id": "54",
+                        "brand_id": 116,
+                        "url": "https://www.central.co.th/clinique/products?page=1&amp;category_id=3144,3145,3136,3143,3146,3139,3138,3137,3142,3147,3141,3135",
+                        "content": null,
+                        "identification": "Clinique - SKINCARE",
+                        "name": "SKINCARE",
+                        "description": "&lt;div&gt;ผลิตภัณฑ์ดูแลผิว เพื่อรับมือกับปัญหาผิว คลีนิกข์ขอแนะนำผลิตภัณฑ์ที่ตรงเข้าดูแลผิวอย่างตรงจุด&lt;/div&gt;\r\n&lt;p&gt;&lt;img title=\"Clinique\" src=\"https://backend.central.co.th/media/wysiwyg/Boutique/CL_ROW_02_Skincare.jpg\" alt=\"Clinique\"&gt;&lt;/p&gt;",
+                        "brand_collection_products": [
+                            {
+                                "product_id": 128083,
+                                "position": 11,
+                                "__typename": "BrandAdditionalProduct"
+                            },
+                            {
+                                "product_id": 128078,
+                                "position": 10,
+                                "__typename": "BrandAdditionalProduct"
+                            },
+                            {
+                                "product_id": 63770,
+                                "position": 9,
+                                "__typename": "BrandAdditionalProduct"
+                            },
+                            {
+                                "product_id": 6174,
+                                "position": 14,
+                                "__typename": "BrandAdditionalProduct"
+                            },
+                            {
+                                "product_id": 6064,
+                                "position": 13,
+                                "__typename": "BrandAdditionalProduct"
+                            },
+                            {
+                                "product_id": 25036,
+                                "position": 12,
+                                "__typename": "BrandAdditionalProduct"
+                            },
+                            {
+                                "product_id": 184909,
+                                "position": 1,
+                                "__typename": "BrandAdditionalProduct"
+                            },
+                            {
+                                "product_id": 128286,
+                                "position": 5,
+                                "__typename": "BrandAdditionalProduct"
+                            },
+                            {
+                                "product_id": 376535,
+                                "position": 15,
+                                "__typename": "BrandAdditionalProduct"
+                            },
+                            {
+                                "product_id": 340405,
+                                "position": 4,
+                                "__typename": "BrandAdditionalProduct"
+                            },
+                            {
+                                "product_id": 612749,
+                                "position": 16,
+                                "__typename": "BrandAdditionalProduct"
+                            },
+                            {
+                                "product_id": 783078,
+                                "position": 3,
+                                "__typename": "BrandAdditionalProduct"
+                            },
+                            {
+                                "product_id": 918327,
+                                "position": 7,
+                                "__typename": "BrandAdditionalProduct"
+                            },
+                            {
+                                "product_id": 128299,
+                                "position": 6,
+                                "__typename": "BrandAdditionalProduct"
+                            },
+                            {
+                                "product_id": 119583,
+                                "position": 2,
+                                "__typename": "BrandAdditionalProduct"
+                            },
+                            {
+                                "product_id": 128284,
+                                "position": 8,
+                                "__typename": "BrandAdditionalProduct"
+                            }
+                        ],
+                        "position": 2,
+                        "deep_link": "central://product-list?categories.id=3144%2C3145%2C3136%2C3143%2C3146%2C3139%2C3138%2C3137%2C3142%2C3147%2C3141%2C3135-in&amp;brand_name=CLINIQUE",
+                        "is_official": false,
+                        "collection_products_textarea": null,
+                        "__typename": "BrandProductCollection"
+                    },
+                    {
+                        "brand_collection_id": "55",
+                        "brand_id": 116,
+                        "url": "https://www.central.co.th/clinique/products?page=1&amp;category_id=3099,3097,3102,3098,3100,3095,3101,3093,3112,3115,3113,3116,3119,3111,3105,3106,3107,3103,3126,3127,3125,3134,3128,3092",
+                        "content": null,
+                        "identification": "Clinique - MAKEUP",
+                        "name": "MAKEUP",
+                        "description": "&lt;div&gt;หลากหลายผลิตภัณฑ์ ตั้งแต่รองพื้นที่เป็นเสมือนผิวชั้นที่สอง ไปจนถึงบลัชออนที่ช่วยแต่งแต้มสีสันเติมความสดใส&lt;/div&gt;\r\n&lt;p&gt;&lt;img title=\"Clinique\" src=\"https://backend.central.co.th/media/wysiwyg/Boutique/CL_ROW_03_Makeup.jpg\" alt=\"Clinique\"&gt;&lt;/p&gt;",
+                        "brand_collection_products": [
+                            {
+                                "product_id": 634051,
+                                "position": 10,
+                                "__typename": "BrandAdditionalProduct"
+                            },
+                            {
+                                "product_id": 634068,
+                                "position": 6,
+                                "__typename": "BrandAdditionalProduct"
+                            },
+                            {
+                                "product_id": 773894,
+                                "position": 11,
+                                "__typename": "BrandAdditionalProduct"
+                            },
+                            {
+                                "product_id": 773895,
+                                "position": 12,
+                                "__typename": "BrandAdditionalProduct"
+                            },
+                            {
+                                "product_id": 128291,
+                                "position": 2,
+                                "__typename": "BrandAdditionalProduct"
+                            },
+                            {
+                                "product_id": 620136,
+                                "position": 13,
+                                "__typename": "BrandAdditionalProduct"
+                            },
+                            {
+                                "product_id": 620145,
+                                "position": 14,
+                                "__typename": "BrandAdditionalProduct"
+                            },
+                            {
+                                "product_id": 725146,
+                                "position": 9,
+                                "__typename": "BrandAdditionalProduct"
+                            },
+                            {
+                                "product_id": 638489,
+                                "position": 15,
+                                "__typename": "BrandAdditionalProduct"
+                            },
+                            {
+                                "product_id": 246870,
+                                "position": 8,
+                                "__typename": "BrandAdditionalProduct"
+                            },
+                            {
+                                "product_id": 417048,
+                                "position": 4,
+                                "__typename": "BrandAdditionalProduct"
+                            },
+                            {
+                                "product_id": 419531,
+                                "position": 5,
+                                "__typename": "BrandAdditionalProduct"
+                            },
+                            {
+                                "product_id": 222481,
+                                "position": 1,
+                                "__typename": "BrandAdditionalProduct"
+                            },
+                            {
+                                "product_id": 222505,
+                                "position": 7,
+                                "__typename": "BrandAdditionalProduct"
+                            },
+                            {
+                                "product_id": 222607,
+                                "position": 3,
+                                "__typename": "BrandAdditionalProduct"
+                            }
+                        ],
+                        "position": 3,
+                        "deep_link": "central://product-list?categories.id=3099%2C3097%2C3102%2C3098%2C3100%2C3095%2C3101%2C3093%2C3112%2C3115%2C3113%2C3116%2C3119%2C3111%2C3105%2C3106%2C3107%2C3103%2C3126%2C3127%2C3125%2C3134%2C3128%2C3092-in&amp;brand_name=CLINIQUE",
+                        "is_official": false,
+                        "collection_products_textarea": null,
+                        "__typename": "BrandProductCollection"
+                    },
+                    {
+                        "brand_collection_id": "56",
+                        "brand_id": 116,
+                        "url": "https://www.central.co.th/th/search/clinique%20?page=1&amp;category_id=4787,4785,4790,4784",
+                        "content": null,
+                        "identification": "Clinique - FOR MEN",
+                        "name": "FOR MEN",
+                        "description": "&lt;div&gt;ดูแลผิวทุกวันของคุณผู้ชาย ด้วยผลิตภัณฑ์ที่เปี่ยมประสิทธิภาพ และดูแลได้อย่างตรงจุด&lt;/div&gt;\r\n&lt;p&gt;&lt;img title=\"Clinique\" src=\"https://backend.central.co.th/media/wysiwyg/Boutique/CL_ROW_04_CFM.jpg\" alt=\"Clinique\"&gt;&lt;/p&gt;",
+                        "brand_collection_products": [
+                            {
+                                "product_id": 634056,
+                                "position": 9,
+                                "__typename": "BrandAdditionalProduct"
+                            },
+                            {
+                                "product_id": 339418,
+                                "position": 14,
+                                "__typename": "BrandAdditionalProduct"
+                            },
+                            {
+                                "product_id": 634446,
+                                "position": 3,
+                                "__typename": "BrandAdditionalProduct"
+                            },
+                            {
+                                "product_id": 128329,
+                                "position": 1,
+                                "__typename": "BrandAdditionalProduct"
+                            },
+                            {
+                                "product_id": 128330,
+                                "position": 5,
+                                "__typename": "BrandAdditionalProduct"
+                            },
+                            {
+                                "product_id": 128334,
+                                "position": 16,
+                                "__typename": "BrandAdditionalProduct"
+                            },
+                            {
+                                "product_id": 128494,
+                                "position": 13,
+                                "__typename": "BrandAdditionalProduct"
+                            },
+                            {
+                                "product_id": 128496,
+                                "position": 15,
+                                "__typename": "BrandAdditionalProduct"
+                            },
+                            {
+                                "product_id": 127813,
+                                "position": 10,
+                                "__typename": "BrandAdditionalProduct"
+                            },
+                            {
+                                "product_id": 127716,
+                                "position": 11,
+                                "__typename": "BrandAdditionalProduct"
+                            },
+                            {
+                                "product_id": 634457,
+                                "position": 4,
+                                "__typename": "BrandAdditionalProduct"
+                            },
+                            {
+                                "product_id": 128492,
+                                "position": 6,
+                                "__typename": "BrandAdditionalProduct"
+                            },
+                            {
+                                "product_id": 128493,
+                                "position": 7,
+                                "__typename": "BrandAdditionalProduct"
+                            },
+                            {
+                                "product_id": 634458,
+                                "position": 12,
+                                "__typename": "BrandAdditionalProduct"
+                            },
+                            {
+                                "product_id": 128328,
+                                "position": 8,
+                                "__typename": "BrandAdditionalProduct"
+                            },
+                            {
+                                "product_id": 128332,
+                                "position": 2,
+                                "__typename": "BrandAdditionalProduct"
+                            }
+                        ],
+                        "position": 4,
+                        "deep_link": "central://product-list?categories.id=4787%2C4785%2C4790%2C4784-in&amp;brand_name=CLINIQUE",
+                        "is_official": false,
+                        "collection_products_textarea": null,
+                        "__typename": "BrandProductCollection"
+                    },
+                    {
+                        "brand_collection_id": "57",
+                        "brand_id": 116,
+                        "url": "https://www.central.co.th/th/search/clinique%20?page=1&amp;category_id=3151,3150,3149",
+                        "content": null,
+                        "identification": "Clinique - FRAGRANCE",
+                        "name": "FRAGRANCE",
+                        "description": "&lt;div&gt;น้ำหอมคลีนิกข์ให้กลิ่นสัมผัสที่มีความสดชื่น ร่าเริงเบิกบานและเสน่ห์ดึงดูดใจ เหมาะที่สุดสำหรับเติมพลังให้ผิวมีชีวิตชีวา&lt;/div&gt;\r\n&lt;p&gt;&lt;img title=\"Clinique\" src=\"https://backend.central.co.th/media/wysiwyg/Boutique/CL_ROW_05_Fragrance_Happy.jpg\" alt=\"Clinique\"&gt;&lt;/p&gt;",
+                        "brand_collection_products": [
+                            {
+                                "product_id": 40344,
+                                "position": 1,
+                                "__typename": "BrandAdditionalProduct"
+                            },
+                            {
+                                "product_id": 40698,
+                                "position": 9,
+                                "__typename": "BrandAdditionalProduct"
+                            },
+                            {
+                                "product_id": 918309,
+                                "position": 3,
+                                "__typename": "BrandAdditionalProduct"
+                            },
+                            {
+                                "product_id": 918329,
+                                "position": 5,
+                                "__typename": "BrandAdditionalProduct"
+                            },
+                            {
+                                "product_id": 918310,
+                                "position": 4,
+                                "__typename": "BrandAdditionalProduct"
+                            },
+                            {
+                                "product_id": 127809,
+                                "position": 11,
+                                "__typename": "BrandAdditionalProduct"
+                            },
+                            {
+                                "product_id": 127810,
+                                "position": 10,
+                                "__typename": "BrandAdditionalProduct"
+                            },
+                            {
+                                "product_id": 128385,
+                                "position": 2,
+                                "__typename": "BrandAdditionalProduct"
+                            },
+                            {
+                                "product_id": 127813,
+                                "position": 6,
+                                "__typename": "BrandAdditionalProduct"
+                            },
+                            {
+                                "product_id": 127716,
+                                "position": 7,
+                                "__typename": "BrandAdditionalProduct"
+                            },
+                            {
+                                "product_id": 634457,
+                                "position": 12,
+                                "__typename": "BrandAdditionalProduct"
+                            },
+                            {
+                                "product_id": 634458,
+                                "position": 8,
+                                "__typename": "BrandAdditionalProduct"
+                            }
+                        ],
+                        "position": 5,
+                        "deep_link": "central://product-list?categories.id=3151%2C3150%2C3149-in&amp;brand_name=CLINIQUE",
+                        "is_official": false,
+                        "collection_products_textarea": null,
+                        "__typename": "BrandProductCollection"
+                    },
+                    {
+                        "brand_collection_id": "300",
+                        "brand_id": 116,
+                        "url": "https://www.central.co.th/clinique/products?page=1&amp;sort=news_from_date,desc",
+                        "content": null,
+                        "identification": "Clinique - What's New",
+                        "name": "What's New",
+                        "description": "",
+                        "brand_collection_products": [
+                            {
+                                "product_id": 773896,
+                                "position": 8,
+                                "__typename": "BrandAdditionalProduct"
+                            },
+                            {
+                                "product_id": 918328,
+                                "position": 4,
+                                "__typename": "BrandAdditionalProduct"
+                            },
+                            {
+                                "product_id": 918309,
+                                "position": 7,
+                                "__typename": "BrandAdditionalProduct"
+                            },
+                            {
+                                "product_id": 918329,
+                                "position": 5,
+                                "__typename": "BrandAdditionalProduct"
+                            },
+                            {
+                                "product_id": 918310,
+                                "position": 6,
+                                "__typename": "BrandAdditionalProduct"
+                            },
+                            {
+                                "product_id": 918311,
+                                "position": 2,
+                                "__typename": "BrandAdditionalProduct"
+                            },
+                            {
+                                "product_id": 918334,
+                                "position": 3,
+                                "__typename": "BrandAdditionalProduct"
+                            },
+                            {
+                                "product_id": 918312,
+                                "position": 1,
+                                "__typename": "BrandAdditionalProduct"
+                            },
+                            {
+                                "product_id": 222481,
+                                "position": 1000,
+                                "__typename": "BrandAdditionalProduct"
+                            }
+                        ],
+                        "position": 0,
+                        "deep_link": "central://product-list?brand_name=CLINIQUE&amp;sort=news_from_date%7CDESC",
+                        "is_official": false,
+                        "collection_products_textarea": null,
+                        "__typename": "BrandProductCollection"
+                    }
+                ],
+                "product_count": 135,
+                "product_name_special": false,
+                "hide_product_original_price": false,
+                "hide_t1c_redeemable_amount": false,
+                "allow_product_review": false,
+                "banners": [],
+                "sort_orders": [],
+                "__typename": "BrandDetailExtensionAttributess"
+            },
+            "__typename": "BrandDetail"
+        }
+    }
+}</msg>
+<msg timestamp="20211101 14:07:17.687" level="INFO">${response} = {'data': {'brandDetail': {'brand_id': '116', 'attribute_id': 390, 'attribute_code': 'brand_name', 'option_id': 722, 'name': 'CLINIQUE', 'website_ids': [1], 'url_key': 'clinique', 'logo': 'clinique-log...</msg>
+<status status="PASS" starttime="20211101 14:07:17.506" endtime="20211101 14:07:17.687"/>
+</kw>
+<kw name="Get logo source of brand" library="brand_api">
+<var>${brand_logo_src}</var>
+<arg>${response}</arg>
+<kw name="Get Value From Json" library="JSONLibrary">
+<var>${brand_logo_arr}</var>
+<arg>${response}</arg>
+<arg>$..logo</arg>
+<doc>Get Value From JSON using JSONPath</doc>
+<msg timestamp="20211101 14:07:17.715" level="INFO">${brand_logo_arr} = ['clinique-logo-2_1.png']</msg>
+<status status="PASS" starttime="20211101 14:07:17.690" endtime="20211101 14:07:17.715"/>
+</kw>
+<msg timestamp="20211101 14:07:17.716" level="INFO">${brand_logo_src} = clinique-logo-2_1.png</msg>
+<status status="PASS" starttime="20211101 14:07:17.688" endtime="20211101 14:07:17.716"/>
+</kw>
+<kw name="Get url key of brand" library="brand_api">
+<var>${brand_url_key}</var>
+<arg>${response}</arg>
+<kw name="Get Value From Json" library="JSONLibrary">
+<var>${brand_url_key_arr}</var>
+<arg>${response}</arg>
+<arg>$..url_key</arg>
+<doc>Get Value From JSON using JSONPath</doc>
+<msg timestamp="20211101 14:07:17.748" level="INFO">${brand_url_key_arr} = ['clinique']</msg>
+<status status="PASS" starttime="20211101 14:07:17.717" endtime="20211101 14:07:17.748"/>
+</kw>
+<msg timestamp="20211101 14:07:17.748" level="INFO">${brand_url_key} = clinique</msg>
+<status status="PASS" starttime="20211101 14:07:17.716" endtime="20211101 14:07:17.748"/>
+</kw>
+<kw name="Set Test Variable" library="BuiltIn">
+<arg>${brand_logo_src}</arg>
+<arg>${brand_logo_src}</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<msg timestamp="20211101 14:07:17.749" level="INFO">${brand_logo_src} = clinique-logo-2_1.png</msg>
+<status status="PASS" starttime="20211101 14:07:17.749" endtime="20211101 14:07:17.750"/>
+</kw>
+<kw name="Set Test Variable" library="BuiltIn">
+<arg>${brand_url_key}</arg>
+<arg>${brand_url_key}</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<msg timestamp="20211101 14:07:17.751" level="INFO">${brand_url_key} = clinique</msg>
+<status status="PASS" starttime="20211101 14:07:17.750" endtime="20211101 14:07:17.751"/>
+</kw>
+<status status="PASS" starttime="20211101 14:07:17.250" endtime="20211101 14:07:17.751"/>
+</kw>
+<kw name="Input text on search box" library="header_fragment">
+<arg>${brand_name}</arg>
+<doc>Input search keyword in search box</doc>
+<kw name="Input Text" library="common_keywords">
+<arg>${headerFragmentLocator}[input_search_box]</arg>
+<arg>${keyword}</arg>
+<doc>Input text into target element
+${locator} - Locator of target element</doc>
+<kw name="Wait Element Is Visible" library="common_keywords">
+<arg>${locator}</arg>
+<arg>${timeout}</arg>
+<doc>Wait element is visible
+xpath=(//*[@id='txt-searchProductOnSearchBar'])[1] - Locator of target element
+30 - Waiting time for target element visible</doc>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>timeout=${timeout}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20211101 14:07:17.754" endtime="20211101 14:07:19.229"/>
+</kw>
+<status status="PASS" starttime="20211101 14:07:17.753" endtime="20211101 14:07:19.230"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20211101 14:07:19.230" level="INFO">Clicking element 'xpath=(//*[@id='txt-searchProductOnSearchBar'])[1]'.</msg>
+<status status="PASS" starttime="20211101 14:07:19.230" endtime="20211101 14:07:19.461"/>
+</kw>
+<kw name="Clear Element Text" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
+<status status="PASS" starttime="20211101 14:07:19.461" endtime="20211101 14:07:21.026"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>${keyword}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20211101 14:07:21.027" level="INFO">Typing text 'clinique' into text field 'xpath=(//*[@id='txt-searchProductOnSearchBar'])[1]'.</msg>
+<status status="PASS" starttime="20211101 14:07:21.026" endtime="20211101 14:07:21.111"/>
+</kw>
+<status status="PASS" starttime="20211101 14:07:17.752" endtime="20211101 14:07:21.111"/>
+</kw>
+<status status="PASS" starttime="20211101 14:07:17.751" endtime="20211101 14:07:21.112"/>
+</kw>
+<status status="PASS" starttime="20211101 14:07:17.249" endtime="20211101 14:07:21.112"/>
+</kw>
+<kw name="Click brand name in suggestion list" library="suggestion_fragment">
+<arg>${brand.clinique.name}</arg>
+<kw name="Format String" library="String">
+<var>${locator}</var>
+<arg>${suggestionFragmentLocator}[txt_brand_name_suggestion_term]</arg>
+<arg>brand_name=${brand_name}</arg>
+<doc>Formats a ``template`` using the given ``positional`` and ``named`` arguments.</doc>
+<msg timestamp="20211101 14:07:21.114" level="INFO">${locator} = xpath=//*[@data-testid='lnk-viewSearchSuggestionPopup-term' and text()='clinique']</msg>
+<status status="PASS" starttime="20211101 14:07:21.114" endtime="20211101 14:07:21.114"/>
+</kw>
+<kw name="Click Element" library="common_keywords">
+<arg>${locator}</arg>
+<doc>Click to target element
+xpath=//*[@data-testid='lnk-viewSearchSuggestionPopup-term' and text()='clinique'] - Locator of target element
+${timeout} - Waiting time for target element visible</doc>
+<kw name="Wait Element Is Visible" library="common_keywords">
+<arg>${locator}</arg>
+<arg>timeout=${timeout}</arg>
+<doc>Wait element is visible
+xpath=//*[@data-testid='lnk-viewSearchSuggestionPopup-term' and text()='clinique'] - Locator of target element
+30 - Waiting time for target element visible</doc>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>timeout=${timeout}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20211101 14:07:21.116" endtime="20211101 14:07:23.993"/>
+</kw>
+<status status="PASS" starttime="20211101 14:07:21.115" endtime="20211101 14:07:23.993"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20211101 14:07:23.994" level="INFO">Clicking element 'xpath=//*[@data-testid='lnk-viewSearchSuggestionPopup-term' and text()='clinique']'.</msg>
+<status status="PASS" starttime="20211101 14:07:23.994" endtime="20211101 14:07:25.066"/>
+</kw>
+<status status="PASS" starttime="20211101 14:07:21.115" endtime="20211101 14:07:25.066"/>
+</kw>
+<status status="PASS" starttime="20211101 14:07:21.113" endtime="20211101 14:07:25.066"/>
+</kw>
+<kw name="Verify brand page is navigated correctly" library="brand_page_feature">
+<kw name="Wait until page is completely loaded" library="common_keywords">
+<kw name="Instrument Browser" library="SeleniumLibrary">
+<tag>plugin</tag>
+<doc>Instruments the current webpage for testability. This should happen automatically vie SeleniumTestability's internal `Event Firing Webdriver` support but keyword is provided also. Calls `Inject Testability` keyword automatically.</doc>
+<status status="PASS" starttime="20211101 14:07:25.068" endtime="20211101 14:07:25.072"/>
+</kw>
+<kw name="Wait For Testability Ready" library="SeleniumLibrary">
+<tag>plugin</tag>
+<doc>Explicitly waits until testability is ready or timeout happens.
+Parameters:
+- ``timeout`` Amount of time to wait until giving up for testability to be ready. Robot framework timestring
+- ``error_on_timeout`` if timeout occurs, should we throw an error</doc>
+<status status="PASS" starttime="20211101 14:07:25.073" endtime="20211101 14:07:27.081"/>
+</kw>
+<status status="PASS" starttime="20211101 14:07:25.067" endtime="20211101 14:07:27.082"/>
+</kw>
+<kw name="Get Variable Value" library="BuiltIn">
+<var>${brand_url_key}</var>
+<arg>${brand_url_key}</arg>
+<doc>Returns variable value or ``default`` if the variable does not exist.</doc>
+<msg timestamp="20211101 14:07:27.085" level="INFO">${brand_url_key} = clinique</msg>
+<status status="PASS" starttime="20211101 14:07:27.083" endtime="20211101 14:07:27.085"/>
+</kw>
+<kw name="Get Variable Value" library="BuiltIn">
+<var>${brand_logo_src}</var>
+<arg>${brand_logo_src}</arg>
+<doc>Returns variable value or ``default`` if the variable does not exist.</doc>
+<msg timestamp="20211101 14:07:27.087" level="INFO">${brand_logo_src} = clinique-logo-2_1.png</msg>
+<status status="PASS" starttime="20211101 14:07:27.086" endtime="20211101 14:07:27.087"/>
+</kw>
+<kw name="Verify brand link is correct" library="brand_page">
+<arg>${brand_url_key}</arg>
+<kw name="Get path of current url" library="common_keywords">
+<var>${current_path}</var>
+<kw name="Get Location" library="SeleniumLibrary">
+<var>${current_url}</var>
+<doc>Returns the current browser window URL.</doc>
+<msg timestamp="20211101 14:07:27.108" level="INFO">${current_url} = https://www.central.co.th/en/clinique</msg>
+<status status="PASS" starttime="20211101 14:07:27.091" endtime="20211101 14:07:27.108"/>
+</kw>
+<kw name="Replace String" library="String">
+<var>${path}</var>
+<arg>${current_url}</arg>
+<arg>search_for=${base_url}/</arg>
+<arg>replace_with=${EMPTY}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<msg timestamp="20211101 14:07:27.112" level="INFO">${path} = clinique</msg>
+<status status="PASS" starttime="20211101 14:07:27.109" endtime="20211101 14:07:27.112"/>
+</kw>
+<msg timestamp="20211101 14:07:27.113" level="INFO">${current_path} = clinique</msg>
+<status status="PASS" starttime="20211101 14:07:27.090" endtime="20211101 14:07:27.113"/>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${current_path}</arg>
+<arg>${brand_url_key}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" starttime="20211101 14:07:27.114" endtime="20211101 14:07:27.115"/>
+</kw>
+<status status="PASS" starttime="20211101 14:07:27.088" endtime="20211101 14:07:27.116"/>
+</kw>
+<kw name="Verify brand logo is displayed correctly" library="brand_page">
+<arg>${brand_logo_src}</arg>
+<kw name="Format String" library="String">
+<var>${locator}</var>
+<arg>${brandPageLocator}[img_brand_logo]</arg>
+<arg>brand_logo_src=${brand_logo_src}</arg>
+<doc>Formats a ``template`` using the given ``positional`` and ``named`` arguments.</doc>
+<msg timestamp="20211101 14:07:27.120" level="INFO">${locator} = xpath=//img[@src='https://backend.central.co.th/media/aw_sbb/brand/clinique-logo-2_1.png']</msg>
+<status status="PASS" starttime="20211101 14:07:27.119" endtime="20211101 14:07:27.121"/>
+</kw>
+<kw name="Wait Element Is Visible" library="common_keywords">
+<arg>${locator}</arg>
+<doc>Wait element is visible
+xpath=//img[@src='https://backend.central.co.th/media/aw_sbb/brand/clinique-logo-2_1.png'] - Locator of target element
+${timeout} - Waiting time for target element visible</doc>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>timeout=${timeout}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20211101 14:07:27.126" endtime="20211101 14:07:27.174"/>
+</kw>
+<status status="PASS" starttime="20211101 14:07:27.124" endtime="20211101 14:07:27.175"/>
+</kw>
+<status status="PASS" starttime="20211101 14:07:27.117" endtime="20211101 14:07:27.175"/>
+</kw>
+<status status="PASS" starttime="20211101 14:07:25.067" endtime="20211101 14:07:27.175"/>
+</kw>
+<kw name="Tear Down Test" library="common_keywords" type="TEARDOWN">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20211101 14:07:27.176" endtime="20211101 14:07:29.599"/>
+</kw>
+<status status="PASS" starttime="20211101 14:07:27.176" endtime="20211101 14:07:29.600"/>
+</kw>
+<tag>navigate_brand_page</tag>
+<tag>Search_026</tag>
+<tag>search_brand</tag>
+<tag>search_function</tag>
+<status status="PASS" starttime="20211101 14:07:05.375" endtime="20211101 14:07:29.601"/>
+</test>
+<status status="PASS" starttime="20211101 14:06:43.939" endtime="20211101 14:07:29.607"/>
+</suite>
+<status status="PASS" starttime="20211101 14:06:43.936" endtime="20211101 14:07:29.615"/>
+</suite>
+<status status="PASS" starttime="20211101 14:06:43.914" endtime="20211101 14:07:29.623"/>
+</suite>
+<statistics>
+<total>
+<stat pass="2" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="2" fail="0" skip="0">navigate_brand_page</stat>
+<stat pass="1" fail="0" skip="0">Search_025</stat>
+<stat pass="1" fail="0" skip="0">Search_026</stat>
+<stat pass="2" fail="0" skip="0">search_brand</stat>
+<stat pass="2" fail="0" skip="0">search_function</stat>
+</tag>
+<suite>
+<stat pass="2" fail="0" skip="0" id="s1" name="Testcases">Testcases</stat>
+<stat pass="2" fail="0" skip="0" id="s1-s1" name="Search Brand">Testcases.Search Brand</stat>
+<stat pass="2" fail="0" skip="0" id="s1-s1-s1" name="Navigate Brand Page">Testcases.Search Brand.Navigate Brand Page</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

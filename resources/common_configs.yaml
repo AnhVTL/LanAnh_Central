@@ -1,0 +1,4 @@
+base_url: https://www.central.co.th/en
+api_end_point: https://falcon.central.co.th/graphql
+brand_logo_src_root: https://backend.central.co.th/media/aw_sbb/brand
+GLOBALTIMEOUT: 30
